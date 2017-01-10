@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://bin.bloggao.cn/"/>
-  <updated>2017-01-10T02:54:32.480Z</updated>
+  <updated>2017-01-10T08:51:19.505Z</updated>
   <id>http://bin.bloggao.cn/</id>
   
   <author>
@@ -14,6 +14,70 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo 添加百度谷歌收录sitemap</title>
+    <link href="http://bin.bloggao.cn/2017/01/10/hexo_sitemap/"/>
+    <id>http://bin.bloggao.cn/2017/01/10/hexo_sitemap/</id>
+    <published>2017-01-10T08:51:52.000Z</published>
+    <updated>2017-01-10T08:51:19.505Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近发现百度没收录blog子页，然后就研究了一番。<br>之前在theme里添加了一段百度自动推送的js：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> bp = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</div><div class="line">    <span class="keyword">var</span> curProtocol = <span class="built_in">window</span>.location.protocol.split(<span class="string">':'</span>)[<span class="number">0</span>];</div><div class="line">    <span class="keyword">if</span> (curProtocol === <span class="string">'https'</span>) &#123;</div><div class="line">        bp.src = <span class="string">'https://zz.bdstatic.com/linksubmit/push.js'</span>;        </div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        bp.src = <span class="string">'http://push.zhanzhang.baidu.com/push.js'</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> s = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"script"</span>)[<span class="number">0</span>];</div><div class="line">    s.parentNode.insertBefore(bp, s);</div><div class="line">&#125;)();</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>感觉没啥人点，自己也懒得点，算了，再补一个sitemap。<br>hexo 站点地图的插件安装方式如下：<br>google：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-sitemap --save</div></pre></td></tr></table></figure></p>
+<p>百度：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-baidu-sitemap --save</div></pre></td></tr></table></figure></p>
+<p>之后编译Blog<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure></p>
+<p><a href="http://bin.bloggao.cn/sitemap.xml">http://bin.bloggao.cn/sitemap.xml</a><br><a href="http://bin.bloggao.cn/baidusitemap.xml">http://bin.bloggao.cn/baidusitemap.xml</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近发现百度没收录blog子页，然后就研究了一番。&lt;br&gt;之前在theme里添加了一段百度自动推送的js：&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div cl
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://bin.bloggao.cn/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://bin.bloggao.cn//tags/hexo/"/>
+    
+      <category term="Blog" scheme="http://bin.bloggao.cn//tags/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo LF will be replaced by CRLF 错误</title>
+    <link href="http://bin.bloggao.cn/2017/01/10/hexo_lf_will_be_replaced_by_crlf/"/>
+    <id>http://bin.bloggao.cn/2017/01/10/hexo_lf_will_be_replaced_by_crlf/</id>
+    <published>2017-01-10T08:32:52.000Z</published>
+    <updated>2017-01-10T08:39:41.112Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天用hexo deploy 到github和coding，发现如下错误。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">warning: LF will be replaced by CRLF in tags/wechat/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div></pre></td></tr></table></figure></p>
+<p>看到网上资源很少，这边做个记录。<br>解决方式为：</p>
+<ul>
+<li>删除.deploy_git 目录</li>
+<li>git config –global core.autocrlf false</li>
+<li>hexo clean</li>
+<li>hexo g</li>
+<li>hexo d</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天用hexo deploy 到github和coding，发现如下错误。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://bin.bloggao.cn/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://bin.bloggao.cn//tags/hexo/"/>
+    
+      <category term="Blog" scheme="http://bin.bloggao.cn//tags/Blog/"/>
+    
+  </entry>
   
   <entry>
     <title>关于开发wechat小程序</title>
@@ -802,78 +866,6 @@
       <category term="javascript" scheme="http://bin.bloggao.cn//tags/javascript/"/>
     
       <category term="flexigrid" scheme="http://bin.bloggao.cn//tags/flexigrid/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux的压缩及解压zip</title>
-    <link href="http://bin.bloggao.cn/2015/11/23/linux_zip/"/>
-    <id>http://bin.bloggao.cn/2015/11/23/linux_zip/</id>
-    <published>2015-11-23T10:00:50.000Z</published>
-    <updated>2017-01-04T08:09:12.260Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">zip -r temp.zip temp</div><div class="line">unzip all.zip</div></pre></td></tr></table></figure>
-<p>create By liecol-晓斌</p>
-<p>2015.11.23</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;c
-    
-    </summary>
-    
-      <category term="linux" scheme="http://bin.bloggao.cn/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://bin.bloggao.cn//tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mysql用户权限管理</title>
-    <link href="http://bin.bloggao.cn/2015/11/17/mysql_user_role/"/>
-    <id>http://bin.bloggao.cn/2015/11/17/mysql_user_role/</id>
-    <published>2015-11-17T09:56:34.000Z</published>
-    <updated>2017-01-04T03:32:05.146Z</updated>
-    
-    <content type="html"><![CDATA[<p>进入mysql<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">use</span> mysql</div></pre></td></tr></table></figure></p>
-<p>创建用户<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">'username'</span>@<span class="string">'host'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'password'</span>;</div></pre></td></tr></table></figure></p>
-<p>username - 用户名,<br>host - 主机,如果是本地用户可用localhost, 任意远程,可以使用通配符%.<br>password - 密码,可以为空<br><a id="more"></a><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">'root'</span>@<span class="string">'localhost'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'123456'</span>;</div><div class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">'root'</span>@<span class="string">'192.168.1.101_'</span> IDENDIFIED <span class="keyword">BY</span> <span class="string">'123456'</span>;</div><div class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">'root'</span>@<span class="string">'%'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'123456'</span>;</div><div class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">'root'</span>@<span class="string">'%'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">''</span>;</div><div class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">'root'</span>@<span class="string">'%'</span>;</div></pre></td></tr></table></figure></p>
-<p>用户授权<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">GRANT</span> <span class="keyword">privileges</span> <span class="keyword">ON</span> databasename.tablename <span class="keyword">TO</span> <span class="string">'username'</span>@<span class="string">'host'</span></div></pre></td></tr></table></figure></p>
-<p>privileges 用户操作权限SELECT , INSERT , UPDATE delete等(全部采用all)<br>databasename 数据库<br>tablename 表名<br>(如果要授权所有的数据库名下的所有表名则<em>.</em>)<br>username 用户名<br>host 可登录主机<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">GRANT</span> <span class="keyword">SELECT</span>, <span class="keyword">INSERT</span> <span class="keyword">ON</span> test.user <span class="keyword">TO</span> <span class="string">'root'</span>@<span class="string">'%'</span>;</div><div class="line"><span class="keyword">GRANT</span> ALL <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'root'</span>@<span class="string">'%'</span>;</div></pre></td></tr></table></figure></p>
-<p>用以上命令授权的用户不能给其它用户授权,如果想让该用户可以授权,用以下命令:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">GRANT</span> <span class="keyword">privileges</span> <span class="keyword">ON</span> databasename.tablename <span class="keyword">TO</span> <span class="string">'username'</span>@<span class="string">'host'</span> <span class="keyword">WITH</span> <span class="keyword">GRANT</span> <span class="keyword">OPTION</span>;</div></pre></td></tr></table></figure></p>
-<p>撤销权限<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">REVOKE</span> privilege <span class="keyword">ON</span> databasename.tablename <span class="keyword">FROM</span> <span class="string">'username'</span>@<span class="string">'host'</span>;</div></pre></td></tr></table></figure></p>
-<p>如何授权则如何撤销，不能混淆，否则是无作用。</p>
-<p>查看权限信息<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SHOW</span> <span class="keyword">GRANTS</span> <span class="keyword">FOR</span> <span class="string">'root'</span>@<span class="string">'%'</span></div></pre></td></tr></table></figure></p>
-<p>查看自己的权限<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">show</span> <span class="keyword">grants</span>;</div></pre></td></tr></table></figure></p>
-<p>删除用户<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">DROP</span> <span class="keyword">USER</span> <span class="string">'username'</span>@<span class="string">'host'</span>;</div></pre></td></tr></table></figure></p>
-<p>修改用户名字<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">rename</span> <span class="keyword">user</span> root <span class="keyword">to</span> newroot</div></pre></td></tr></table></figure></p>
-<p>设置密码<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">set</span> <span class="keyword">password</span> <span class="keyword">for</span> zx_root =<span class="keyword">password</span>(<span class="string">'xxxxxx'</span>);</div></pre></td></tr></table></figure></p>
-<p>更改密码<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">update</span> mysql.user <span class="keyword">set</span> <span class="keyword">password</span>=<span class="keyword">password</span>(<span class="string">'xxxx'</span>)  <span class="keyword">where</span> <span class="keyword">user</span>=<span class="string">'otheruser'</span></div><div class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> <span class="keyword">password</span>=<span class="keyword">PASSWORD</span>(‘<span class="number">123456</span>’) <span class="keyword">where</span> <span class="keyword">User</span>=<span class="string">'root'</span>;</div></pre></td></tr></table></figure></p>
-<p>设置外链接<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> host=<span class="string">"%"</span> <span class="keyword">where</span> <span class="keyword">user</span>=<span class="string">'root'</span> <span class="keyword">and</span> host = <span class="string">'locolhost'</span></div></pre></td></tr></table></figure></p>
-<p>刷新表权限(让配置生效)<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">flush</span> <span class="keyword">privileges</span>;</div></pre></td></tr></table></figure></p>
-<p>启动mysql<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service mysqld <span class="keyword">start</span></div></pre></td></tr></table></figure></p>
-<p>重启mysql<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service mysqld restart</div></pre></td></tr></table></figure></p>
-<p>关闭mysql<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service mysqld restart</div></pre></td></tr></table></figure></p>
-<p>开启apache<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service httpd <span class="keyword">start</span></div></pre></td></tr></table></figure></p>
-<p>重启开启apache<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service httpd restart</div></pre></td></tr></table></figure></p>
-<p>关闭apache<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service httpd <span class="keyword">stop</span></div></pre></td></tr></table></figure></p>
-<p>2015.11.17<br>By liecol-晓斌</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;进入mysql&lt;br&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;use&lt;/span&gt; mysql&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;创建用户&lt;br&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;USER&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;username&#39;&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;&#39;host&#39;&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;IDENTIFIED&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;password&#39;&lt;/span&gt;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;username - 用户名,&lt;br&gt;host - 主机,如果是本地用户可用localhost, 任意远程,可以使用通配符%.&lt;br&gt;password - 密码,可以为空&lt;br&gt;
-    
-    </summary>
-    
-      <category term="mysql" scheme="http://bin.bloggao.cn/categories/mysql/"/>
-    
-    
-      <category term="mysql" scheme="http://bin.bloggao.cn//tags/mysql/"/>
     
   </entry>
   

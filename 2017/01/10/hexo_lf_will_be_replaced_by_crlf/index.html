@@ -4,24 +4,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>python导入excel表数据 | Liecol&#39;s Blog</title>
+  <title>hexo LF will be replaced by CRLF 错误 | Liecol&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1:安装第三方包1import xlrd
-2:读取文件1file_content = xlrd.open_workbook(&apos;excelFile.xls&apos;)
-这边看了一下源码，它和csv不一样，是在内部打开文件，所以传输路径就可以，如果想传内容，可以稍微改一下。">
+  <meta name="description" content="今天用hexo deploy 到github和coding，发现如下错误。12warning: LF will be replaced by CRLF in tags/wechat/index.html.The file will have its original line endings in your working directory.
+看到网上资源很少，这边做个记录。解决方式为：
+
+删除">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python导入excel表数据">
-<meta property="og:url" content="http://bin.bloggao.cn/2016/07/07/python_excel/index.html">
+<meta property="og:title" content="hexo LF will be replaced by CRLF 错误">
+<meta property="og:url" content="http://bin.bloggao.cn/2017/01/10/hexo_lf_will_be_replaced_by_crlf/index.html">
 <meta property="og:site_name" content="Liecol's Blog">
-<meta property="og:description" content="1:安装第三方包1import xlrd
-2:读取文件1file_content = xlrd.open_workbook(&apos;excelFile.xls&apos;)
-这边看了一下源码，它和csv不一样，是在内部打开文件，所以传输路径就可以，如果想传内容，可以稍微改一下。">
-<meta property="og:updated_time" content="2017-01-04T03:31:10.858Z">
+<meta property="og:description" content="今天用hexo deploy 到github和coding，发现如下错误。12warning: LF will be replaced by CRLF in tags/wechat/index.html.The file will have its original line endings in your working directory.
+看到网上资源很少，这边做个记录。解决方式为：
+
+删除">
+<meta property="og:updated_time" content="2017-01-10T08:39:41.112Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python导入excel表数据">
-<meta name="twitter:description" content="1:安装第三方包1import xlrd
-2:读取文件1file_content = xlrd.open_workbook(&apos;excelFile.xls&apos;)
-这边看了一下源码，它和csv不一样，是在内部打开文件，所以传输路径就可以，如果想传内容，可以稍微改一下。">
+<meta name="twitter:title" content="hexo LF will be replaced by CRLF 错误">
+<meta name="twitter:description" content="今天用hexo deploy 到github和coding，发现如下错误。12warning: LF will be replaced by CRLF in tags/wechat/index.html.The file will have its original line endings in your working directory.
+看到网上资源很少，这边做个记录。解决方式为：
+
+删除">
   
     <link rel="alternative" href="/atom.xml" title="Liecol&#39;s Blog" type="application/atom+xml">
   
@@ -93,14 +96,14 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main"><article id="post-python_excel" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-hexo_lf_will_be_replaced_by_crlf" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/07/07/python_excel/" class="article-date">
-  <time datetime="2016-07-07T08:58:00.000Z" itemprop="datePublished">2016-07-07</time>
+    <a href="/2017/01/10/hexo_lf_will_be_replaced_by_crlf/" class="article-date">
+  <time datetime="2017-01-10T08:32:52.000Z" itemprop="datePublished">2017-01-10</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/python/">python</a>
+    <a class="article-category-link" href="/categories/hexo/">hexo</a>
   </div>
 
   </div>
@@ -111,7 +114,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      python导入excel表数据
+      hexo LF will be replaced by CRLF 错误
     </h1>
   
 
@@ -119,28 +122,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1:安装第三方包<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> xlrd</div></pre></td></tr></table></figure></p>
-<p>2:读取文件<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">file_content = xlrd.open_workbook(<span class="string">'excelFile.xls'</span>)</div></pre></td></tr></table></figure></p>
-<p>这边看了一下源码，它和csv不一样，是在内部打开文件，所以传输路径就可以，如果想传内容，可以稍微改一下。<br><a id="more"></a><br>3:获取工作表<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>)table = file_content.sheets()[<span class="number">0</span>]//索引</div><div class="line"><span class="number">2</span>)table = file_content.sheet_by_index(<span class="number">0</span>)//索引 </div><div class="line"><span class="number">3</span>)table = data.sheet_by_name(<span class="string">u'Sheet1'</span>)//通过名称</div></pre></td></tr></table></figure></p>
-<p>4:获取行数和列数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nrows = table.nrows //获取行数</div><div class="line">ncols = table.ncols 获取列数</div></pre></td></tr></table></figure></p>
-<p>5:获取数据<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">table.row_values(数字)</div><div class="line">table.col_values(数字)</div></pre></td></tr></table></figure></p>
-<p>6:循环获取数据<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(nrows):</div><div class="line">    <span class="keyword">print</span> table.row_values(i)</div></pre></td></tr></table></figure></p>
-<p>7:获取某单元格<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cell_A1 = table.cell(<span class="number">0</span>,<span class="number">0</span>).value  //列行，索引从<span class="number">0</span>开始</div><div class="line">cell_C4 = table.cell(<span class="number">2</span>,<span class="number">3</span>).value  //列行，索引从<span class="number">0</span>开始</div></pre></td></tr></table></figure></p>
-<p>只是简单的读取了数据，其他的没做练习，在这就不再copy网上的了。有需要的，大家自己去研究， 比php的简单多了。<br>注：后来因为业务，导致长度不够，后改为openpyxl使用了。<br>create By<br>liecol-晓斌<br>2016/07/07</p>
+        <p>今天用hexo deploy 到github和coding，发现如下错误。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">warning: LF will be replaced by CRLF in tags/wechat/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div></pre></td></tr></table></figure></p>
+<p>看到网上资源很少，这边做个记录。<br>解决方式为：</p>
+<ul>
+<li>删除.deploy_git 目录</li>
+<li>git config –global core.autocrlf false</li>
+<li>hexo clean</li>
+<li>hexo g</li>
+<li>hexo d</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2016/07/07/python_excel/" data-id="cixr9k7rp000mqsvo8g4btzxi" class="article-share-link" data-share="baidu" data-title="python导入excel表数据">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2017/01/10/hexo_lf_will_be_replaced_by_crlf/" data-id="cixr9k7r60007qsvoltal11qu" class="article-share-link" data-share="baidu" data-title="hexo LF will be replaced by CRLF 错误">分享到</a>
       
 
       
-        <a href="http://bin.bloggao.cn/2016/07/07/python_excel/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://bin.bloggao.cn/2017/01/10/hexo_lf_will_be_replaced_by_crlf/#ds-thread" class="article-comment-link">评论</a>
       
 
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/excel/">excel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xlrd/">xlrd</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
 
     </footer>
   </div>
@@ -148,19 +152,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/09/30/linux_hexo_blog_git/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/01/10/hexo_sitemap/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
       <div class="article-nav-title">
         
-          如何在linux上使用hexo搭建git博客
+          hexo 添加百度谷歌收录sitemap
         
       </div>
     </a>
   
   
-    <a href="/2016/06/12/vpn_install/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/01/09/wechat_min_app/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">关于vpn的搭建</div>
+      <div class="article-nav-title">关于开发wechat小程序</div>
     </a>
   
 </nav>
@@ -170,7 +174,7 @@
 
 
   <section id="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="2016/07/07/python_excel/" data-title="python导入excel表数据" data-url="http://bin.bloggao.cn/2016/07/07/python_excel/"></div>
+    <div id="ds-thread" class="ds-thread" data-thread-key="2017/01/10/hexo_lf_will_be_replaced_by_crlf/" data-title="hexo LF will be replaced by CRLF 错误" data-url="http://bin.bloggao.cn/2017/01/10/hexo_lf_will_be_replaced_by_crlf/"></div>
   </section>
 </section>
       
