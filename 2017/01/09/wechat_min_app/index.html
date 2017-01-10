@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>关于开发wechat小程序 | Liecol&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="小程序今日上线致敬乔布斯，朋友圈一堆言论刷屏以及一片卧槽声起伏不定。博主也不能免俗的研究了一番，注册了一个小程序，写了个demo。首先发表点个人对该产品的观点：
+
+用完即走，目前看来第一批试用者倒是实实在在的没有玩坏，不过根据文档来看，玩坏是早晚的事儿。
+与其他应用共用UnionID，这种事儿就能看出腾讯心很大。
+优势在于开发上速度会更快，用户量以及用户推广也会方便不少。说说技术坑点：
+https">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于开发wechat小程序">
+<meta property="og:url" content="http://bin.bloggao.cn/2017/01/09/wechat_min_app/index.html">
+<meta property="og:site_name" content="Liecol's Blog">
+<meta property="og:description" content="小程序今日上线致敬乔布斯，朋友圈一堆言论刷屏以及一片卧槽声起伏不定。博主也不能免俗的研究了一番，注册了一个小程序，写了个demo。首先发表点个人对该产品的观点：
+
+用完即走，目前看来第一批试用者倒是实实在在的没有玩坏，不过根据文档来看，玩坏是早晚的事儿。
+与其他应用共用UnionID，这种事儿就能看出腾讯心很大。
+优势在于开发上速度会更快，用户量以及用户推广也会方便不少。说说技术坑点：
+https">
+<meta property="og:updated_time" content="2017-01-10T02:54:32.480Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于开发wechat小程序">
+<meta name="twitter:description" content="小程序今日上线致敬乔布斯，朋友圈一堆言论刷屏以及一片卧槽声起伏不定。博主也不能免俗的研究了一番，注册了一个小程序，写了个demo。首先发表点个人对该产品的观点：
+
+用完即走，目前看来第一批试用者倒是实实在在的没有玩坏，不过根据文档来看，玩坏是早晚的事儿。
+与其他应用共用UnionID，这种事儿就能看出腾讯心很大。
+优势在于开发上速度会更快，用户量以及用户推广也会方便不少。说说技术坑点：
+https">
+  
+    <link rel="alternative" href="/atom.xml" title="Liecol&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+</head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Liecol&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">技术，源于对生活的分享，所谓迷茫，就是才华配不上梦想！</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="bin.bloggao.cn">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main"><article id="post-wechat_min_app" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/09/wechat_min_app/" class="article-date">
+  <time datetime="2017-01-09T15:54:50.000Z" itemprop="datePublished">2017-01-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/wechat/">wechat</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于开发wechat小程序
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>小程序今日上线致敬乔布斯，朋友圈一堆言论刷屏以及一片卧槽声起伏不定。<br>博主也不能免俗的研究了一番，注册了一个小程序，写了个demo。<br>首先发表点个人对该产品的观点：</p>
+<ul>
+<li>用完即走，目前看来第一批试用者倒是实实在在的没有玩坏，不过根据文档来看，玩坏是早晚的事儿。</li>
+<li>与其他应用共用UnionID，这种事儿就能看出腾讯心很大。</li>
+<li>优势在于开发上速度会更快，用户量以及用户推广也会方便不少。<br><strong>说说技术坑点：</strong></li>
+<li>https,博主不想说脏话。</li>
+<li>rpx,博主再次不想说脏话。</li>
+<li>自己杜撰程序脚本，博主还是不想说脏话。<a id="more"></a>
+</li>
+</ul>
+<p><strong>说一下它的技术优势:</strong></p>
+<ul>
+<li>微信api调用方便。</li>
+<li>h5处理方便。</li>
+<li>少了公众号授权步骤，加载上有微提升。</li>
+</ul>
+<p>接下来说说对开发文档的理解，个人觉得其有仿js框架的嫌疑，属于野路子里杜撰的一个脚本规则：<br>其实小程序的文档写的还是蛮清楚的：</p>
+<ul>
+<li>app.json 配置</li>
+<li>app.js 脚本</li>
+<li>app.wxss 样式</li>
+<li>test.wxml 类似html的标签脚本</li>
+</ul>
+<p><em>小程序页面由以上4部分组成，当然这4个需要放置在同一个目录以及配置同一个文件名称。</em></p>
+<hr>
+<ul>
+<li>wx.api 微信原生API</li>
+</ul>
+<p>app.json<br>结构与json一致：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="string">"a"</span>:a, <span class="string">"b"</span>:b, <span class="string">"c"</span>:c&#125;</div></pre></td></tr></table></figure></p>
+<p>从他们官方的demo里我摘出了一部分初始配置：</p>
+<ul>
+<li>pages指显示需要用到的一些page路径;</li>
+<li>window指对该窗口的一些配置;</li>
+<li>tabBar指的是tab菜单;</li>
+<li>networkTimeout指窗口超时配置。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"pages"</span>: [</div><div class="line">    <span class="string">"page/component/index"</span>,</div><div class="line">    <span class="string">"page/API/storage/storage"</span></div><div class="line">  ],</div><div class="line">  <span class="string">"window"</span>: &#123;</div><div class="line">    <span class="string">"navigationBarTextStyle"</span>: <span class="string">"black"</span>,</div><div class="line">    <span class="string">"navigationBarTitleText"</span>: <span class="string">"演示"</span>,</div><div class="line">    <span class="string">"navigationBarBackgroundColor"</span>: <span class="string">"#fbf9fe"</span>,</div><div class="line">    <span class="string">"backgroundColor"</span>: <span class="string">"#fbf9fe"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="string">"tabBar"</span>: &#123;</div><div class="line">    <span class="string">"color"</span>: <span class="string">"#dddddd"</span>,</div><div class="line">    <span class="string">"selectedColor"</span>: <span class="string">"#3cc51f"</span>,</div><div class="line">    <span class="string">"borderStyle"</span>: <span class="string">"black"</span>,</div><div class="line">    <span class="string">"backgroundColor"</span>: <span class="string">"#ffffff"</span>,</div><div class="line">    <span class="string">"list"</span>: [&#123;</div><div class="line">      <span class="string">"pagePath"</span>: <span class="string">"page/component/index"</span>,</div><div class="line">      <span class="string">"iconPath"</span>: <span class="string">"image/icon_component.png"</span>,</div><div class="line">      <span class="string">"selectedIconPath"</span>: <span class="string">"image/icon_component_HL.png"</span>,</div><div class="line">      <span class="string">"text"</span>: <span class="string">"组件"</span></div><div class="line">    &#125;, &#123;</div><div class="line">      <span class="string">"pagePath"</span>: <span class="string">"page/API/index/index"</span>,</div><div class="line">      <span class="string">"iconPath"</span>: <span class="string">"image/icon_API.png"</span>,</div><div class="line">      <span class="string">"selectedIconPath"</span>: <span class="string">"image/icon_API_HL.png"</span>,</div><div class="line">      <span class="string">"text"</span>: <span class="string">"接口"</span></div><div class="line">    &#125;]</div><div class="line">  &#125;,</div><div class="line">  <span class="string">"networkTimeout"</span>: &#123;</div><div class="line">    <span class="string">"request"</span>: <span class="number">10000</span>,</div><div class="line">    <span class="string">"connectSocket"</span>: <span class="number">10000</span>,</div><div class="line">    <span class="string">"uploadFile"</span>: <span class="number">10000</span>,</div><div class="line">    <span class="string">"downloadFile"</span>: <span class="number">10000</span></div><div class="line">  &#125;,</div><div class="line">  <span class="string">"debug"</span>: <span class="literal">true</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>app.js<br>结构(obj参数)：<br>注册程序：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">App(&#123;</div><div class="line">  <span class="attr">onLaunch</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'App Launch'</span>)</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">myfunction</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    ...</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>注册页面：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Page(&#123;</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">texts</span>: [</div><div class="line">      <span class="string">'第1个'</span>,</div><div class="line">      <span class="string">'第2个'</span>,</div><div class="line">      <span class="string">'第3个'</span></div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">tabchange</span>: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'第 '</span> + e.detail.current + <span class="string">' 个t'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>结构基本如上显示，后面可根据自己的需要来增加对应代码，当然在脚本app.js也依然可以申明js变量。</p>
+<p>app.wxss<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>rpx = <span class="number">0.5</span>px</div></pre></td></tr></table></figure></p>
+<p>这里面除了rpx比较搞，其他的都还好。</p>
+<p>test.wxml<br>这里test是我自己写的。<br>类似于html的标签脚本<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">view</span>/&gt;</span>、<span class="tag">&lt;<span class="name">image</span>/&gt;</span>、<span class="tag">&lt;<span class="name">text</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"liecol_input_自动对焦"</span> <span class="attr">auto-focus</span>/&gt;</span></div></pre></td></tr></table></figure></p>
+<p>这玩意儿刚开始不对应对应，还真有可能会乱掉。</p>
+<p>标签数据绑定<br>这就是绝对的js框架搬过来了<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; message &#125;&#125;</div><div class="line">Page(&#123;</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">message</span>: <span class="string">'Hello LIECOL!'</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>这里的事件还是蛮有意思的，写起来也很轻松。<br>例如：</p>
+<ul>
+<li>longtap 手指触摸后，超过350ms再离开</li>
+<li>touchcancel 手指触摸动作被打断，如来电提醒，弹窗<br>等等…<br>这个官方文档写的很清楚，我在这里就不再赘述。</li>
+</ul>
+<p>wx.api<br>微信原生api.<br>如果大家都开发过公众号的话，相信很清楚，根据对应的微信原生api调用方式调用即可。<br>在小程序这边都是以wx.作为前缀。<br>这些原生的微信api接口还是非常实用的，文档也很清楚，在这仅举一例即可：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">App(&#123;</div><div class="line">  <span class="attr">onLaunch</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    wx.login(&#123;</div><div class="line">      <span class="attr">success</span>: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (res.code) &#123;</div><div class="line">          <span class="comment">//发起网络请求</span></div><div class="line">          wx.request(&#123;</div><div class="line">            <span class="attr">url</span>: <span class="string">'https://test.com/onLogin'</span>,</div><div class="line">            <span class="attr">data</span>: &#123;</div><div class="line">              <span class="attr">code</span>: res.code</div><div class="line">            &#125;</div><div class="line">          &#125;)</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'获取用户登录态失败！'</span> + res.errMsg)</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<ul>
+<li>APP:界面程序里</li>
+<li>onLaunch为：生命周期函数–监听小程序初始化</li>
+<li>wx.login 为微信的原生api接口</li>
+<li>wx.request 为发起的 HTTPS 请求。</li>
+<li>url为地址</li>
+<li>data为参数</li>
+</ul>
+<p>关于小程序基本的结构介绍差不多就是这些.<br>还有一些关于继承A-继承-&gt;B-继承-&gt;C 但是A-/继承-&gt;C<br>一类的就让大家在开发过程中自己去探索吧。<br>Create By<br>liecol-晓斌<br>2017-01-09</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://bin.bloggao.cn/2017/01/09/wechat_min_app/" data-id="cixr8t1w5000qb8vopx49en3p" class="article-share-link" data-share="baidu" data-title="关于开发wechat小程序">分享到</a>
+      
+
+      
+        <a href="http://bin.bloggao.cn/2017/01/09/wechat_min_app/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wechat/">wechat</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/25/Apache_Directory/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">Apache2.4与2.2版本访问配置对比</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="2017/01/09/wechat_min_app/" data-title="关于开发wechat小程序" data-url="http://bin.bloggao.cn/2017/01/09/wechat_min_app/"></div>
+  </section>
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/fileupload/" style="font-size: 13px; color: #ee9a49">fileupload</a> <a href="/tags/mysql/" style="font-size: 17px; color: #ee5c2c">mysql</a> <a href="/tags/Apache/" style="font-size: 13px; color: #ee9a49">Apache</a> <a href="/tags/php/" style="font-size: 21px; color: #ee1f0f">php</a> <a href="/tags/phpexcel/" style="font-size: 13px; color: #ee9a49">phpexcel</a> <a href="/tags/hexo/" style="font-size: 15px; color: #ee7b3a">hexo</a> <a href="/tags/coding/" style="font-size: 13px; color: #ee9a49">coding</a> <a href="/tags/Blog/" style="font-size: 13px; color: #ee9a49">Blog</a> <a href="/tags/Memcache/" style="font-size: 13px; color: #ee9a49">Memcache</a> <a href="/tags/nosql/" style="font-size: 15px; color: #ee7b3a">nosql</a> <a href="/tags/html/" style="font-size: 15px; color: #ee7b3a">html</a> <a href="/tags/other/" style="font-size: 15px; color: #ee7b3a">other</a> <a href="/tags/javascript/" style="font-size: 17px; color: #ee5c2c">javascript</a> <a href="/tags/jquery/" style="font-size: 15px; color: #ee7b3a">jquery</a> <a href="/tags/linux/" style="font-size: 23px; color: #e00">linux</a> <a href="/tags/flexigrid/" style="font-size: 13px; color: #ee9a49">flexigrid</a> <a href="/tags/nodejs/" style="font-size: 15px; color: #ee7b3a">nodejs</a> <a href="/tags/svn/" style="font-size: 13px; color: #ee9a49">svn</a> <a href="/tags/curl/" style="font-size: 13px; color: #ee9a49">curl</a> <a href="/tags/redis/" style="font-size: 15px; color: #ee7b3a">redis</a> <a href="/tags/python/" style="font-size: 19px; color: #ee3e1d">python</a> <a href="/tags/xlrd/" style="font-size: 13px; color: #ee9a49">xlrd</a> <a href="/tags/excel/" style="font-size: 13px; color: #ee9a49">excel</a> <a href="/tags/smarty/" style="font-size: 13px; color: #ee9a49">smarty</a> <a href="/tags/vpn/" style="font-size: 13px; color: #ee9a49">vpn</a> <a href="/tags/wechat/" style="font-size: 13px; color: #ee9a49">wechat</a> <a href="/tags/virtualenv/" style="font-size: 15px; color: #ee7b3a">virtualenv</a> <a href="/tags/pyramid/" style="font-size: 13px; color: #ee9a49">pyramid</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/01/09/wechat_min_app/">关于开发wechat小程序</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/25/Apache_Directory/">Apache2.4与2.2版本访问配置对比</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/23/linux_fdisk/">挂载磁盘和永久挂载</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/20/PHPExcel/">PHPExcel的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/23/php_redis/">php中关于redis的使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/curl/">curl</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nosql/">nosql</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/other/">other</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wechat/">wechat</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://www.bloggao.cn" target="_blank">liecol&#39;s 主页</a>
+          </li>
+        
+          <li>
+            <a href="http://shop.bloggao.cn" target="_blank">liecol&#39;s 商城</a>
+          </li>
+        
+          <li>
+            <a href="http://zpw.bloggao.cn" target="_blank">liecol&#39;s 招聘</a>
+          </li>
+        
+          <li>
+            <a href="http://ltkd.bloggao.cn" target="_blank">liecol&#39;s 快递</a>
+          </li>
+        
+          <li>
+            <a href="http://blog.newbmiao.com" target="_blank">菜鸟-Miao</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <ul class="list-inline text-center">
+    <li>
+        <a target="_blank" href="http://weibo.com/liecol">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+    </li>
+    <li>
+        <a target="_blank"  href="https://github.com/liecol-gao">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+    </li>
+    </ul>
+  <p class="copyright text-muted" style='margin-top:10px;'>
+    <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人次</span>
+  </p>  
+  <p class="copyright text-muted"  style='margin-top:0px;'>
+      Copyright &copy; Liecol&#39;s Blog 2017 
+      <br>
+      Create by <a href="http://www.bloggao.cn">liecol</a> 
+      <span style="display: inline-block; margin: 0 5px;">
+          <i class="fa fa-heart"></i>
+      </span> 
+      Ported by <a href="https://github.com/liecol-gao/liecol-gao.github.io">Liecol-Github</a> | 
+      京ICP备15020464号
+  </p>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+<!-- 多说公共js代码 start -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"liecol"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共js代码 end -->
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+</div>
+</body>
+</html>

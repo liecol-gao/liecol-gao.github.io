@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2017/01/09/wechat_min_app/</loc>
+    <lastmod>2017-01-10T02:54:32.480Z</lastmod>
+    <data>
+        <display>
+        <title>关于开发wechat小程序</title>
+        <pubTime>2017-01-09T15:54:50.000Z</pubTime>
+        
+        <tag>wechat</tag>
+         
+         
+           
+             
+              <breadCrumb title="wechat" url="http://bin.bloggao.cn/categories/wechat/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2016/01/10/windows_Python_virtualenv/</loc>
+    <lastmod>2017-01-06T07:53:35.391Z</lastmod>
+    <data>
+        <display>
+        <title>windows＋Python＋virtualenv环境配置</title>
+        <pubTime>2016-01-10T09:44:05.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>virtualenv</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://bin.bloggao.cn/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2015/04/02/mysql_rollback/</loc>
+    <lastmod>2017-01-04T08:24:39.109Z</lastmod>
+    <data>
+        <display>
+        <title>关于mysql数据库rollback浅谈</title>
+        <pubTime>2015-04-02T09:41:11.000Z</pubTime>
+        
+        <tag>mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="mysql" url="http://bin.bloggao.cn/categories/mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2016/02/14/BINARY_mysql/</loc>
+    <lastmod>2017-01-04T08:23:14.204Z</lastmod>
+    <data>
+        <display>
+        <title>BINARY解决数据大小写敏感及部分查询问题</title>
+        <pubTime>2016-02-14T09:09:27.000Z</pubTime>
+        
+        <tag>mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="mysql" url="http://bin.bloggao.cn/categories/mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2015/11/16/python_html_role/</loc>
+    <lastmod>2017-01-04T08:17:46.027Z</lastmod>
+    <data>
+        <display>
+        <title>python解决html转义</title>
+        <pubTime>2015-11-16T09:55:45.000Z</pubTime>
+        
+        <tag>html</tag>
+         
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://bin.bloggao.cn/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2015/11/23/linux_zip/</loc>
+    <lastmod>2017-01-04T08:09:12.260Z</lastmod>
+    <data>
+        <display>
+        <title>linux的压缩及解压zip</title>
+        <pubTime>2015-11-23T10:00:50.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://bin.bloggao.cn/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2015/09/28/MemCache_phpApi/</loc>
+    <lastmod>2017-01-04T03:33:35.978Z</lastmod>
+    <data>
+        <display>
+        <title>MemCache及phpApi缓存浅谈</title>
+        <pubTime>2015-09-28T09:50:17.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>php</tag>
+         
+        <tag>Memcache</tag>
+         
+        <tag>nosql</tag>
+         
+         
+           
+             
+              <breadCrumb title="nosql" url="http://bin.bloggao.cn/categories/nosql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2016/05/10/linux_svn/</loc>
+    <lastmod>2017-01-04T03:33:20.482Z</lastmod>
+    <data>
+        <display>
+        <title>linux系统里svn的搭建</title>
+        <pubTime>2016-05-10T11:02:25.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>svn</tag>
+         
+         
+           
+             
+              <breadCrumb title="svn" url="http://bin.bloggao.cn/categories/svn/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2016/09/30/linux_hexo_blog_git/</loc>
+    <lastmod>2017-01-04T03:33:10.761Z</lastmod>
+    <data>
+        <display>
+        <title>如何在linux上使用hexo搭建git博客</title>
+        <pubTime>2016-09-30T09:48:37.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>hexo</tag>
+         
+        <tag>nodejs</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="http://bin.bloggao.cn/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2015/08/27/jquery_Symbol/</loc>
+    <lastmod>2017-01-04T03:33:02.297Z</lastmod>
+    <data>
+        <display>
+        <title>如何解决jquery的$符号冲突</title>
+        <pubTime>2015-08-27T09:48:37.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>jquery</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://bin.bloggao.cn/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2016/12/23/linux_fdisk/</loc>
+    <lastmod>2017-01-04T03:32:54.281Z</lastmod>
+    <data>
+        <display>
+        <title>挂载磁盘和永久挂载</title>
+        <pubTime>2016-12-23T10:02:15.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://bin.bloggao.cn/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2015/11/23/jquery_flexigrid/</loc>
+    <lastmod>2017-01-04T03:32:48.457Z</lastmod>
+    <data>
+        <display>
+        <title>关于flexigrid的初识</title>
+        <pubTime>2015-11-23T10:02:15.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>flexigrid</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://bin.bloggao.cn/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2016/11/23/jQuery_FileUpload/</loc>
+    <lastmod>2017-01-04T03:32:39.761Z</lastmod>
+    <data>
+        <display>
+        <title>jQuery上传插件FileUpload浅析</title>
+        <pubTime>2016-11-23T12:22:00.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>jquery</tag>
+         
+        <tag>fileupload</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://bin.bloggao.cn/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2016/11/14/Hexo_Blog_Coding/</loc>
+    <lastmod>2017-01-04T03:32:29.273Z</lastmod>
+    <data>
+        <display>
+        <title>关于Hexo搭建Blog托管至Coding并显示</title>
+        <pubTime>2016-11-14T09:08:37.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>coding</tag>
+         
+        <tag>Blog</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="http://bin.bloggao.cn/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2015/03/13/baidu_search_summary/</loc>
+    <lastmod>2017-01-04T03:32:18.082Z</lastmod>
+    <data>
+        <display>
+        <title>百度搜索引擎图文展现规则</title>
+        <pubTime>2015-03-13T09:07:29.000Z</pubTime>
+        
+        <tag>html</tag>
+         
+        <tag>other</tag>
+         
+         
+           
+             
+              <breadCrumb title="other" url="http://bin.bloggao.cn/categories/other/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2015/09/30/nodejs_install/</loc>
+    <lastmod>2017-01-04T03:32:11.082Z</lastmod>
+    <data>
+        <display>
+        <title>nodejs安装及环境搭建</title>
+        <pubTime>2015-09-30T09:54:05.000Z</pubTime>
+        
+        <tag>nodejs</tag>
+         
+         
+           
+             
+              <breadCrumb title="nodejs" url="http://bin.bloggao.cn/categories/nodejs/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2015/11/17/mysql_user_role/</loc>
+    <lastmod>2017-01-04T03:32:05.146Z</lastmod>
+    <data>
+        <display>
+        <title>mysql用户权限管理</title>
+        <pubTime>2015-11-17T09:56:34.000Z</pubTime>
+        
+        <tag>mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="mysql" url="http://bin.bloggao.cn/categories/mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2014/11/06/other_web/</loc>
+    <lastmod>2017-01-04T03:31:58.561Z</lastmod>
+    <data>
+        <display>
+        <title>个人总结web开发</title>
+        <pubTime>2014-11-06T09:08:17.000Z</pubTime>
+        
+        <tag>other</tag>
+         
+         
+           
+             
+              <breadCrumb title="other" url="http://bin.bloggao.cn/categories/other/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2016/11/20/php_libcurl_curl/</loc>
+    <lastmod>2017-01-04T03:31:49.290Z</lastmod>
+    <data>
+        <display>
+        <title>php对libcurl库的支持cURL</title>
+        <pubTime>2016-11-20T09:22:00.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+        <tag>curl</tag>
+         
+         
+           
+             
+              <breadCrumb title="curl" url="http://bin.bloggao.cn/categories/curl/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2016/11/23/php_redis/</loc>
+    <lastmod>2017-01-04T03:31:31.553Z</lastmod>
+    <data>
+        <display>
+        <title>php中关于redis的使用</title>
+        <pubTime>2016-11-23T14:22:00.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+        <tag>redis</tag>
+         
+         
+           
+             
+              <breadCrumb title="nosql" url="http://bin.bloggao.cn/categories/nosql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2016/11/19/php_summary/</loc>
+    <lastmod>2017-01-04T03:31:23.066Z</lastmod>
+    <data>
+        <display>
+        <title>php常用函数总结</title>
+        <pubTime>2016-11-19T04:22:00.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+         
+           
+             
+              <breadCrumb title="php" url="http://bin.bloggao.cn/categories/php/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2016/12/20/PHPExcel/</loc>
+    <lastmod>2017-01-04T03:31:15.905Z</lastmod>
+    <data>
+        <display>
+        <title>PHPExcel的使用</title>
+        <pubTime>2016-12-20T12:50:00.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+        <tag>phpexcel</tag>
+         
+         
+           
+             
+              <breadCrumb title="php" url="http://bin.bloggao.cn/categories/php/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2016/07/07/python_excel/</loc>
+    <lastmod>2017-01-04T03:31:10.858Z</lastmod>
+    <data>
+        <display>
+        <title>python导入excel表数据</title>
+        <pubTime>2016-07-07T08:58:00.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>xlrd</tag>
+         
+        <tag>excel</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://bin.bloggao.cn/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2016/11/23/redis/</loc>
+    <lastmod>2017-01-04T03:31:02.034Z</lastmod>
+    <data>
+        <display>
+        <title>redis操作浅谈</title>
+        <pubTime>2016-11-23T11:30:00.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>nosql</tag>
+         
+        <tag>redis</tag>
+         
+         
+           
+             
+              <breadCrumb title="nosql" url="http://bin.bloggao.cn/categories/nosql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2015/03/17/smarty/</loc>
+    <lastmod>2017-01-04T03:30:42.906Z</lastmod>
+    <data>
+        <display>
+        <title>smarty模板机制数据显示原理</title>
+        <pubTime>2015-03-17T09:12:21.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+        <tag>smarty</tag>
+         
+         
+           
+             
+              <breadCrumb title="php" url="http://bin.bloggao.cn/categories/php/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2016/06/12/vpn_install/</loc>
+    <lastmod>2017-01-04T03:30:34.785Z</lastmod>
+    <data>
+        <display>
+        <title>关于vpn的搭建</title>
+        <pubTime>2016-06-12T06:22:00.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>vpn</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://bin.bloggao.cn/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2016/01/11/windows_python_virtualenv_pyramid/</loc>
+    <lastmod>2017-01-04T03:28:39.945Z</lastmod>
+    <data>
+        <display>
+        <title>windows/python/virtualenv环境安装pyramid</title>
+        <pubTime>2016-01-11T09:46:29.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>virtualenv</tag>
+         
+        <tag>pyramid</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://bin.bloggao.cn/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2016/12/25/Apache_Directory/</loc>
+    <lastmod>2017-01-03T07:27:23.704Z</lastmod>
+    <data>
+        <display>
+        <title>Apache2.4与2.2版本访问配置对比</title>
+        <pubTime>2016-12-25T11:02:25.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>Apache</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://bin.bloggao.cn/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+</urlset>

@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>php常用函数总结 | Liecol&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="数据类型转换：第一种转换方式： (int)  (bool)  (float)  (string)  (array) (object)eg:(int)$num1第二种转换方式：  intval()  floatval()  strval()eg:intval($str)第三种转换方式：  settype();//强制转换类型settype($num,&amp;quot;int&amp;quot;);">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php常用函数总结">
+<meta property="og:url" content="http://bin.bloggao.cn/2016/11/19/php_summary/index.html">
+<meta property="og:site_name" content="Liecol's Blog">
+<meta property="og:description" content="数据类型转换：第一种转换方式： (int)  (bool)  (float)  (string)  (array) (object)eg:(int)$num1第二种转换方式：  intval()  floatval()  strval()eg:intval($str)第三种转换方式：  settype();//强制转换类型settype($num,&amp;quot;int&amp;quot;);">
+<meta property="og:updated_time" content="2017-01-04T03:31:23.066Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php常用函数总结">
+<meta name="twitter:description" content="数据类型转换：第一种转换方式： (int)  (bool)  (float)  (string)  (array) (object)eg:(int)$num1第二种转换方式：  intval()  floatval()  strval()eg:intval($str)第三种转换方式：  settype();//强制转换类型settype($num,&amp;quot;int&amp;quot;);">
+  
+    <link rel="alternative" href="/atom.xml" title="Liecol&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+</head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Liecol&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">技术，源于对生活的分享，所谓迷茫，就是才华配不上梦想！</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="bin.bloggao.cn">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main"><article id="post-php_summary" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/19/php_summary/" class="article-date">
+  <time datetime="2016-11-19T04:22:00.000Z" itemprop="datePublished">2016-11-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      php常用函数总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>数据类型转换：<br>第一种转换方式： (int)  (bool)  (float)  (string)  (array) (object)<br>eg:<br><code>(int)$num1</code><br>第二种转换方式：  intval()  floatval()  strval()<br>eg:<br><code>intval($str)</code><br>第三种转换方式：  settype();//强制转换类型<br><code>settype($num,&quot;int&quot;);</code><br><a id="more"></a><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">unset</span>(<span class="keyword">var</span>) <span class="comment">//删除指定变量</span></div><div class="line">sleep() <span class="comment">//函数延迟代码执行若干秒。</span></div><div class="line"><span class="keyword">eval</span>() <span class="comment">//函数把字符串按照 PHP 代码来计算。</span></div><div class="line">defined() <span class="comment">//函数检查某常量是否存在。</span></div><div class="line">define() <span class="comment">//函数定义一个常量。</span></div><div class="line">trim() <span class="comment">//函数从字符串的两端删除空白字符和其他预定义字符。</span></div><div class="line">substr_replace() <span class="comment">//函数把字符串的一部分替换为另一个字符串。</span></div><div class="line">substr_count() <span class="comment">//函数计算子串在字符串中出现的次数。</span></div><div class="line">strrev() <span class="comment">//函数反转字符串。</span></div><div class="line">strlen() <span class="comment">//函数返回字符串的长度。</span></div><div class="line">stristr() <span class="comment">//函数查找字符串在另一个字符串中第一次出现的位置。</span></div><div class="line">stripos() <span class="comment">//函数返回字符串在另一个字符串中第一次出现的位置。</span></div><div class="line">str_split() <span class="comment">//函数把字符串分割到数组中。</span></div><div class="line">str_replace() <span class="comment">//函数使用一个字符串替换字符串中的另一些字符。</span></div><div class="line">md5() <span class="comment">//函数计算字符串的 MD5 散列。</span></div><div class="line">ltrim() <span class="comment">//函数从字符串左侧删除空格或其他预定义字符。</span></div><div class="line">join(<span class="string">","</span>,$arr) <span class="comment">//函数把数组元素组合为一个字符串。</span></div><div class="line">htmlspecialchars(str) <span class="comment">//函数把一些预定义的字符转换为 HTML 实体。</span></div><div class="line">htmlspecialchars_decode(string,flags)</div><div class="line">htmlentities(str) <span class="comment">//函数把字符转换为 HTML 实体。</span></div><div class="line">html_entity_decode(str) <span class="comment">//函数把 HTML 实体转换为字符。</span></div><div class="line">explode(<span class="keyword">array</span>) <span class="comment">//函数把字符串分割为数组。</span></div><div class="line">addslashes(string) <span class="comment">//函数在指定的预定义字符前添加反斜杠。</span></div><div class="line">stripslashes(string) <span class="comment">//addslashes反函数。</span></div><div class="line">round() <span class="comment">//函数对浮点数进行四舍五入。</span></div><div class="line">rand() <span class="comment">//函数返回随机整数。</span></div><div class="line">min() <span class="comment">//返回最小值。</span></div><div class="line">max() <span class="comment">//返回最大值。</span></div><div class="line">ceil() <span class="comment">//函数向上舍入为最接近的整数。</span></div><div class="line"></div><div class="line">array_change_key_case($input_array, CASE_UPPER); <span class="comment">//CASE_LOWER 返回字符串键名全为大写或者小写的数组</span></div><div class="line">array_chunk(<span class="keyword">array</span>, int, <span class="keyword">true</span>/<span class="keyword">false</span>) <span class="comment">//将一个数组分割成多个 （true/false是否保持键名）</span></div><div class="line">array_combine(<span class="keyword">array</span>, <span class="keyword">array</span>)<span class="comment">// 创建一个数组，用一个数组的值作为其键名，另一个数组的值作为其值</span></div><div class="line">array_filter($array1, <span class="string">"filter"</span>) <span class="comment">//用回调函数过滤数组中的单元</span></div><div class="line">array_intersect(<span class="keyword">array</span>,<span class="keyword">array</span>) <span class="comment">//返回两个数组的交集，键值不变</span></div><div class="line">array_key_exists (key, <span class="keyword">array</span>)<span class="comment">//检查给定的键名或索引是否存在于数组中</span></div><div class="line">array_keys(<span class="keyword">array</span>)<span class="comment">//返回数组的所有键值</span></div><div class="line">array_map(<span class="string">"cube"</span>, <span class="keyword">array</span>)<span class="comment">//返回一个数组，该数组包含了 arr1 中的所有单元经过 callback 作用过之后的单元</span></div><div class="line">array_merge_recursive(<span class="keyword">array</span>,<span class="keyword">array</span>) <span class="comment">//将两个或多个数组的单元合并起来,一个数组中的值附加在前一个数组的后面,返回作为结果的数组。</span></div><div class="line">array_merge() <span class="comment">//将两个或多个数组的单元合并起来，一个数组中的值附加在前一个数组的后面。返回作为结果的数组。</span></div><div class="line">array_pad(<span class="keyword">array</span>,<span class="number">-7</span>,<span class="number">1</span>)<span class="comment">//用值将数组填补到指定长度(数组，位置，值)</span></div><div class="line">array_pop (<span class="keyword">array</span>) <span class="comment">//弹出数组最后一个单元</span></div><div class="line">array_push(<span class="keyword">array</span>, str) <span class="comment">//往数组追加内容</span></div><div class="line">array_reverse(<span class="keyword">array</span>,<span class="keyword">true</span>) <span class="comment">//翻转数组，如果 preserve_keys 为 TRUE 则保留原来的键名。</span></div><div class="line">array_search(str,<span class="keyword">array</span>) <span class="comment">//在数组中搜索给定的值，如果成功则返回相应的键名</span></div><div class="line">array_shift(<span class="keyword">array</span>) <span class="comment">//去除数组第一个元素</span></div><div class="line">array_slice(<span class="keyword">array</span>, <span class="number">2</span>,<span class="number">-1</span>) <span class="comment">//返回根据 offset 和 length 参数所指定的 array 数组中的一段序列.类似python的list切片。</span></div><div class="line">array_sum(<span class="keyword">array</span>) <span class="comment">//将数组中的所有值的和以整数或浮点数的结果返回</span></div><div class="line">array_unshift(<span class="keyword">array</span>,str) <span class="comment">//将传入的单元插入到 array 数组的开头</span></div><div class="line">array_values(<span class="keyword">array</span>) <span class="comment">//返回数组中所有的值</span></div><div class="line">arsort(<span class="keyword">array</span>, sort_flags) <span class="comment">//对数组进行逆向排序并保持索引关系</span></div><div class="line">asort(<span class="keyword">array</span>, sort_flags) <span class="comment">//对数组进行顺向排序并保持索引关系</span></div><div class="line">sort_flags:</div><div class="line">SORT_REGULAR - 正常比较单元</div><div class="line">SORT_NUMERIC - 单元被作为数字来比较</div><div class="line">SORT_STRING - 单元被作为字符串来比较</div><div class="line">count(<span class="keyword">array</span>) <span class="comment">//统计变量中的单元数目</span></div><div class="line">current(<span class="keyword">array</span>) <span class="comment">//返回数组中的当前单元</span></div><div class="line">end (<span class="keyword">array</span>) <span class="comment">//将 array 的内部指针移动到最后一个单元，并返回该单元的值。</span></div><div class="line">in_array(str,<span class="keyword">array</span>) <span class="comment">//检查数组中是否存在某个值</span></div><div class="line">krsort() <span class="comment">//对数组按照键名逆向排序，保留键名到数据的关联</span></div><div class="line">ksort() <span class="comment">//对数组按照键名顺序排序，保留键名到数据的关联。本函数主要用于结合数组</span></div><div class="line">rsort() <span class="comment">//本函数对数组进行逆向排序（最高到最低）。</span></div><div class="line">uksort(<span class="keyword">array</span>, <span class="string">'str'</span>) <span class="comment">//键名进行排序, 采用用户自定义函数</span></div><div class="line">uasort(<span class="keyword">array</span>, <span class="string">'str'</span>) <span class="comment">//键值进行排序，采用用户自定义函数</span></div><div class="line">usort(<span class="keyword">array</span>, <span class="string">'str'</span>) <span class="comment">//使用用户自定义的比较函数对数组中的值进行排序</span></div></pre></td></tr></table></figure></p>
+<p>create By<br>liecol-晓斌<br>2016-11-19</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://bin.bloggao.cn/2016/11/19/php_summary/" data-id="cixr8t1w0000kb8vocyfwxezu" class="article-share-link" data-share="baidu" data-title="php常用函数总结">分享到</a>
+      
+
+      
+        <a href="http://bin.bloggao.cn/2016/11/19/php_summary/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/11/20/php_libcurl_curl/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          php对libcurl库的支持cURL
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/11/14/Hexo_Blog_Coding/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">关于Hexo搭建Blog托管至Coding并显示</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="2016/11/19/php_summary/" data-title="php常用函数总结" data-url="http://bin.bloggao.cn/2016/11/19/php_summary/"></div>
+  </section>
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/fileupload/" style="font-size: 13px; color: #ee9a49">fileupload</a> <a href="/tags/mysql/" style="font-size: 17px; color: #ee5c2c">mysql</a> <a href="/tags/Apache/" style="font-size: 13px; color: #ee9a49">Apache</a> <a href="/tags/php/" style="font-size: 21px; color: #ee1f0f">php</a> <a href="/tags/phpexcel/" style="font-size: 13px; color: #ee9a49">phpexcel</a> <a href="/tags/hexo/" style="font-size: 15px; color: #ee7b3a">hexo</a> <a href="/tags/coding/" style="font-size: 13px; color: #ee9a49">coding</a> <a href="/tags/Blog/" style="font-size: 13px; color: #ee9a49">Blog</a> <a href="/tags/Memcache/" style="font-size: 13px; color: #ee9a49">Memcache</a> <a href="/tags/nosql/" style="font-size: 15px; color: #ee7b3a">nosql</a> <a href="/tags/html/" style="font-size: 15px; color: #ee7b3a">html</a> <a href="/tags/other/" style="font-size: 15px; color: #ee7b3a">other</a> <a href="/tags/javascript/" style="font-size: 17px; color: #ee5c2c">javascript</a> <a href="/tags/jquery/" style="font-size: 15px; color: #ee7b3a">jquery</a> <a href="/tags/linux/" style="font-size: 23px; color: #e00">linux</a> <a href="/tags/flexigrid/" style="font-size: 13px; color: #ee9a49">flexigrid</a> <a href="/tags/nodejs/" style="font-size: 15px; color: #ee7b3a">nodejs</a> <a href="/tags/svn/" style="font-size: 13px; color: #ee9a49">svn</a> <a href="/tags/curl/" style="font-size: 13px; color: #ee9a49">curl</a> <a href="/tags/redis/" style="font-size: 15px; color: #ee7b3a">redis</a> <a href="/tags/python/" style="font-size: 19px; color: #ee3e1d">python</a> <a href="/tags/xlrd/" style="font-size: 13px; color: #ee9a49">xlrd</a> <a href="/tags/excel/" style="font-size: 13px; color: #ee9a49">excel</a> <a href="/tags/smarty/" style="font-size: 13px; color: #ee9a49">smarty</a> <a href="/tags/vpn/" style="font-size: 13px; color: #ee9a49">vpn</a> <a href="/tags/wechat/" style="font-size: 13px; color: #ee9a49">wechat</a> <a href="/tags/virtualenv/" style="font-size: 15px; color: #ee7b3a">virtualenv</a> <a href="/tags/pyramid/" style="font-size: 13px; color: #ee9a49">pyramid</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/01/09/wechat_min_app/">关于开发wechat小程序</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/25/Apache_Directory/">Apache2.4与2.2版本访问配置对比</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/23/linux_fdisk/">挂载磁盘和永久挂载</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/20/PHPExcel/">PHPExcel的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/23/php_redis/">php中关于redis的使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/curl/">curl</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nosql/">nosql</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/other/">other</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wechat/">wechat</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://www.bloggao.cn" target="_blank">liecol&#39;s 主页</a>
+          </li>
+        
+          <li>
+            <a href="http://shop.bloggao.cn" target="_blank">liecol&#39;s 商城</a>
+          </li>
+        
+          <li>
+            <a href="http://zpw.bloggao.cn" target="_blank">liecol&#39;s 招聘</a>
+          </li>
+        
+          <li>
+            <a href="http://ltkd.bloggao.cn" target="_blank">liecol&#39;s 快递</a>
+          </li>
+        
+          <li>
+            <a href="http://blog.newbmiao.com" target="_blank">菜鸟-Miao</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <ul class="list-inline text-center">
+    <li>
+        <a target="_blank" href="http://weibo.com/liecol">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+    </li>
+    <li>
+        <a target="_blank"  href="https://github.com/liecol-gao">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+    </li>
+    </ul>
+  <p class="copyright text-muted" style='margin-top:10px;'>
+    <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人次</span>
+  </p>  
+  <p class="copyright text-muted"  style='margin-top:0px;'>
+      Copyright &copy; Liecol&#39;s Blog 2017 
+      <br>
+      Create by <a href="http://www.bloggao.cn">liecol</a> 
+      <span style="display: inline-block; margin: 0 5px;">
+          <i class="fa fa-heart"></i>
+      </span> 
+      Ported by <a href="https://github.com/liecol-gao/liecol-gao.github.io">Liecol-Github</a> | 
+      京ICP备15020464号
+  </p>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+<!-- 多说公共js代码 start -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"liecol"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共js代码 end -->
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+</div>
+</body>
+</html>
