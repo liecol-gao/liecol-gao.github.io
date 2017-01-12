@@ -572,9 +572,9 @@
       <category term="hexo" scheme="http://bin.bloggao.cn/categories/hexo/"/>
     
     
-      <category term="linux" scheme="http://bin.bloggao.cn//tags/linux/"/>
-    
       <category term="hexo" scheme="http://bin.bloggao.cn//tags/hexo/"/>
+    
+      <category term="linux" scheme="http://bin.bloggao.cn//tags/linux/"/>
     
       <category term="nodejs" scheme="http://bin.bloggao.cn//tags/nodejs/"/>
     
