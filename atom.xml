@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://bin.bloggao.cn/"/>
-  <updated>2017-01-11T10:31:58.160Z</updated>
+  <updated>2017-05-15T06:03:01.111Z</updated>
   <id>http://bin.bloggao.cn/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Date.parse在IE里NaN问题的解决方式</title>
+    <link href="http://bin.bloggao.cn/2017/04/23/date_parse/"/>
+    <id>http://bin.bloggao.cn/2017/04/23/date_parse/</id>
+    <published>2017-04-23T05:59:50.000Z</published>
+    <updated>2017-05-15T06:03:01.111Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前处理时间问题发现ie浏览器里，Date.parse不起效果，兼容解决方式如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> start_time = test_time.replace(<span class="regexp">/-/g</span>,<span class="string">'/'</span>);</div><div class="line">start_time = <span class="keyword">new</span> <span class="built_in">Date</span>(start_time);</div><div class="line"><span class="keyword">var</span> result = start_time.getTime();</div></pre></td></tr></table></figure></p>
+<p>create By liecol-晓斌</p>
+<p>2017.04.23</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前处理时间问题发现ie浏览器里，Date.parse不起效果，兼容解决方式如下：&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;
+    
+    </summary>
+    
+      <category term="javascript" scheme="http://bin.bloggao.cn/categories/javascript/"/>
+    
+    
+      <category term="javascript" scheme="http://bin.bloggao.cn//tags/javascript/"/>
+    
+  </entry>
   
   <entry>
     <title>chrome通过SwitchyOmega配置代理</title>
@@ -839,55 +864,6 @@
       <category term="virtualenv" scheme="http://bin.bloggao.cn//tags/virtualenv/"/>
     
       <category term="pyramid" scheme="http://bin.bloggao.cn//tags/pyramid/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>windows＋Python＋virtualenv环境配置</title>
-    <link href="http://bin.bloggao.cn/2016/01/10/windows_Python_virtualenv/"/>
-    <id>http://bin.bloggao.cn/2016/01/10/windows_Python_virtualenv/</id>
-    <published>2016-01-10T09:44:05.000Z</published>
-    <updated>2017-01-06T07:53:35.391Z</updated>
-    
-    <content type="html"><![CDATA[<p>python安装</p>
-<p>建议官网下载，因为可能会缺少<code>pip</code>和<code>easy_install</code>，没有这两个，需要耗时安装二者之一(由于2.7版本和3.X版本有一些区别，3.X有些库不支持,这里配置的是2.7.10)</p>
-<p>python安装按提示进行，然后更改环境变量path即可</p>
-<p>然后运行<code>cmd</code>输入<code>python</code>即能测试是否成功</p>
-<p>官网文件会自动安装<code>pip</code>和<code>easy_install</code>，没有则需要手动安装其中之一，因为安装它们可以更加便捷的去安装更多的python第三方库。</p>
-<p>这里也需要将script文件目录增至path环境变量<br><a id="more"></a><br>安装 virtualenv(虚拟环境)</p>
-<p>为什么安装虚拟环境，1，避免版本冲突，2方便管理</p>
-<p>安装pip之后安装virtualenv就很方便了</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install virtualenv</div></pre></td></tr></table></figure>
-<p>由于python兼容性主要作用于linux上，切安装包以外网居多，有钱的老板可自行够买vpn，笔者耗了半天，连cmd都超时了，最后还是买了个vpn，感受到了人民币和非人民币玩家的区别。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">You are using pip version <span class="number">7.0</span><span class="number">.1</span>, however version <span class="number">7.1</span><span class="number">.0</span> <span class="keyword">is</span> available.</div><div class="line"></div><div class="line">You should consider upgrading via the <span class="string">'pip install --upgrade pip'</span> command.</div><div class="line"></div><div class="line">Collecting virtualenv</div><div class="line"></div><div class="line">  Downloading virtualenv<span class="number">-13.1</span><span class="number">.0</span>-py2.py3-none-any.whl (<span class="number">1.7</span>MB)</div><div class="line"></div><div class="line">    <span class="number">100</span>% |████████████████████████████████| <span class="number">1.7</span>MB <span class="number">100</span>kB/s</div><div class="line"></div><div class="line">Installing collected packages: virtualenv</div><div class="line"></div><div class="line">Successfully installed virtualenv<span class="number">-13.1</span><span class="number">.0</span></div></pre></td></tr></table></figure></p>
-<p>如上为安装完成</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">virtualenv test</div><div class="line"></div><div class="line">virtualenv C:\test（如果要分离主环境，前面加路径即可）</div><div class="line"></div><div class="line">New python executable <span class="keyword">in</span> test\Scripts\python.exe</div><div class="line"></div><div class="line">Installing setuptools, pip, wheel...done.</div></pre></td></tr></table></figure>
-<p>test即创建的工程文件，这个文件夹就是保存 Python 虚拟环境。</p>
-<p>开启虚拟环境<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Scripts\activate</div><div class="line"></div><div class="line">Scripts 文件内部，在命令行下直接执行文件 activate</div><div class="line"></div><div class="line"><span class="number">2015</span>/<span class="number">08</span>/<span class="number">07</span>  <span class="number">15</span>:<span class="number">42</span>    &lt;DIR&gt;          .</div><div class="line"></div><div class="line"><span class="number">2015</span>/<span class="number">08</span>/<span class="number">07</span>  <span class="number">15</span>:<span class="number">42</span>    &lt;DIR&gt;          ..</div><div class="line"></div><div class="line"><span class="number">2015</span>/<span class="number">08</span>/<span class="number">07</span>  <span class="number">15</span>:<span class="number">42</span>             <span class="number">2</span>,<span class="number">305</span> activate</div><div class="line"></div><div class="line">(省略...)</div></pre></td></tr></table></figure></p>
-<p>如下即进入虚拟环境文件<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(test) C:\python27\Scripts\test\Scripts&gt;</div></pre></td></tr></table></figure></p>
-<p>在这里面 可使用 python，pip等命令，均是 virtualenv 配置好的，自己也可以自行下载其他库。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">deactivate</div></pre></td></tr></table></figure></p>
-<p>退出虚拟环境</p>
-<p>virtualenv 创建的虚拟环境与主机的 Python 环境无关，主机配置的库不能在 virtualenv 中使用。你需要在虚拟环境中利用 pip install 再次安装配置后才能使用。</p>
-<p>关于pyramid 如若有时间下次也会写出一段记录。</p>
-<p><strong>最后，涉及到数据库等环境变量，需要增加 <code>--system-site-packages</code>用来调用系统数据库用作虚拟环境内部调用。否则程序跑不起来。</strong></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;python安装&lt;/p&gt;
-&lt;p&gt;建议官网下载，因为可能会缺少&lt;code&gt;pip&lt;/code&gt;和&lt;code&gt;easy_install&lt;/code&gt;，没有这两个，需要耗时安装二者之一(由于2.7版本和3.X版本有一些区别，3.X有些库不支持,这里配置的是2.7.10)&lt;/p&gt;
-&lt;p&gt;python安装按提示进行，然后更改环境变量path即可&lt;/p&gt;
-&lt;p&gt;然后运行&lt;code&gt;cmd&lt;/code&gt;输入&lt;code&gt;python&lt;/code&gt;即能测试是否成功&lt;/p&gt;
-&lt;p&gt;官网文件会自动安装&lt;code&gt;pip&lt;/code&gt;和&lt;code&gt;easy_install&lt;/code&gt;，没有则需要手动安装其中之一，因为安装它们可以更加便捷的去安装更多的python第三方库。&lt;/p&gt;
-&lt;p&gt;这里也需要将script文件目录增至path环境变量&lt;br&gt;
-    
-    </summary>
-    
-      <category term="python" scheme="http://bin.bloggao.cn/categories/python/"/>
-    
-    
-      <category term="python" scheme="http://bin.bloggao.cn//tags/python/"/>
-    
-      <category term="virtualenv" scheme="http://bin.bloggao.cn//tags/virtualenv/"/>
     
   </entry>
   

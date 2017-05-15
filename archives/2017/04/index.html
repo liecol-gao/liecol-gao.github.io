@@ -4,38 +4,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>chrome通过SwitchyOmega配置代理 | Liecol&#39;s Blog</title>
+  <title>Archives: 2017/4 | Liecol&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="之前公司搭建的vpn丢包80%以上，搞的我很郁闷，玩不了。然后就找了一种新的PAC脚本方式，在这做个记录。
-
-安装 SwitchyOmega.
-
-这个是google的一个扩展程序。SwitchyOmega可以在谷歌应用商店安装。
-如果没法连接，也可以在github下载安装最新版安装。安装直接拖动到 google-&amp;gt;更多工具-&amp;gt;扩展程序即可，上面的链接也有显示如何安装。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="chrome通过SwitchyOmega配置代理">
-<meta property="og:url" content="http://bin.bloggao.cn/2017/01/11/chrome_SwitchyOmega/index.html">
+  <meta name="description" content="liecol-晓斌的个人网站，技术，源于对生活的分享，所谓迷茫，就是才华配不上梦想。我是liecol，欢迎进入我的个人网站。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Liecol's Blog">
+<meta property="og:url" content="http://bin.bloggao.cn/archives/2017/04/index.html">
 <meta property="og:site_name" content="Liecol's Blog">
-<meta property="og:description" content="之前公司搭建的vpn丢包80%以上，搞的我很郁闷，玩不了。然后就找了一种新的PAC脚本方式，在这做个记录。
-
-安装 SwitchyOmega.
-
-这个是google的一个扩展程序。SwitchyOmega可以在谷歌应用商店安装。
-如果没法连接，也可以在github下载安装最新版安装。安装直接拖动到 google-&amp;gt;更多工具-&amp;gt;扩展程序即可，上面的链接也有显示如何安装。">
-<meta property="og:image" content="http://bin.bloggao.cn/images/chrom_extensions.png">
-<meta property="og:image" content="http://bin.bloggao.cn/images/add_extension_switch.png">
-<meta property="og:image" content="http://bin.bloggao.cn/images/pac_address.png">
-<meta property="og:image" content="http://bin.bloggao.cn/images/auto_switch.png">
-<meta property="og:updated_time" content="2017-01-11T10:31:58.160Z">
+<meta property="og:description" content="liecol-晓斌的个人网站，技术，源于对生活的分享，所谓迷茫，就是才华配不上梦想。我是liecol，欢迎进入我的个人网站。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="chrome通过SwitchyOmega配置代理">
-<meta name="twitter:description" content="之前公司搭建的vpn丢包80%以上，搞的我很郁闷，玩不了。然后就找了一种新的PAC脚本方式，在这做个记录。
-
-安装 SwitchyOmega.
-
-这个是google的一个扩展程序。SwitchyOmega可以在谷歌应用商店安装。
-如果没法连接，也可以在github下载安装最新版安装。安装直接拖动到 google-&amp;gt;更多工具-&amp;gt;扩展程序即可，上面的链接也有显示如何安装。">
-<meta name="twitter:image" content="http://bin.bloggao.cn/images/chrom_extensions.png">
+<meta name="twitter:title" content="Liecol's Blog">
+<meta name="twitter:description" content="liecol-晓斌的个人网站，技术，源于对生活的分享，所谓迷茫，就是才华配不上梦想。我是liecol，欢迎进入我的个人网站。">
   
     <link rel="alternative" href="/atom.xml" title="Liecol&#39;s Blog" type="application/atom+xml">
   
@@ -109,120 +88,39 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main"><article id="post-chrome_SwitchyOmega" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/11/chrome_SwitchyOmega/" class="article-date">
-  <time datetime="2017-01-11T09:56:30.000Z" itemprop="datePublished">2017-01-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/linux/">linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+      <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      chrome通过SwitchyOmega配置代理
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2017/04/23/date_parse/" class="archive-article-date">
+  <time datetime="2017-04-23T05:59:50.000Z" itemprop="datePublished">4月 23</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/04/23/date_parse/">Date.parse在IE里NaN问题的解决方式</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>之前公司搭建的vpn丢包80%以上，搞的我很郁闷，玩不了。<br>然后就找了一种新的PAC脚本方式，在这做个记录。</p>
-<ul>
-<li>安装 SwitchyOmega.</li>
-</ul>
-<p>这个是google的一个扩展程序。<br>SwitchyOmega可以在谷歌应用商店安装。</p>
-<p>如果没法连接，也可以在<a href="https://github.com/FelisCatus/SwitchyOmega/releases" target="_blank" rel="external">github下载安装最新版</a>安装。<br>安装直接拖动到 google-&gt;更多工具-&gt;扩展程序即可，上面的链接也有显示如何安装。<br><a id="more"></a></p>
-<img src="/images/chrom_extensions.png" width="700" height="280" title="liecol-晓斌|谷歌扩展图 liecol-晓斌|谷歌扩展图">
-<ul>
-<li>新建情景模式</li>
-<li><p>选择PAC情景模式</p>
-<img src="/images/add_extension_switch.png" width="700" height="280" title="liecol-晓斌|新建情景模式 liecol-晓斌|新建情景模式">
-</li>
-<li><p>PAC网址选为<br><a href="https://raw.githubusercontent.com/kgfw/fg/master/pac/cfu.pac" target="_blank" rel="external">https://raw.githubusercontent.com/kgfw/fg/master/pac/cfu.pac</a></p>
-</li>
-</ul>
-<img src="/images/pac_address.png" width="700" height="280" title="liecol-晓斌|PAC地址 liecol-晓斌|PAC地址">
-<ul>
-<li>auto switch 设置<br>有些网站可以不用走代理，就可以在此设置。</li>
-</ul>
-<img src="/images/auto_switch.png" width="700" height="280" title="liecol-晓斌|auto switch liecol-晓斌|auto switch">
-<p>然后google选择对应的模式即可访问了。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://bin.bloggao.cn/2017/01/11/chrome_SwitchyOmega/" data-id="cj2ppufdw0006dkdej0shvot3" class="article-share-link" data-share="baidu" data-title="chrome通过SwitchyOmega配置代理">分享到</a>
-      
-
-      
-        <a href="http://bin.bloggao.cn/2017/01/11/chrome_SwitchyOmega/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google/">Google</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-
-  
-    <! -- 添加版权信息 -->
-    <div style="margin-top:20px;">
-    <div>
-    <b>注:</b> 转载请注明出处,本文作者为
-    <a style="color:#e32d40;" href="/index.html" target="_blank" title="Liecol Gao">Liecol Gao</a>,
-    本文标题为
-    <a style="color:#e32d40;" href="/2017/01/11/chrome_SwitchyOmega/" target="_blank" title="chrome通过SwitchyOmega配置代理">chrome通过SwitchyOmega配置代理</a>
-    </div>
-    <div>
-    &nbsp;&nbsp;&nbsp;&nbsp;本文链接为
-    <a style="color:#e32d40;" href="/2017/01/11/chrome_SwitchyOmega/" target="_blank" title="chrome通过SwitchyOmega配置代理">http://bin.bloggao.cn/2017/01/11/chrome_SwitchyOmega/</a>.
-    </div>
-    </div>
-    <! -- 添加版权信息 -->
-
-    
-<nav id="article-nav">
-  
-    <a href="/2017/04/23/date_parse/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">
-        
-          Date.parse在IE里NaN问题的解决方式
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/01/10/hexo_sitemap/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">hexo 添加百度谷歌收录sitemap</div>
-    </a>
-  
-</nav>
-
-  
 </article>
-
-
-  <!--PC和WAP自适应版-->
-  <div id="SOHUCS" sid="chrome通过SwitchyOmega配置代理" ></div> 
-  <script type="text/javascript"> 
-  (function(){ 
-  var appid = 'cysWveYe9'; 
-  var conf = 'prod_17d4525b97e67d157e2c5e0a2cedfcd7'; 
-  var width = window.innerWidth || document.documentElement.clientWidth; 
-  if (width < 960) { 
-  window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+  
+  
+    </div></section>
+  
 
 </section>
       

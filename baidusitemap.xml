@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://bin.bloggao.cn/2017/04/23/date_parse/</loc>
+    <lastmod>2017-05-15T06:03:01.111Z</lastmod>
+    <data>
+        <display>
+        <title>Date.parse在IE里NaN问题的解决方式</title>
+        <pubTime>2017-04-23T05:59:50.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://bin.bloggao.cn/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://bin.bloggao.cn/2017/01/10/hexo_sitemap/</loc>
     <lastmod>2017-01-13T02:19:28.001Z</lastmod>
     <data>
