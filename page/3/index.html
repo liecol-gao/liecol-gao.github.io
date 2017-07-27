@@ -90,6 +90,124 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-BINARY_mysql" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/14/BINARY_mysql/" class="article-date">
+  <time datetime="2016-02-14T09:09:27.000Z" itemprop="datePublished">2016-02-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/mysql/">mysql</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/14/BINARY_mysql/">BINARY解决数据大小写敏感及部分查询问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>BINARY不是函数，是类型转换运算符，它用来强制它后面的字符串为一个二进制字符串，可以理解为在字符串比较的时候区分大小写</p>
+<p>代码如下:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">mysql&gt; select binary 'ABCD'='abcd' COM1, 'ABCD'='abcd' COM2;</div><div class="line">+--------+-----------+</div><div class="line">| COM1 | COM2 |</div><div class="line">+--------+-----------+</div><div class="line">|      0     |      1      |</div><div class="line">+---------+-----------+</div><div class="line">1 row in set (0.00 sec)</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2016/02/14/BINARY_mysql/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://bin.bloggao.cn/2016/02/14/BINARY_mysql/" data-id="cj5m3t00q0002xcdem9kjgspt" class="article-share-link" data-share="baidu" data-title="BINARY解决数据大小写敏感及部分查询问题">分享到</a>
+      
+
+      
+        <a href="http://bin.bloggao.cn/2016/02/14/BINARY_mysql/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+
+    </footer>
+  </div>
+
+  
+</article>
+
+
+
+  
+    <article id="post-windows_python_virtualenv_pyramid" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/11/windows_python_virtualenv_pyramid/" class="article-date">
+  <time datetime="2016-01-11T09:46:29.000Z" itemprop="datePublished">2016-01-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/11/windows_python_virtualenv_pyramid/">windows/python/virtualenv环境安装pyramid</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于win-py-vir的环境安装技巧在之前就有记录(详情参考windows＋Python＋virtualenv环境配置)</p>
+<p>这里主要讲在虚拟环境下如何安装python框架pyramid</p>
+<p>pyramid采用<code>mako</code>模板引擎,<code>SQLAlchemy</code> ORM工具，可配置多样数据库,如<code>sqlite</code>，<code>mysql</code>等(如若有时间，以后也会整理出一份文档)</p>
+<p>在安装python库<code>pip</code>或者<code>easy_install</code>后</p>
+<p>采用<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pip install pyramid ==<span class="number">1.4</span>或者</div><div class="line"></div><div class="line">easy_install pyramid == <span class="number">1.4</span></div></pre></td></tr></table></figure></p>
+<p>后面的1.4是版本，如若不加则采用最新版</p>
+<p>但是pyramid不支持高版本对低版本的兼容，所以谨慎处理<br>
+        
+          <p class="article-more-link">
+            <a href="/2016/01/11/windows_python_virtualenv_pyramid/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://bin.bloggao.cn/2016/01/11/windows_python_virtualenv_pyramid/" data-id="cj5m3t01z000wxcdewzz62ra3" class="article-share-link" data-share="baidu" data-title="windows/python/virtualenv环境安装pyramid">分享到</a>
+      
+
+      
+        <a href="http://bin.bloggao.cn/2016/01/11/windows_python_virtualenv_pyramid/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pyramid/">pyramid</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/virtualenv/">virtualenv</a></li></ul>
+
+    </footer>
+  </div>
+
+  
+</article>
+
+
+
+  
     <article id="post-windows_Python_virtualenv" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/01/10/windows_Python_virtualenv/" class="article-date">
@@ -131,7 +249,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2016/01/10/windows_Python_virtualenv/" data-id="cj2ppuffn000sdkdeh5kagd15" class="article-share-link" data-share="baidu" data-title="windows＋Python＋virtualenv环境配置">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2016/01/10/windows_Python_virtualenv/" data-id="cj5m3t01y000vxcdepnao4liu" class="article-share-link" data-share="baidu" data-title="windows＋Python＋virtualenv环境配置">分享到</a>
       
 
       
@@ -176,7 +294,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>对比了一下jquery表格框架<code>flexigrid</code>和<code>jqgrid</code>，个人认为flexigrid表格框架其实要比jqgrid用着要舒坦<br>样式也比jqgrid的好看，二者有很大相似也有很大不同。<br>在这里笔者说一下flexigrid，因为国内demo比较少<br>希望能对大家有点帮助。<br>引用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">".jquery.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">".styleII.css"</span> /&gt;</div><div class="line">&lt;link rel="stylesheet" type="text/css" href="./flexigrid.css"&gt;</div><div class="line">&lt;script type="text/javascript" src="./flexigrid.js"&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+        <p>对比了一下jquery表格框架<code>flexigrid</code>和<code>jqgrid</code>，个人认为flexigrid表格框架其实要比jqgrid用着要舒坦<br>样式也比jqgrid的好看，二者有很大相似也有很大不同。<br>在这里笔者说一下flexigrid，因为国内demo比较少<br>希望能对大家有点帮助。<br>引用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">".jquery.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">".styleII.css"</span> /&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"./flexigrid.css"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"./flexigrid.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
         
           <p class="article-more-link">
             <a href="/2015/11/23/jquery_flexigrid/#more">Read More</a>
@@ -186,7 +304,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2015/11/23/jquery_flexigrid/" data-id="cj2ppufe0000adkdek2xwmqvb" class="article-share-link" data-share="baidu" data-title="关于flexigrid的初识">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2015/11/23/jquery_flexigrid/" data-id="cj5m3t014000cxcdetc29zt5h" class="article-share-link" data-share="baidu" data-title="关于flexigrid的初识">分享到</a>
       
 
       
@@ -239,7 +357,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2015/11/23/linux_zip/" data-id="cj2ppufe1000bdkde5lfc8a0r" class="article-share-link" data-share="baidu" data-title="linux的压缩及解压zip">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2015/11/23/linux_zip/" data-id="cj5m3t018000gxcdeia76xlzi" class="article-share-link" data-share="baidu" data-title="linux的压缩及解压zip">分享到</a>
       
 
       
@@ -296,7 +414,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2015/11/17/mysql_user_role/" data-id="cj2ppufee000jdkdewjip9me0" class="article-share-link" data-share="baidu" data-title="mysql用户权限管理">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2015/11/17/mysql_user_role/" data-id="cj5m3t01f000lxcdek5fvjls9" class="article-share-link" data-share="baidu" data-title="mysql用户权限管理">分享到</a>
       
 
       
@@ -349,7 +467,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2015/11/16/python_html_role/" data-id="cj2ppufel000qdkdengql1iym" class="article-share-link" data-share="baidu" data-title="python解决html转义">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2015/11/16/python_html_role/" data-id="cj5m3t01j000pxcde7e21dbc3" class="article-share-link" data-share="baidu" data-title="python解决html转义">分享到</a>
       
 
       
@@ -405,7 +523,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2015/09/30/nodejs_install/" data-id="cj2ppufec000idkdetis0g03i" class="article-share-link" data-share="baidu" data-title="nodejs安装及环境搭建">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2015/09/30/nodejs_install/" data-id="cj5m3t01c000jxcdekmixsphs" class="article-share-link" data-share="baidu" data-title="nodejs安装及环境搭建">分享到</a>
       
 
       
@@ -465,7 +583,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2015/09/28/MemCache_phpApi/" data-id="cj2ppufdx0007dkde19ojrd1u" class="article-share-link" data-share="baidu" data-title="MemCache及phpApi缓存浅谈">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2015/09/28/MemCache_phpApi/" data-id="cj5m3t00r0003xcdexvxer9dv" class="article-share-link" data-share="baidu" data-title="MemCache及phpApi缓存浅谈">分享到</a>
       
 
       
@@ -524,7 +642,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2015/08/27/jquery_Symbol/" data-id="cj2ppufe8000edkdegns95dmw" class="article-share-link" data-share="baidu" data-title="如何解决jquery的$符号冲突">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2015/08/27/jquery_Symbol/" data-id="cj5m3t016000excdejy5p17cx" class="article-share-link" data-share="baidu" data-title="如何解决jquery的$符号冲突">分享到</a>
       
 
       
@@ -533,113 +651,6 @@
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li></ul>
-
-    </footer>
-  </div>
-
-  
-</article>
-
-
-
-  
-    <article id="post-mysql_rollback" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/04/02/mysql_rollback/" class="article-date">
-  <time datetime="2015-04-02T09:41:11.000Z" itemprop="datePublished">2015-04-02</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/mysql/">mysql</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/02/mysql_rollback/">关于mysql数据库rollback浅谈</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>由于公司新项目开启，数据库搜索引擎从<code>myisam</code>改成了<code>innodb</code>，于是便也能支持了事务，由于需要笔者今儿写了一个function，可是在回滚的时候却出现了问题，耗了些时间才找出原因，于是决定需要写个文档，以便自己或者同行朋友免得走了弯路。废话不说，不喜勿喷，代码如下：<br>mysql数据库rollback需要具备以下几个条件：<br>1：数据库：ENGINE=InnoDB 判断搜索引擎为InnoDB，default是否开启(Yes)因为只有Innodb才能支持事务。<br> <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt; show engines;</div><div class="line">mysql&gt; show variables like '%storage_engine%';</div></pre></td></tr></table></figure></p>
-<p>2: 数据表：ENGINE=InnoDB 笔者在这遇到了一些问题，只是看了数据库ENGINE是否是InnoDB，而为了省事儿没看数据表的存储引擎，事务支持需要库和表ENGINE都是InnoDB。<br> <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt; show create table 表名;</div><div class="line">mysql&gt; alter table 表名 engine=innodb;</div></pre></td></tr></table></figure></p>
-        
-          <p class="article-more-link">
-            <a href="/2015/04/02/mysql_rollback/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://bin.bloggao.cn/2015/04/02/mysql_rollback/" data-id="cj2ppufe9000fdkdescxj6eor" class="article-share-link" data-share="baidu" data-title="关于mysql数据库rollback浅谈">分享到</a>
-      
-
-      
-        <a href="http://bin.bloggao.cn/2015/04/02/mysql_rollback/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
-
-    </footer>
-  </div>
-
-  
-</article>
-
-
-
-  
-    <article id="post-smarty" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/03/17/smarty/" class="article-date">
-  <time datetime="2015-03-17T09:12:21.000Z" itemprop="datePublished">2015-03-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/php/">php</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/17/smarty/">smarty模板机制数据显示原理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>smartyassign和display的源码：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyMiniSmarty</span></span>&#123;  </div><div class="line">    <span class="comment">//模版文件的存放路径  </span></div><div class="line">    <span class="keyword">var</span> $template_dir=<span class="string">"./templates/"</span>;  </div><div class="line">    <span class="comment">//编译文件的存放路径 ，编译文件的名称格式暂定为：com_对应的tpl.php  </span></div><div class="line">    <span class="keyword">var</span> $complie_dir=<span class="string">"./templates_c"</span>;  </div><div class="line">    <span class="comment">//模版变量数组：存放所有模版变量的值  </span></div><div class="line">    <span class="keyword">var</span> $tpl_vars=<span class="keyword">array</span>();  </div><div class="line">    <span class="comment">//这里我们主要模拟两个方法  </span></div><div class="line">    <span class="comment">//参数1-模版变量     参数2：模版变量的值  </span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">assign</span><span class="params">($tpl_var,$val=null)</span></span>&#123;  </div><div class="line">        <span class="keyword">if</span>($tpl_var!=<span class="string">''</span>)&#123;  </div><div class="line">            <span class="keyword">$this</span>-&gt;tpl_vars[$tpl_var]=$var;  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">    <span class="comment">//这里编写display  </span></div><div class="line">    <span class="comment">//参数1-要显示的模版文件名  </span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">display</span><span class="params">($tpl_file)</span></span>&#123;  </div><div class="line">        <span class="comment">//模版文件的路径  </span></div><div class="line">        $tpl_file_path=<span class="keyword">$this</span>-&gt;template_dir.$tpl_file;  </div><div class="line">        <span class="comment">//编译文件的命名及路径  </span></div><div class="line">        $complie_file_path=<span class="keyword">$this</span>-&gt;complie_dir.<span class="string">"com_"</span>.$tpl_file.<span class="string">".php"</span>;  </div><div class="line">        <span class="comment">//判断当前模版文件是否存在  </span></div><div class="line">        <span class="keyword">if</span>(!file_exists($tpl_file_path))&#123;  </div><div class="line">            <span class="comment">//如果当前模版文件不存在，则返回false  </span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;  </div><div class="line">        &#125;  </div><div class="line">        <span class="comment">//查看是否有编译文件，如果没有编译文件，或者说模版文件的修改时间大于编译文件的生成时间，则需要重新编译  </span></div><div class="line">        <span class="keyword">if</span>(!file_exists($comlie_file_path) ||filemtime($tpl_file_path)&gt;filemtime($complie_file_path))&#123;  </div><div class="line">            <span class="comment">//获取模版文件的内容  </span></div><div class="line">            $tpl_file_content=file_get_contents($tpl_file_path);  </div><div class="line">            <span class="comment">//这里我们的核心是怎样把tpl转化为php文件  </span></div><div class="line">            $pattern=<span class="keyword">array</span>(  </div><div class="line">                <span class="comment">//1.\&#123; - 转义&#123; 左括号 2.\s* - 代表一个或多个空格 3.\$ - 转义$符号  4.\&#125; - 转义 &#125; 右括号  </span></div><div class="line">                <span class="string">'/\&#123;\s*\$([a-zA-Z][a-zA-Z0-9]*)\s*\&#125;/i'</span>  </div><div class="line">            );  </div><div class="line">            $replace=<span class="keyword">array</span>(  </div><div class="line">                <span class="string">'&lt;?php echo $this-&gt;tpl_vars["$&#123;1&#125;"] ?&gt;'</span>  </div><div class="line">            );  </div><div class="line">            <span class="comment">//将类似 &#123;$title&#125;替换为<span class="meta">&lt;?php</span> echo $this-&gt;tpl_vars["title"] ? &gt;,返回替换后的字符串  </span></div><div class="line">            $new_str=preg_replace($pattern,$replace,$tpl_file_content);  </div><div class="line">            <span class="comment">//编译文件的生成：将正则替换后的模版文件中的内容写入到编译文件  </span></div><div class="line">            file_put_contents($complie_file_path,$new_str);  </div><div class="line">        &#125;  </div><div class="line">        <span class="comment">//如果存在编译文件并且模版文件没有改动，则直接引入编译文件  </span></div><div class="line">        <span class="keyword">include</span> $complie_file_path;  </div><div class="line">    &#125;  </div><div class="line">&#125;  </div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://bin.bloggao.cn/2015/03/17/smarty/" data-id="cj2ppufek000odkdec4xjopxy" class="article-share-link" data-share="baidu" data-title="smarty模板机制数据显示原理">分享到</a>
-      
-
-      
-        <a href="http://bin.bloggao.cn/2015/03/17/smarty/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/smarty/">smarty</a></li></ul>
 
     </footer>
   </div>
@@ -663,7 +674,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/flexigrid/" style="font-size: 13px; color: #ee9a49">flexigrid</a> <a href="/tags/mysql/" style="font-size: 17px; color: #ee5c2c">mysql</a> <a href="/tags/Apache/" style="font-size: 13px; color: #ee9a49">Apache</a> <a href="/tags/hexo/" style="font-size: 19px; color: #ee3e1d">hexo</a> <a href="/tags/coding/" style="font-size: 13px; color: #ee9a49">coding</a> <a href="/tags/Blog/" style="font-size: 17px; color: #ee5c2c">Blog</a> <a href="/tags/php/" style="font-size: 21px; color: #ee1f0f">php</a> <a href="/tags/phpexcel/" style="font-size: 13px; color: #ee9a49">phpexcel</a> <a href="/tags/html/" style="font-size: 15px; color: #ee7b3a">html</a> <a href="/tags/other/" style="font-size: 15px; color: #ee7b3a">other</a> <a href="/tags/chrome/" style="font-size: 13px; color: #ee9a49">chrome</a> <a href="/tags/Google/" style="font-size: 13px; color: #ee9a49">Google</a> <a href="/tags/Memcache/" style="font-size: 13px; color: #ee9a49">Memcache</a> <a href="/tags/nosql/" style="font-size: 15px; color: #ee7b3a">nosql</a> <a href="/tags/javascript/" style="font-size: 19px; color: #ee3e1d">javascript</a> <a href="/tags/linux/" style="font-size: 23px; color: #e00">linux</a> <a href="/tags/jquery/" style="font-size: 15px; color: #ee7b3a">jquery</a> <a href="/tags/fileupload/" style="font-size: 13px; color: #ee9a49">fileupload</a> <a href="/tags/svn/" style="font-size: 13px; color: #ee9a49">svn</a> <a href="/tags/nodejs/" style="font-size: 15px; color: #ee7b3a">nodejs</a> <a href="/tags/redis/" style="font-size: 15px; color: #ee7b3a">redis</a> <a href="/tags/curl/" style="font-size: 13px; color: #ee9a49">curl</a> <a href="/tags/python/" style="font-size: 19px; color: #ee3e1d">python</a> <a href="/tags/xlrd/" style="font-size: 13px; color: #ee9a49">xlrd</a> <a href="/tags/excel/" style="font-size: 13px; color: #ee9a49">excel</a> <a href="/tags/smarty/" style="font-size: 13px; color: #ee9a49">smarty</a> <a href="/tags/vpn/" style="font-size: 13px; color: #ee9a49">vpn</a> <a href="/tags/virtualenv/" style="font-size: 15px; color: #ee7b3a">virtualenv</a> <a href="/tags/pyramid/" style="font-size: 13px; color: #ee9a49">pyramid</a> <a href="/tags/wechat/" style="font-size: 13px; color: #ee9a49">wechat</a>
+      <a href="/tags/fileupload/" style="font-size: 13px; color: #ee9a49">fileupload</a> <a href="/tags/linux/" style="font-size: 23px; color: #e00">linux</a> <a href="/tags/mysql/" style="font-size: 16.33px; color: #ee6731">mysql</a> <a href="/tags/php/" style="font-size: 21.33px; color: #ee1a0c">php</a> <a href="/tags/Memcache/" style="font-size: 13px; color: #ee9a49">Memcache</a> <a href="/tags/nosql/" style="font-size: 14.67px; color: #ee803d">nosql</a> <a href="/tags/hexo/" style="font-size: 18px; color: #ee4d25">hexo</a> <a href="/tags/coding/" style="font-size: 13px; color: #ee9a49">coding</a> <a href="/tags/Blog/" style="font-size: 16.33px; color: #ee6731">Blog</a> <a href="/tags/javascript/" style="font-size: 18px; color: #ee4d25">javascript</a> <a href="/tags/html/" style="font-size: 14.67px; color: #ee803d">html</a> <a href="/tags/other/" style="font-size: 14.67px; color: #ee803d">other</a> <a href="/tags/phpexcel/" style="font-size: 13px; color: #ee9a49">phpexcel</a> <a href="/tags/chrome/" style="font-size: 13px; color: #ee9a49">chrome</a> <a href="/tags/Google/" style="font-size: 13px; color: #ee9a49">Google</a> <a href="/tags/jquery/" style="font-size: 14.67px; color: #ee803d">jquery</a> <a href="/tags/Apache/" style="font-size: 13px; color: #ee9a49">Apache</a> <a href="/tags/flexigrid/" style="font-size: 13px; color: #ee9a49">flexigrid</a> <a href="/tags/svn/" style="font-size: 13px; color: #ee9a49">svn</a> <a href="/tags/nodejs/" style="font-size: 14.67px; color: #ee803d">nodejs</a> <a href="/tags/python/" style="font-size: 19.67px; color: #ee3318">python</a> <a href="/tags/xlrd/" style="font-size: 13px; color: #ee9a49">xlrd</a> <a href="/tags/excel/" style="font-size: 13px; color: #ee9a49">excel</a> <a href="/tags/redis/" style="font-size: 14.67px; color: #ee803d">redis</a> <a href="/tags/curl/" style="font-size: 13px; color: #ee9a49">curl</a> <a href="/tags/smarty/" style="font-size: 13px; color: #ee9a49">smarty</a> <a href="/tags/tmux/" style="font-size: 13px; color: #ee9a49">tmux</a> <a href="/tags/vpn/" style="font-size: 13px; color: #ee9a49">vpn</a> <a href="/tags/virtualenv/" style="font-size: 14.67px; color: #ee803d">virtualenv</a> <a href="/tags/pyramid/" style="font-size: 13px; color: #ee9a49">pyramid</a> <a href="/tags/wechat/" style="font-size: 13px; color: #ee9a49">wechat</a> <a href="/tags/cProfile/" style="font-size: 13px; color: #ee9a49">cProfile</a>
     </div>
   </div>
 
@@ -673,6 +684,14 @@
     <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/07/27/python_cprofile/">python性能测量工具cProfile</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/10/tmux_linux/">多窗口工具tmux快捷键速查表</a>
+          </li>
         
           <li>
             <a href="/2017/04/23/date_parse/">Date.parse在IE里NaN问题的解决方式</a>
@@ -686,14 +705,6 @@
             <a href="/2017/01/10/hexo_sitemap/">hexo 添加百度谷歌收录sitemap</a>
           </li>
         
-          <li>
-            <a href="/2017/01/10/hexo_lf_will_be_replaced_by_crlf/">hexo LF will be replaced by CRLF 错误</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/09/wechat_min_app/">关于开发wechat小程序</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -703,7 +714,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/curl/">curl</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nosql/">nosql</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/other/">other</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wechat/">wechat</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/curl/">curl</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nosql/">nosql</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/other/">other</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wechat/">wechat</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -712,7 +723,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 

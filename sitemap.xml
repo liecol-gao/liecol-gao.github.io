@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://bin.bloggao.cn/2017/07/27/python_cprofile/</loc>
+    
+    <lastmod>2017-07-27T07:38:42.987Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://bin.bloggao.cn/2017/07/10/tmux_linux/</loc>
+    
+    <lastmod>2017-07-10T06:29:34.278Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://bin.bloggao.cn/2017/04/23/date_parse/</loc>
     
     <lastmod>2017-05-15T06:03:01.111Z</lastmod>

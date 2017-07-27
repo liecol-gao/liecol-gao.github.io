@@ -90,6 +90,121 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-php_redis" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/23/php_redis/" class="article-date">
+  <time datetime="2016-11-23T14:22:00.000Z" itemprop="datePublished">2016-11-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/nosql/">nosql</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/23/php_redis/">php中关于redis的使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>安装扩展我这边不做过多说明，大家自行搜索一下。</em></p>
+<p>php连接到redis服务<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">    <span class="comment">//连接本地的 Redis 服务</span></div><div class="line">   $redis = <span class="keyword">new</span> Redis();</div><div class="line">   $redis-&gt;connect(<span class="string">'127.0.0.1'</span>, <span class="number">6379</span>);</div><div class="line">   <span class="keyword">echo</span> <span class="string">"Connection to liecol server."</span>;</div><div class="line">         <span class="comment">//查看服务是否运行</span></div><div class="line">   <span class="keyword">echo</span> <span class="string">"Running: "</span>+ $redis-&gt;ping();</div><div class="line"></div><div class="line">   <span class="comment">//Connection to liecol server.</span></div><div class="line">   <span class="comment">//Running: PONG</span></div><div class="line">   <span class="comment">//新建数据</span></div><div class="line">   $redis-&gt;set(<span class="string">"liecol"</span>, <span class="string">"name"</span>);</div><div class="line">   $arList = $redis-&gt;get(<span class="string">"liecol-list"</span>);</div><div class="line"></div><div class="line">   $redis-&gt;lpush(<span class="string">"liecol1"</span>, <span class="string">"Redis"</span>);</div><div class="line">   $redis-&gt;lpush(<span class="string">"liecol1"</span>, <span class="string">"Mongodb"</span>);</div><div class="line">   $redis-&gt;lpush(<span class="string">"liecol1"</span>, <span class="string">"Mysql"</span>);</div><div class="line">   $arList = $redis-&gt;lrange(<span class="string">"liecol1"</span>, <span class="number">0</span> ,<span class="number">5</span>);</div><div class="line"></div><div class="line">   $arList = $redis-&gt;keys(<span class="string">"*"</span>);</div><div class="line">   <span class="comment">//liecol</span></div><div class="line">   <span class="comment">//liecol1</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+        
+          <p class="article-more-link">
+            <a href="/2016/11/23/php_redis/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://bin.bloggao.cn/2016/11/23/php_redis/" data-id="cj5m3t01i000oxcdem9qpupvv" class="article-share-link" data-share="baidu" data-title="php中关于redis的使用">分享到</a>
+      
+
+      
+        <a href="http://bin.bloggao.cn/2016/11/23/php_redis/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li></ul>
+
+    </footer>
+  </div>
+
+  
+</article>
+
+
+
+  
+    <article id="post-jQuery_FileUpload" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/23/jQuery_FileUpload/" class="article-date">
+  <time datetime="2016-11-23T12:22:00.000Z" itemprop="datePublished">2016-11-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/23/jQuery_FileUpload/">jQuery上传插件FileUpload浅析</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>对比了一下fileupload与其他的一些多图上传插件的对比<br>发现1fileupload1不需要对浏览器插件有支持，而且是一个神似<code>input file</code>的一个插件，因为业务需要，于是做了一下简单研究。<br>jQuery <code>File Upload</code>支持多文件上传、取消、删除，上传前缩略图预览、列表显示图片大小，支持上传进度条显示。</p>
+<p>需要的文件：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">jquey<span class="number">-1.8</span><span class="number">.3</span>.min.js</div><div class="line">jquery-ui-widget.js</div><div class="line">jquery.iframe-transport.js</div><div class="line">jquery.fileupload.js</div></pre></td></tr></table></figure></p>
+<p>如果跨站点的话，需要一个iframe的文件，也可支持bootstrap样式修改。</p>
+<p>需要的表单样式：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"fileupload"</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">data-url</span>=<span class="string">"action_url"</span> <span class="attr">name</span>=<span class="string">"file[]"</span> <span class="attr">multiple</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>action可直接放到input上也可自行添加url。<br>
+        
+          <p class="article-more-link">
+            <a href="/2016/11/23/jQuery_FileUpload/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://bin.bloggao.cn/2016/11/23/jQuery_FileUpload/" data-id="cj5m3t013000bxcdeueylwyfv" class="article-share-link" data-share="baidu" data-title="jQuery上传插件FileUpload浅析">分享到</a>
+      
+
+      
+        <a href="http://bin.bloggao.cn/2016/11/23/jQuery_FileUpload/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fileupload/">fileupload</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li></ul>
+
+    </footer>
+  </div>
+
+  
+</article>
+
+
+
+  
     <article id="post-redis" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/11/23/redis/" class="article-date">
@@ -126,7 +241,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2016/11/23/redis/" data-id="cj2ppufek000pdkdev0hgop9k" class="article-share-link" data-share="baidu" data-title="redis操作浅谈">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2016/11/23/redis/" data-id="cj5m3t01r000qxcdelbr2xfw2" class="article-share-link" data-share="baidu" data-title="redis操作浅谈">分享到</a>
       
 
       
@@ -182,7 +297,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2016/11/20/php_libcurl_curl/" data-id="cj2ppufeg000ldkde6rlt3gmw" class="article-share-link" data-share="baidu" data-title="php对libcurl库的支持cURL">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2016/11/20/php_libcurl_curl/" data-id="cj5m3t01t000rxcdeo7y8o2q8" class="article-share-link" data-share="baidu" data-title="php对libcurl库的支持cURL">分享到</a>
       
 
       
@@ -237,7 +352,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2016/11/19/php_summary/" data-id="cj2ppufei000mdkdetyyrmmt3" class="article-share-link" data-share="baidu" data-title="php常用函数总结">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2016/11/19/php_summary/" data-id="cj5m3t01g000mxcde1jjqobeo" class="article-share-link" data-share="baidu" data-title="php常用函数总结">分享到</a>
       
 
       
@@ -292,7 +407,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2016/11/14/Hexo_Blog_Coding/" data-id="cj2ppufdo0003dkdethi2fvxb" class="article-share-link" data-share="baidu" data-title="关于Hexo搭建Blog托管至Coding并显示">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2016/11/14/Hexo_Blog_Coding/" data-id="cj5m3t00t0004xcde5wgjs1so" class="article-share-link" data-share="baidu" data-title="关于Hexo搭建Blog托管至Coding并显示">分享到</a>
       
 
       
@@ -349,7 +464,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2016/09/30/linux_hexo_blog_git/" data-id="cj2ppufeb000hdkdei2ubl8ac" class="article-share-link" data-share="baidu" data-title="如何在linux上使用hexo搭建git博客">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2016/09/30/linux_hexo_blog_git/" data-id="cj5m3t01a000hxcdedvauduol" class="article-share-link" data-share="baidu" data-title="如何在linux上使用hexo搭建git博客">分享到</a>
       
 
       
@@ -406,7 +521,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2016/07/07/python_excel/" data-id="cj2ppufej000ndkdetyjwzx5c" class="article-share-link" data-share="baidu" data-title="python导入excel表数据">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2016/07/07/python_excel/" data-id="cj5m3t01h000nxcdekj3adbho" class="article-share-link" data-share="baidu" data-title="python导入excel表数据">分享到</a>
       
 
       
@@ -462,7 +577,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2016/06/12/vpn_install/" data-id="cj2ppufem000rdkdeq5o7hez3" class="article-share-link" data-share="baidu" data-title="关于vpn的搭建">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2016/06/12/vpn_install/" data-id="cj5m3t01x000uxcdenatev6t5" class="article-share-link" data-share="baidu" data-title="关于vpn的搭建">分享到</a>
       
 
       
@@ -518,7 +633,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2016/05/10/linux_svn/" data-id="cj2ppufea000gdkdeg01lwgye" class="article-share-link" data-share="baidu" data-title="linux系统里svn的搭建">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2016/05/10/linux_svn/" data-id="cj5m3t017000fxcde7ftswkjr" class="article-share-link" data-share="baidu" data-title="linux系统里svn的搭建">分享到</a>
       
 
       
@@ -527,124 +642,6 @@
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/svn/">svn</a></li></ul>
-
-    </footer>
-  </div>
-
-  
-</article>
-
-
-
-  
-    <article id="post-BINARY_mysql" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/02/14/BINARY_mysql/" class="article-date">
-  <time datetime="2016-02-14T09:09:27.000Z" itemprop="datePublished">2016-02-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/mysql/">mysql</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/14/BINARY_mysql/">BINARY解决数据大小写敏感及部分查询问题</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>BINARY不是函数，是类型转换运算符，它用来强制它后面的字符串为一个二进制字符串，可以理解为在字符串比较的时候区分大小写</p>
-<p>代码如下:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">mysql&gt; select binary 'ABCD'='abcd' COM1, 'ABCD'='abcd' COM2;</div><div class="line">+--------+-----------+</div><div class="line">| COM1 | COM2 |</div><div class="line">+--------+-----------+</div><div class="line">|      0     |      1      |</div><div class="line">+---------+-----------+</div><div class="line">1 row in set (0.00 sec)</div></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2016/02/14/BINARY_mysql/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://bin.bloggao.cn/2016/02/14/BINARY_mysql/" data-id="cj2ppufdg0001dkdemqmuttxk" class="article-share-link" data-share="baidu" data-title="BINARY解决数据大小写敏感及部分查询问题">分享到</a>
-      
-
-      
-        <a href="http://bin.bloggao.cn/2016/02/14/BINARY_mysql/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
-
-    </footer>
-  </div>
-
-  
-</article>
-
-
-
-  
-    <article id="post-windows_python_virtualenv_pyramid" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/11/windows_python_virtualenv_pyramid/" class="article-date">
-  <time datetime="2016-01-11T09:46:29.000Z" itemprop="datePublished">2016-01-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/python/">python</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/11/windows_python_virtualenv_pyramid/">windows/python/virtualenv环境安装pyramid</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>关于win-py-vir的环境安装技巧在之前就有记录(详情参考windows＋Python＋virtualenv环境配置)</p>
-<p>这里主要讲在虚拟环境下如何安装python框架pyramid</p>
-<p>pyramid采用<code>mako</code>模板引擎,<code>SQLAlchemy</code> ORM工具，可配置多样数据库,如<code>sqlite</code>，<code>mysql</code>等(如若有时间，以后也会整理出一份文档)</p>
-<p>在安装python库<code>pip</code>或者<code>easy_install</code>后</p>
-<p>采用<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pip install pyramid ==<span class="number">1.4</span>或者</div><div class="line"></div><div class="line">easy_install pyramid == <span class="number">1.4</span></div></pre></td></tr></table></figure></p>
-<p>后面的1.4是版本，如若不加则采用最新版</p>
-<p>但是pyramid不支持高版本对低版本的兼容，所以谨慎处理<br>
-        
-          <p class="article-more-link">
-            <a href="/2016/01/11/windows_python_virtualenv_pyramid/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://bin.bloggao.cn/2016/01/11/windows_python_virtualenv_pyramid/" data-id="cj2ppufg9000vdkde96n86sri" class="article-share-link" data-share="baidu" data-title="windows/python/virtualenv环境安装pyramid">分享到</a>
-      
-
-      
-        <a href="http://bin.bloggao.cn/2016/01/11/windows_python_virtualenv_pyramid/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pyramid/">pyramid</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/virtualenv/">virtualenv</a></li></ul>
 
     </footer>
   </div>
@@ -668,7 +665,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/flexigrid/" style="font-size: 13px; color: #ee9a49">flexigrid</a> <a href="/tags/mysql/" style="font-size: 17px; color: #ee5c2c">mysql</a> <a href="/tags/Apache/" style="font-size: 13px; color: #ee9a49">Apache</a> <a href="/tags/hexo/" style="font-size: 19px; color: #ee3e1d">hexo</a> <a href="/tags/coding/" style="font-size: 13px; color: #ee9a49">coding</a> <a href="/tags/Blog/" style="font-size: 17px; color: #ee5c2c">Blog</a> <a href="/tags/php/" style="font-size: 21px; color: #ee1f0f">php</a> <a href="/tags/phpexcel/" style="font-size: 13px; color: #ee9a49">phpexcel</a> <a href="/tags/html/" style="font-size: 15px; color: #ee7b3a">html</a> <a href="/tags/other/" style="font-size: 15px; color: #ee7b3a">other</a> <a href="/tags/chrome/" style="font-size: 13px; color: #ee9a49">chrome</a> <a href="/tags/Google/" style="font-size: 13px; color: #ee9a49">Google</a> <a href="/tags/Memcache/" style="font-size: 13px; color: #ee9a49">Memcache</a> <a href="/tags/nosql/" style="font-size: 15px; color: #ee7b3a">nosql</a> <a href="/tags/javascript/" style="font-size: 19px; color: #ee3e1d">javascript</a> <a href="/tags/linux/" style="font-size: 23px; color: #e00">linux</a> <a href="/tags/jquery/" style="font-size: 15px; color: #ee7b3a">jquery</a> <a href="/tags/fileupload/" style="font-size: 13px; color: #ee9a49">fileupload</a> <a href="/tags/svn/" style="font-size: 13px; color: #ee9a49">svn</a> <a href="/tags/nodejs/" style="font-size: 15px; color: #ee7b3a">nodejs</a> <a href="/tags/redis/" style="font-size: 15px; color: #ee7b3a">redis</a> <a href="/tags/curl/" style="font-size: 13px; color: #ee9a49">curl</a> <a href="/tags/python/" style="font-size: 19px; color: #ee3e1d">python</a> <a href="/tags/xlrd/" style="font-size: 13px; color: #ee9a49">xlrd</a> <a href="/tags/excel/" style="font-size: 13px; color: #ee9a49">excel</a> <a href="/tags/smarty/" style="font-size: 13px; color: #ee9a49">smarty</a> <a href="/tags/vpn/" style="font-size: 13px; color: #ee9a49">vpn</a> <a href="/tags/virtualenv/" style="font-size: 15px; color: #ee7b3a">virtualenv</a> <a href="/tags/pyramid/" style="font-size: 13px; color: #ee9a49">pyramid</a> <a href="/tags/wechat/" style="font-size: 13px; color: #ee9a49">wechat</a>
+      <a href="/tags/fileupload/" style="font-size: 13px; color: #ee9a49">fileupload</a> <a href="/tags/linux/" style="font-size: 23px; color: #e00">linux</a> <a href="/tags/mysql/" style="font-size: 16.33px; color: #ee6731">mysql</a> <a href="/tags/php/" style="font-size: 21.33px; color: #ee1a0c">php</a> <a href="/tags/Memcache/" style="font-size: 13px; color: #ee9a49">Memcache</a> <a href="/tags/nosql/" style="font-size: 14.67px; color: #ee803d">nosql</a> <a href="/tags/hexo/" style="font-size: 18px; color: #ee4d25">hexo</a> <a href="/tags/coding/" style="font-size: 13px; color: #ee9a49">coding</a> <a href="/tags/Blog/" style="font-size: 16.33px; color: #ee6731">Blog</a> <a href="/tags/javascript/" style="font-size: 18px; color: #ee4d25">javascript</a> <a href="/tags/html/" style="font-size: 14.67px; color: #ee803d">html</a> <a href="/tags/other/" style="font-size: 14.67px; color: #ee803d">other</a> <a href="/tags/phpexcel/" style="font-size: 13px; color: #ee9a49">phpexcel</a> <a href="/tags/chrome/" style="font-size: 13px; color: #ee9a49">chrome</a> <a href="/tags/Google/" style="font-size: 13px; color: #ee9a49">Google</a> <a href="/tags/jquery/" style="font-size: 14.67px; color: #ee803d">jquery</a> <a href="/tags/Apache/" style="font-size: 13px; color: #ee9a49">Apache</a> <a href="/tags/flexigrid/" style="font-size: 13px; color: #ee9a49">flexigrid</a> <a href="/tags/svn/" style="font-size: 13px; color: #ee9a49">svn</a> <a href="/tags/nodejs/" style="font-size: 14.67px; color: #ee803d">nodejs</a> <a href="/tags/python/" style="font-size: 19.67px; color: #ee3318">python</a> <a href="/tags/xlrd/" style="font-size: 13px; color: #ee9a49">xlrd</a> <a href="/tags/excel/" style="font-size: 13px; color: #ee9a49">excel</a> <a href="/tags/redis/" style="font-size: 14.67px; color: #ee803d">redis</a> <a href="/tags/curl/" style="font-size: 13px; color: #ee9a49">curl</a> <a href="/tags/smarty/" style="font-size: 13px; color: #ee9a49">smarty</a> <a href="/tags/tmux/" style="font-size: 13px; color: #ee9a49">tmux</a> <a href="/tags/vpn/" style="font-size: 13px; color: #ee9a49">vpn</a> <a href="/tags/virtualenv/" style="font-size: 14.67px; color: #ee803d">virtualenv</a> <a href="/tags/pyramid/" style="font-size: 13px; color: #ee9a49">pyramid</a> <a href="/tags/wechat/" style="font-size: 13px; color: #ee9a49">wechat</a> <a href="/tags/cProfile/" style="font-size: 13px; color: #ee9a49">cProfile</a>
     </div>
   </div>
 
@@ -678,6 +675,14 @@
     <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/07/27/python_cprofile/">python性能测量工具cProfile</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/10/tmux_linux/">多窗口工具tmux快捷键速查表</a>
+          </li>
         
           <li>
             <a href="/2017/04/23/date_parse/">Date.parse在IE里NaN问题的解决方式</a>
@@ -691,14 +696,6 @@
             <a href="/2017/01/10/hexo_sitemap/">hexo 添加百度谷歌收录sitemap</a>
           </li>
         
-          <li>
-            <a href="/2017/01/10/hexo_lf_will_be_replaced_by_crlf/">hexo LF will be replaced by CRLF 错误</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/09/wechat_min_app/">关于开发wechat小程序</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -708,7 +705,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/curl/">curl</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nosql/">nosql</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/other/">other</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wechat/">wechat</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/curl/">curl</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nosql/">nosql</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/other/">other</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wechat/">wechat</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -717,7 +714,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://bin.bloggao.cn/"/>
-  <updated>2017-05-15T06:03:01.111Z</updated>
+  <updated>2017-07-27T07:38:42.987Z</updated>
   <id>http://bin.bloggao.cn/</id>
   
   <author>
@@ -14,6 +14,82 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python性能测量工具cProfile</title>
+    <link href="http://bin.bloggao.cn/2017/07/27/python_cprofile/"/>
+    <id>http://bin.bloggao.cn/2017/07/27/python_cprofile/</id>
+    <published>2017-07-27T07:17:40.000Z</published>
+    <updated>2017-07-27T07:38:42.987Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h2><p>Python是一种解释性的语言，执行速度相比C、C++等语言十分缓慢；因此我们需要在其它地方上下功夫来提高代码的执行速度。<br>首先需要对代码进行分析，这个时候则需要用一些工具。<br>这里介绍cProfile：<br>全代码分析：<br>命令行: cProfile -s tottime your_program.py<br>结果如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">ncalls  tottime  percall  cumtime  percall filename:lineno(function)</div><div class="line">   <span class="number">66</span>    <span class="number">0.001</span>    <span class="number">0.000</span>   <span class="number">11.850</span>    <span class="number">0.180</span>  base.py:<span class="number">228</span>(micro_service)</div><div class="line">   <span class="number">66</span>    <span class="number">0.003</span>    <span class="number">0.000</span>   <span class="number">11.849</span>    <span class="number">0.180</span>  tools.py:<span class="number">557</span>(micro_service)</div><div class="line"> <span class="number">1056</span>    <span class="number">0.001</span>    <span class="number">0.000</span>   <span class="number">11.073</span>    <span class="number">0.010</span>  connection.py:<span class="number">463</span>(drain_events)</div><div class="line"> <span class="number">1056</span>    <span class="number">0.015</span>    <span class="number">0.000</span>   <span class="number">11.072</span>    <span class="number">0.010</span>  connection.py:<span class="number">466</span>(blocking_read)</div><div class="line"> <span class="number">1056</span>    <span class="number">0.008</span>    <span class="number">0.000</span>   <span class="number">10.920</span>    <span class="number">0.010</span>  transport.py:<span class="number">233</span>(read_frame)</div><div class="line"> <span class="number">3168</span>    <span class="number">0.014</span>    <span class="number">0.000</span>   <span class="number">10.908</span>    <span class="number">0.003</span>  transport.py:<span class="number">370</span>(_read)</div><div class="line"> <span class="number">3168</span>   <span class="number">10.892</span>    <span class="number">0.003</span>   <span class="number">10.892</span>    <span class="number">0.003</span>  &#123;method <span class="string">'recv'</span> of <span class="string">'_socket.socket'</span> objects&#125;</div><div class="line">   <span class="number">66</span>    <span class="number">0.001</span>    <span class="number">0.000</span>    <span class="number">9.814</span>    <span class="number">0.149</span>  rpc.py:<span class="number">350</span>(__call__)</div><div class="line">   <span class="number">66</span>    <span class="number">0.001</span>    <span class="number">0.000</span>    <span class="number">8.395</span>    <span class="number">0.127</span>  rpc.py:<span class="number">329</span>(result)</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="块分析"><a href="#块分析" class="headerlink" title="块分析:"></a>块分析:</h2><p>上面属于文件分析,但是我们可能只对部分代码感兴趣，那么只需要在这部分代码的前后加上下面这两段代码即可：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> cProfile</div><div class="line">cp = cProfile.Profile()</div><div class="line">cp.enable()</div><div class="line"></div><div class="line">YOUR CODE</div><div class="line"></div><div class="line">cp.disable()</div><div class="line">cp.print_stats()</div></pre></td></tr></table></figure></p>
+<p>结果与全代码分析的类似，但是只包含你感兴趣的部分。</p>
+<h2 id="行分析"><a href="#行分析" class="headerlink" title="行分析:"></a>行分析:</h2><p>行分析需要安装line_profiler：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install line_profiler</div></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@profile</div><div class="line">def class_name()</div><div class="line">	pass</div></pre></td></tr></table></figure>
+<p>然后在命令行输入：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">kernprof -l -v your_code.py</div><div class="line">-l 逐行分析</div><div class="line">-v 立即查看结果</div></pre></td></tr></table></figure></p>
+<h2 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> cProfile <span class="keyword">import</span> Profile <span class="keyword">as</span> profile </div><div class="line"><span class="keyword">from</span> pstats <span class="keyword">import</span> Stats </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">profile_module</span><span class="params">()</span>:</span> </div><div class="line">	p = profile() </div><div class="line">	p.snapshot_stats() </div><div class="line">	p.enable() </div><div class="line">	<span class="comment"># 需要调优的代码</span></div><div class="line">	p.disable() </div><div class="line">	p.print_stats(<span class="number">2</span>) <span class="comment"># 按照调用累加总耗时累加排序，即将最耗时的函数最优先</span></div><div class="line">	p.dump_stats(<span class="string">"call.log"</span>)</div></pre></td></tr></table></figure>
+<p>关于profile和cProfile的更多链接，请点击：<br><a href="https://docs.python.org/3/library/profile.html?spm=5176.100239.0.0.qa5fU5" target="_blank" rel="external">https://docs.python.org/3/library/profile.html?spm=5176.100239.0.0.qa5fU5</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;背景：&quot;&gt;&lt;a href=&quot;#背景：&quot; class=&quot;headerlink&quot; title=&quot;背景：&quot;&gt;&lt;/a&gt;背景：&lt;/h2&gt;&lt;p&gt;Python是一种解释性的语言，执行速度相比C、C++等语言十分缓慢；因此我们需要在其它地方上下功夫来提高代码的执行速度。&lt;br&gt;首先需要对代码进行分析，这个时候则需要用一些工具。&lt;br&gt;这里介绍cProfile：&lt;br&gt;全代码分析：&lt;br&gt;命令行: cProfile -s tottime your_program.py&lt;br&gt;结果如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;ncalls  tottime  percall  cumtime  percall filename:lineno(function)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &lt;span class=&quot;number&quot;&gt;66&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.001&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.000&lt;/span&gt;   &lt;span class=&quot;number&quot;&gt;11.850&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.180&lt;/span&gt;  base.py:&lt;span class=&quot;number&quot;&gt;228&lt;/span&gt;(micro_service)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &lt;span class=&quot;number&quot;&gt;66&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.003&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.000&lt;/span&gt;   &lt;span class=&quot;number&quot;&gt;11.849&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.180&lt;/span&gt;  tools.py:&lt;span class=&quot;number&quot;&gt;557&lt;/span&gt;(micro_service)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &lt;span class=&quot;number&quot;&gt;1056&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.001&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.000&lt;/span&gt;   &lt;span class=&quot;number&quot;&gt;11.073&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.010&lt;/span&gt;  connection.py:&lt;span class=&quot;number&quot;&gt;463&lt;/span&gt;(drain_events)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &lt;span class=&quot;number&quot;&gt;1056&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.015&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.000&lt;/span&gt;   &lt;span class=&quot;number&quot;&gt;11.072&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.010&lt;/span&gt;  connection.py:&lt;span class=&quot;number&quot;&gt;466&lt;/span&gt;(blocking_read)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &lt;span class=&quot;number&quot;&gt;1056&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.008&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.000&lt;/span&gt;   &lt;span class=&quot;number&quot;&gt;10.920&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.010&lt;/span&gt;  transport.py:&lt;span class=&quot;number&quot;&gt;233&lt;/span&gt;(read_frame)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &lt;span class=&quot;number&quot;&gt;3168&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.014&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.000&lt;/span&gt;   &lt;span class=&quot;number&quot;&gt;10.908&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.003&lt;/span&gt;  transport.py:&lt;span class=&quot;number&quot;&gt;370&lt;/span&gt;(_read)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &lt;span class=&quot;number&quot;&gt;3168&lt;/span&gt;   &lt;span class=&quot;number&quot;&gt;10.892&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.003&lt;/span&gt;   &lt;span class=&quot;number&quot;&gt;10.892&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.003&lt;/span&gt;  &amp;#123;method &lt;span class=&quot;string&quot;&gt;&#39;recv&#39;&lt;/span&gt; of &lt;span class=&quot;string&quot;&gt;&#39;_socket.socket&#39;&lt;/span&gt; objects&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &lt;span class=&quot;number&quot;&gt;66&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.001&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.000&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;9.814&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.149&lt;/span&gt;  rpc.py:&lt;span class=&quot;number&quot;&gt;350&lt;/span&gt;(__call__)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &lt;span class=&quot;number&quot;&gt;66&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.001&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.000&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;8.395&lt;/span&gt;    &lt;span class=&quot;number&quot;&gt;0.127&lt;/span&gt;  rpc.py:&lt;span class=&quot;number&quot;&gt;329&lt;/span&gt;(result)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://bin.bloggao.cn/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://bin.bloggao.cn//tags/python/"/>
+    
+      <category term="cProfile" scheme="http://bin.bloggao.cn//tags/cProfile/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>多窗口工具tmux快捷键速查表</title>
+    <link href="http://bin.bloggao.cn/2017/07/10/tmux_linux/"/>
+    <id>http://bin.bloggao.cn/2017/07/10/tmux_linux/</id>
+    <published>2017-07-10T05:12:40.000Z</published>
+    <updated>2017-07-10T06:29:34.278Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="介绍："><a href="#介绍：" class="headerlink" title="介绍："></a>介绍：</h2><p>tmux 是在一个终端进行多窗口回话的工具，可在后台运行，进入、断开会话。<br>如下图示例：</p>
+<img src="/images/tmux_001.png" width="700" height="280" title="liecol-晓斌|tmux liecol-晓斌|tmux">
+<h2 id="tmux的快捷键前缀："><a href="#tmux的快捷键前缀：" class="headerlink" title="tmux的快捷键前缀："></a>tmux的快捷键前缀：</h2><ul>
+<li>按下组合键 Ctrl+b (Tmux 快捷键前缀)</li>
+<li>放开组合键 Ctrl+b</li>
+<li>按下 tmux内部指令<a id="more"></a>
+</li>
+</ul>
+<h2 id="安装tmux"><a href="#安装tmux" class="headerlink" title="安装tmux"></a>安装tmux</h2><p>笔者以Ubuntu为例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install tmux</div></pre></td></tr></table></figure></p>
+<h2 id="修改tmux数据配置："><a href="#修改tmux数据配置：" class="headerlink" title="修改tmux数据配置："></a>修改tmux数据配置：</h2><p>–路径:~/.tmux.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">前缀绑定 (Ctrl+a)</div><div class="line">set -g prefix ^a</div><div class="line">unbind ^b</div><div class="line">bind a send-prefix</div><div class="line"></div><div class="line">居中窗口列表</div><div class="line">set -g status-justify centre</div><div class="line"></div><div class="line">最大化/恢复窗格</div><div class="line">unbind Up bind Up new-window -d -n tmp \; swap-pane -s tmp.1 \; select-window -t tmp</div><div class="line">unbind Down</div><div class="line">bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp</div></pre></td></tr></table></figure></p>
+<h2 id="tmux会话快捷键"><a href="#tmux会话快捷键" class="headerlink" title="tmux会话快捷键:"></a>tmux会话快捷键:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">启动新会话</div><div class="line">tmux new -s session-name</div><div class="line">eg: tmux new -s liecol-0</div><div class="line"></div><div class="line">列出所有会话：</div><div class="line">tmux ls</div><div class="line">create By liecol-晓斌</div><div class="line"></div><div class="line">恢复会话：</div><div class="line">tmux at [-t 会话名]</div><div class="line">tmux a -t session-name</div><div class="line">eg: tmux at -t liecol</div><div class="line"></div><div class="line">强制独占恢复会话：</div><div class="line">tmux at [-dt 会话名]</div><div class="line">tmux at -dt liecol</div><div class="line"></div><div class="line">删除会话</div><div class="line">tmux kill-session -t session-name</div><div class="line">tmux kill-session -t liecol1</div></pre></td></tr></table></figure>
+<h2 id="窗口-amp-窗格杂项："><a href="#窗口-amp-窗格杂项：" class="headerlink" title="窗口&amp;窗格杂项："></a>窗口&amp;窗格杂项：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">s 列出所有会话 可用上下键进入对应会话</div><div class="line">$ 重命名当前的会话</div><div class="line">d 断开当前的会话</div><div class="line"></div><div class="line">窗口 (标签页)</div><div class="line">c  创建新窗口</div><div class="line">w  列出所有窗口</div><div class="line">n  后一个窗口</div><div class="line">p  前一个窗口</div><div class="line">f  查找窗口</div><div class="line">,  重命名当前窗口</div><div class="line">&amp;  关闭当前窗口</div><div class="line"></div><div class="line">窗格</div><div class="line">% 水平分割窗口</div><div class="line">&quot; 竖直分割窗口</div><div class="line">&#125; 与下一个窗格交换位置</div><div class="line">&#123; 与上一个窗格交换位置</div><div class="line">将光标移入对应窗口 上下左右箭头</div><div class="line">t 钟表时间</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;介绍：&quot;&gt;&lt;a href=&quot;#介绍：&quot; class=&quot;headerlink&quot; title=&quot;介绍：&quot;&gt;&lt;/a&gt;介绍：&lt;/h2&gt;&lt;p&gt;tmux 是在一个终端进行多窗口回话的工具，可在后台运行，进入、断开会话。&lt;br&gt;如下图示例：&lt;/p&gt;
+&lt;img src=&quot;/images/tmux_001.png&quot; width=&quot;700&quot; height=&quot;280&quot; title=&quot;liecol-晓斌|tmux liecol-晓斌|tmux&quot;&gt;
+&lt;h2 id=&quot;tmux的快捷键前缀：&quot;&gt;&lt;a href=&quot;#tmux的快捷键前缀：&quot; class=&quot;headerlink&quot; title=&quot;tmux的快捷键前缀：&quot;&gt;&lt;/a&gt;tmux的快捷键前缀：&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;按下组合键 Ctrl+b (Tmux 快捷键前缀)&lt;/li&gt;
+&lt;li&gt;放开组合键 Ctrl+b&lt;/li&gt;
+&lt;li&gt;按下 tmux内部指令
+    
+    </summary>
+    
+      <category term="linux" scheme="http://bin.bloggao.cn/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://bin.bloggao.cn//tags/linux/"/>
+    
+      <category term="tmux" scheme="http://bin.bloggao.cn//tags/tmux/"/>
+    
+  </entry>
   
   <entry>
     <title>Date.parse在IE里NaN问题的解决方式</title>
@@ -732,138 +808,6 @@
       <category term="linux" scheme="http://bin.bloggao.cn//tags/linux/"/>
     
       <category term="svn" scheme="http://bin.bloggao.cn//tags/svn/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>BINARY解决数据大小写敏感及部分查询问题</title>
-    <link href="http://bin.bloggao.cn/2016/02/14/BINARY_mysql/"/>
-    <id>http://bin.bloggao.cn/2016/02/14/BINARY_mysql/</id>
-    <published>2016-02-14T09:09:27.000Z</published>
-    <updated>2017-01-04T08:23:14.204Z</updated>
-    
-    <content type="html"><![CDATA[<p>BINARY不是函数，是类型转换运算符，它用来强制它后面的字符串为一个二进制字符串，可以理解为在字符串比较的时候区分大小写</p>
-<p>代码如下:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">mysql&gt; select binary 'ABCD'='abcd' COM1, 'ABCD'='abcd' COM2;</div><div class="line">+--------+-----------+</div><div class="line">| COM1 | COM2 |</div><div class="line">+--------+-----------+</div><div class="line">|      0     |      1      |</div><div class="line">+---------+-----------+</div><div class="line">1 row in set (0.00 sec)</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>(仅仅有些而已！4.<em>以前)<br>因为有的MySQL特别是4.</em>以前的对于中文检索会有不准确的问题，可以在检索的时候加上binary。<br>建表：</p>
-<p>代码如下:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">TABLE</span> usertest (</div><div class="line"><span class="keyword">id</span> <span class="built_in">int</span>(<span class="number">9</span>) <span class="keyword">unsigned</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> auto_increment,</div><div class="line">username <span class="built_in">varchar</span>(<span class="number">30</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">default</span> <span class="string">''</span>,</div><div class="line">primary <span class="keyword">key</span> (<span class="keyword">id</span>)</div><div class="line">)</div></pre></td></tr></table></figure>
-<p>插入数据：</p>
-<p>代码如下:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> usertest (username) <span class="keyword">VALUES</span>(<span class="string">'美文'</span>);</div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> usertest (username) <span class="keyword">VALUES</span>(<span class="string">'美国项目'</span>);</div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> usertest (username) <span class="keyword">VALUES</span>(<span class="string">'李文'</span>);</div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> usertest (username) <span class="keyword">VALUES</span>(<span class="string">'老唐'</span>);</div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> usertest (username) <span class="keyword">VALUES</span>(<span class="string">'梦漂'</span>);</div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> usertest (username) <span class="keyword">VALUES</span>(<span class="string">'龙武'</span>);</div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> usertest (username) <span class="keyword">VALUES</span>(<span class="string">'夏'</span>);</div></pre></td></tr></table></figure>
-<p>例如：select <em> from usertest where username like ‘%夏%’ ，结果七条记录都出来了，比较郁闷。<br>如果使用=而不是like的时候，select </em> from usertest where username = ‘夏’ ，只出现一个结果。因为mysql 的LIKE操作是按照ASCII 操作的，所以LIKE的时候是可能有问题的。问题继续：如果再加上：</p>
-<p>代码如下:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> usertest (username) <span class="keyword">VALUES</span>(<span class="string">'文'</span>);</div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> usertest (username) <span class="keyword">VALUES</span>(<span class="string">'唐'</span>);</div></pre></td></tr></table></figure>
-<p>还是使用select * from usertest where username = ‘夏’ ，结果还是出现3条记录，又郁闷了。解决办法如下：<br>1.在create的时候就使用binary，而不是在query的时候加。</p>
-<p>代码如下:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">username varchar(30) BINARY NOT NULL default '', 如果表已经建好了，使用：</div><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> usertest <span class="keyword">modify</span> username <span class="built_in">varchar</span>(<span class="number">32</span>) <span class="built_in">binary</span>; 来就该表的属性。</div></pre></td></tr></table></figure>
-<p>2.在query的时候加上binary，select * from usertest where username like binary  ‘%夏%’ ，就可以准确的查询出一条记录来。</p>
-<p>char使用固定长度的空间进行存储，char(4)存储4个字符，根据编码方式的不同占用不同的字节，gbk编码方式，不论是中文还是英文，每个字符占用2个字节的空间，utf8编码方式，每个字符占用3个字节的空间。<br>如果需要存储的字符串的长度跟所有值的平均长度相差不大，适合用char，如MD5。<br>对于经常改变的值，char优于varchar，原因是固定长度的行不容易产生碎片。<br>对于很短的列，char优于varchar，原因是varchar需要额外一个或两个字节存储字符串的长度。</p>
-<p>varchar保存可变长度的字符串，使用额外的一个或两个字节存储字符串长度，varchar(10),除了需要存储10个字符，还需要1个字节存储长度信息(10),超过255的长度需要2个字节来存储<br>例外：Myisam引擎中使用ROW_FORMAT=FIXED时，每行使用相同的空间，造成浪费</p>
-<p>char和varchar后面如果有空格，char会自动去掉空格后存储，varchar虽然不会去掉空格，但在进行字符串比较时，会去掉空格进行比较。 </p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;BINARY不是函数，是类型转换运算符，它用来强制它后面的字符串为一个二进制字符串，可以理解为在字符串比较的时候区分大小写&lt;/p&gt;
-&lt;p&gt;代码如下:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;mysql&amp;gt; select binary &#39;ABCD&#39;=&#39;abcd&#39; COM1, &#39;ABCD&#39;=&#39;abcd&#39; COM2;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;+--------+-----------+&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;| COM1 | COM2 |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;+--------+-----------+&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|      0     |      1      |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;+---------+-----------+&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;1 row in set (0.00 sec)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="mysql" scheme="http://bin.bloggao.cn/categories/mysql/"/>
-    
-    
-      <category term="mysql" scheme="http://bin.bloggao.cn//tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>windows/python/virtualenv环境安装pyramid</title>
-    <link href="http://bin.bloggao.cn/2016/01/11/windows_python_virtualenv_pyramid/"/>
-    <id>http://bin.bloggao.cn/2016/01/11/windows_python_virtualenv_pyramid/</id>
-    <published>2016-01-11T09:46:29.000Z</published>
-    <updated>2017-01-04T03:28:39.945Z</updated>
-    
-    <content type="html"><![CDATA[<p>关于win-py-vir的环境安装技巧在之前就有记录(详情参考windows＋Python＋virtualenv环境配置)</p>
-<p>这里主要讲在虚拟环境下如何安装python框架pyramid</p>
-<p>pyramid采用<code>mako</code>模板引擎,<code>SQLAlchemy</code> ORM工具，可配置多样数据库,如<code>sqlite</code>，<code>mysql</code>等(如若有时间，以后也会整理出一份文档)</p>
-<p>在安装python库<code>pip</code>或者<code>easy_install</code>后</p>
-<p>采用<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pip install pyramid ==<span class="number">1.4</span>或者</div><div class="line"></div><div class="line">easy_install pyramid == <span class="number">1.4</span></div></pre></td></tr></table></figure></p>
-<p>后面的1.4是版本，如若不加则采用最新版</p>
-<p>但是pyramid不支持高版本对低版本的兼容，所以谨慎处理<br><a id="more"></a><br>linux采用yum或者apt-get处理，这里不做详细介绍</p>
-<p>安装之后，需要进入虚拟环境<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Scripts\activate</div></pre></td></tr></table></figure></p>
-<p>执行在路径Script下activate</p>
-<p>开启环境后可建立项目(建议项目和环境文件夹分开，因为如若环境版本不可控，可删除从新载入项目)</p>
-<p>创建项目<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pcreate -s starter myproject(项目名称)</div><div class="line"></div><div class="line">pcreate -s alchemy C:\simpleCRUD（项目名称）</div></pre></td></tr></table></figure></p>
-<p>如果要分离的话前面加上路径即可。</p>
-<p>在创建项目后，还需要增加项目的内置包<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python setup.py develop</div></pre></td></tr></table></figure></p>
-<p>然后进入项目启动项目<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pserve development.ini</div></pre></td></tr></table></figure></p>
-<p>目录安装完成，大体说一下文件作用，但不尽详细。</p>
-<p>这里我们首先看一下Myroject这个项目根目录下的几个文件：</p>
-<ol>
-<li><p>CHANGES.txt</p>
-<p> 本项目的变更文件，推荐采用ReST格式编写</p>
-</li>
-<li><p>RADME.txt</p>
-<p> 项目描述文件，推荐采用ReST格式编写</p>
-</li>
-<li><p>development.ini</p>
-<p> 开发时参数配置文件</p>
-</li>
-<li><p>production.ini</p>
-<p> 运行时参数配置文件</p>
-</li>
-<li><p>setup.cfg</p>
-<p> 这是setup.py使用的配置文件</p>
-</li>
-<li><p>MANIFEST.in</p>
-<p> 打包清单，列出了打包时需要一起打到python程序包中的文件</p>
-</li>
-<li><p>setup.py</p>
-<p> 标准的setuptools的setup.py文件，用于测试、分发该项目</p>
-</li>
-</ol>
-<p>在MyProject项目目录中，还有一个叫myproject的包目录，这个目录下包含了如下内容</p>
-<ol>
-<li><p><strong>init</strong>.py</p>
-<p> 初始化文件。包含了一些启动本项目的指令。</p>
-</li>
-<li><p>templates</p>
-<p> 存放开发模板文件的目录</p>
-</li>
-<li><p>tests.py</p>
-<p> 存放单元测试</p>
-</li>
-<li><p>views.py</p>
-<p> 存放可调用视图</p>
-</li>
-</ol>
-<p>各版本不一致，但主体文件差不多都是这样，也可以自行增加view文件夹开发。</p>
-<p>create By<br>liecol-晓斌</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;关于win-py-vir的环境安装技巧在之前就有记录(详情参考windows＋Python＋virtualenv环境配置)&lt;/p&gt;
-&lt;p&gt;这里主要讲在虚拟环境下如何安装python框架pyramid&lt;/p&gt;
-&lt;p&gt;pyramid采用&lt;code&gt;mako&lt;/code&gt;模板引擎,&lt;code&gt;SQLAlchemy&lt;/code&gt; ORM工具，可配置多样数据库,如&lt;code&gt;sqlite&lt;/code&gt;，&lt;code&gt;mysql&lt;/code&gt;等(如若有时间，以后也会整理出一份文档)&lt;/p&gt;
-&lt;p&gt;在安装python库&lt;code&gt;pip&lt;/code&gt;或者&lt;code&gt;easy_install&lt;/code&gt;后&lt;/p&gt;
-&lt;p&gt;采用&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;pip install pyramid ==&lt;span class=&quot;number&quot;&gt;1.4&lt;/span&gt;或者&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;easy_install pyramid == &lt;span class=&quot;number&quot;&gt;1.4&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;后面的1.4是版本，如若不加则采用最新版&lt;/p&gt;
-&lt;p&gt;但是pyramid不支持高版本对低版本的兼容，所以谨慎处理&lt;br&gt;
-    
-    </summary>
-    
-      <category term="python" scheme="http://bin.bloggao.cn/categories/python/"/>
-    
-    
-      <category term="python" scheme="http://bin.bloggao.cn//tags/python/"/>
-    
-      <category term="virtualenv" scheme="http://bin.bloggao.cn//tags/virtualenv/"/>
-    
-      <category term="pyramid" scheme="http://bin.bloggao.cn//tags/pyramid/"/>
     
   </entry>
   
