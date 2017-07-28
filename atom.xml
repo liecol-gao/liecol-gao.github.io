@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://bin.bloggao.cn/"/>
-  <updated>2017-07-28T09:18:47.344Z</updated>
+  <updated>2017-07-28T09:28:16.223Z</updated>
   <id>http://bin.bloggao.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://bin.bloggao.cn/2017/07/28/python_bfs/"/>
     <id>http://bin.bloggao.cn/2017/07/28/python_bfs/</id>
     <published>2017-07-28T09:10:45.000Z</published>
-    <updated>2017-07-28T09:18:47.344Z</updated>
+    <updated>2017-07-28T09:28:16.223Z</updated>
     
     <content type="html"><![CDATA[<p>关于图的搜索有两种：广度优先（bfs）深度优先 （dfs）。</p>
 <table>
@@ -64,8 +64,8 @@
 </tr>
 </tbody>
 </table>
-<p>dfs:顺序应该为：ABCEDF CGH I</p>
-<p>bfs:顺序应该为：ABC EDF GH I</p>
+<p>dfs:顺序应该为：ABDEF CGH I</p>
+<p>bfs:顺序应该为：ABC DEF GH I</p>
 <p>笔者总结：深度优先的过程也就是递归的过程, 而bfs是层级的过程，所以广度优先不可避免的需要用到队列。</p>
 <a id="more"></a>
 <p>以下是结合需求用Python写的bfs代码(为了解决一个涉行的最短选择)，因涉及需求，笔者有注释，仅供参考。</p>
@@ -116,8 +116,8 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;dfs:顺序应该为：ABCEDF CGH I&lt;/p&gt;
-&lt;p&gt;bfs:顺序应该为：ABC EDF GH I&lt;/p&gt;
+&lt;p&gt;dfs:顺序应该为：ABDEF CGH I&lt;/p&gt;
+&lt;p&gt;bfs:顺序应该为：ABC DEF GH I&lt;/p&gt;
 &lt;p&gt;笔者总结：深度优先的过程也就是递归的过程, 而bfs是层级的过程，所以广度优先不可避免的需要用到队列。&lt;/p&gt;
     
     </summary>
