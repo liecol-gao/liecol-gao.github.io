@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://bin.bloggao.cn/"/>
-  <updated>2017-07-27T07:38:42.987Z</updated>
+  <updated>2017-07-28T09:18:47.344Z</updated>
   <id>http://bin.bloggao.cn/</id>
   
   <author>
@@ -14,6 +14,122 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>图的基本算法bfs浅析</title>
+    <link href="http://bin.bloggao.cn/2017/07/28/python_bfs/"/>
+    <id>http://bin.bloggao.cn/2017/07/28/python_bfs/</id>
+    <published>2017-07-28T09:10:45.000Z</published>
+    <updated>2017-07-28T09:18:47.344Z</updated>
+    
+    <content type="html"><![CDATA[<p>关于图的搜索有两种：广度优先（bfs）深度优先 （dfs）。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th>A</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>B</td>
+<td></td>
+<td></td>
+<td></td>
+<td>C</td>
+<td></td>
+</tr>
+<tr>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td></td>
+<td>G</td>
+<td></td>
+<td>H</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>dfs:顺序应该为：ABCEDF CGH I</p>
+<p>bfs:顺序应该为：ABC EDF GH I</p>
+<p>笔者总结：深度优先的过程也就是递归的过程, 而bfs是层级的过程，所以广度优先不可避免的需要用到队列。</p>
+<a id="more"></a>
+<p>以下是结合需求用Python写的bfs代码(为了解决一个涉行的最短选择)，因涉及需求，笔者有注释，仅供参考。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_rows</span><span class="params">(s_row, product_list, slot_p_count)</span>:</span></div><div class="line">    <span class="comment"># product_list eg:['p2', 'p3', 'p1', 'p1']</span></div><div class="line">    <span class="comment"># slot_p_count eg: &#123;'02': 1, '03': 2, '08': 3&#125;</span></div><div class="line">    end_rows_path = []</div><div class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> range(<span class="number">0</span>, len(s_row)): </div><div class="line">    	status = <span class="number">0</span></div><div class="line">        row_order = []</div><div class="line">        temporary_order = []</div><div class="line">        copy_p_list = copy.deepcopy(product_list)</div><div class="line">        <span class="keyword">for</span> row <span class="keyword">in</span> s_row:</div><div class="line">            <span class="keyword">if</span> num &gt; status:</div><div class="line">            	status += <span class="number">1</span></div><div class="line">                <span class="keyword">continue</span></div><div class="line">        	<span class="comment"># get list tree intersection (must for del)</span></div><div class="line">            pro_in_slot = <span class="keyword">False</span></div><div class="line">            <span class="keyword">for</span> pro <span class="keyword">in</span> s_row[row]:</div><div class="line">                <span class="keyword">try</span>:</div><div class="line">                    pro_ad = copy_p_list.index(pro)</div><div class="line">                    <span class="keyword">del</span> copy_p_list[pro_ad]</div><div class="line">                    pro_in_slot = <span class="keyword">True</span></div><div class="line">                <span class="keyword">except</span> Exception, e:</div><div class="line">                    <span class="keyword">pass</span></div><div class="line">            <span class="keyword">if</span> pro_in_slot:</div><div class="line">            	row_order.append([row, slot_p_count[row]])</div><div class="line">            <span class="keyword">if</span> <span class="keyword">not</span> copy_p_list:</div><div class="line">            	temporary_order = copy.deepcopy(row_order)</div><div class="line">                <span class="keyword">break</span></div><div class="line">        <span class="keyword">if</span> temporary_order:</div><div class="line">            end_rows_path.append(temporary_order)</div><div class="line">    <span class="comment"># all end_rows_path eg: [['01', 5], ['05', 1], ...]  [row, all pro quantity]  Reason: less quantity priority</span></div><div class="line">    <span class="keyword">return</span> end_rows_path</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关于图的搜索有两种：广度优先（bfs）深度优先 （dfs）。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;A&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;B&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;D&lt;/td&gt;
+&lt;td&gt;E&lt;/td&gt;
+&lt;td&gt;F&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;G&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;H&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;I&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;dfs:顺序应该为：ABCEDF CGH I&lt;/p&gt;
+&lt;p&gt;bfs:顺序应该为：ABC EDF GH I&lt;/p&gt;
+&lt;p&gt;笔者总结：深度优先的过程也就是递归的过程, 而bfs是层级的过程，所以广度优先不可避免的需要用到队列。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://bin.bloggao.cn/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://bin.bloggao.cn//tags/python/"/>
+    
+      <category term="bfs" scheme="http://bin.bloggao.cn//tags/bfs/"/>
+    
+  </entry>
   
   <entry>
     <title>python性能测量工具cProfile</title>
@@ -174,7 +290,7 @@
     <updated>2017-01-13T02:19:28.001Z</updated>
     
     <content type="html"><![CDATA[<p><strong>自动推送:</strong><br>最近发现百度没收录blog子页，然后就研究了一番。<br>之前在theme里添加了一段百度自动推送的js：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> bp = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</div><div class="line">    <span class="keyword">var</span> curProtocol = <span class="built_in">window</span>.location.protocol.split(<span class="string">':'</span>)[<span class="number">0</span>];</div><div class="line">    <span class="keyword">if</span> (curProtocol === <span class="string">'https'</span>) &#123;</div><div class="line">        bp.src = <span class="string">'https://zz.bdstatic.com/linksubmit/push.js'</span>;        </div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        bp.src = <span class="string">'http://push.zhanzhang.baidu.com/push.js'</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> s = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"script"</span>)[<span class="number">0</span>];</div><div class="line">    s.parentNode.insertBefore(bp, s);</div><div class="line">&#125;)();</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> bp = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</div><div class="line">    <span class="keyword">var</span> curProtocol = <span class="built_in">window</span>.location.protocol.split(<span class="string">':'</span>)[<span class="number">0</span>];</div><div class="line">    <span class="keyword">if</span> (curProtocol === <span class="string">'https'</span>) &#123;</div><div class="line">        bp.src = <span class="string">'https://zz.bdstatic.com/linksubmit/push.js'</span>;        </div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        bp.src = <span class="string">'http://push.zhanzhang.baidu.com/push.js'</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> s = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"script"</span>)[<span class="number">0</span>];</div><div class="line">    s.parentNode.insertBefore(bp, s);</div><div class="line">&#125;)();</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <p><strong>sitemap提交:</strong><br>感觉没啥人点，自己也懒得点，算了，再补一个sitemap。<br>hexo 站点地图的插件安装方式如下：<br>google：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-sitemap --save</div></pre></td></tr></table></figure></p>
 <p>百度：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-baidu-sitemap --save</div></pre></td></tr></table></figure></p>
@@ -189,7 +305,7 @@
     <summary type="html">
     
       &lt;p&gt;&lt;strong&gt;自动推送:&lt;/strong&gt;&lt;br&gt;最近发现百度没收录blog子页，然后就研究了一番。&lt;br&gt;之前在theme里添加了一段百度自动推送的js：&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;script&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; bp = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.createElement(&lt;span class=&quot;string&quot;&gt;&#39;script&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; curProtocol = &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.location.protocol.split(&lt;span class=&quot;string&quot;&gt;&#39;:&#39;&lt;/span&gt;)[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (curProtocol === &lt;span class=&quot;string&quot;&gt;&#39;https&#39;&lt;/span&gt;) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        bp.src = &lt;span class=&quot;string&quot;&gt;&#39;https://zz.bdstatic.com/linksubmit/push.js&#39;&lt;/span&gt;;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        bp.src = &lt;span class=&quot;string&quot;&gt;&#39;http://push.zhanzhang.baidu.com/push.js&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; s = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementsByTagName(&lt;span class=&quot;string&quot;&gt;&quot;script&quot;&lt;/span&gt;)[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    s.parentNode.insertBefore(bp, s);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;)();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;script&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; bp = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.createElement(&lt;span class=&quot;string&quot;&gt;&#39;script&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; curProtocol = &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.location.protocol.split(&lt;span class=&quot;string&quot;&gt;&#39;:&#39;&lt;/span&gt;)[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (curProtocol === &lt;span class=&quot;string&quot;&gt;&#39;https&#39;&lt;/span&gt;) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        bp.src = &lt;span class=&quot;string&quot;&gt;&#39;https://zz.bdstatic.com/linksubmit/push.js&#39;&lt;/span&gt;;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        bp.src = &lt;span class=&quot;string&quot;&gt;&#39;http://push.zhanzhang.baidu.com/push.js&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; s = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementsByTagName(&lt;span class=&quot;string&quot;&gt;&quot;script&quot;&lt;/span&gt;)[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    s.parentNode.insertBefore(bp, s);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;)();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;/script&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -758,56 +874,6 @@
       <category term="linux" scheme="http://bin.bloggao.cn//tags/linux/"/>
     
       <category term="vpn" scheme="http://bin.bloggao.cn//tags/vpn/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux系统里svn的搭建</title>
-    <link href="http://bin.bloggao.cn/2016/05/10/linux_svn/"/>
-    <id>http://bin.bloggao.cn/2016/05/10/linux_svn/</id>
-    <published>2016-05-10T11:02:25.000Z</published>
-    <updated>2017-01-04T03:33:20.482Z</updated>
-    
-    <content type="html"><![CDATA[<p>Ubuntu 安装/卸载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install svnserve</div><div class="line">apt-get remove subversion</div></pre></td></tr></table></figure></p>
-<p>centos 安装/卸载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">yum install subversion</div><div class="line">yum remove subversion</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>查看进程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ps aux | grep svnserve</div></pre></td></tr></table></figure></p>
-<p>创建目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir -p /svn/test</div></pre></td></tr></table></figure></p>
-<p>创建版本库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svnadmin create svn/test/</div></pre></td></tr></table></figure></p>
-<p>svn/svn/ 文件夹包含conf, db,format,hooks, locks, README.txt等文件，说明一个SVN库已经建立。</p>
-<p>配置文件：<br>conf：(前置空格svn checkout会报错)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">passwd</div><div class="line">[users]</div><div class="line"># harry = harryssecret (用户名 = 密码)</div><div class="line"># sally = sallyssecret</div><div class="line">Eg:</div><div class="line">root = passwd</div></pre></td></tr></table></figure></p>
-<p>authz</p>
-<p>[groups] 用户组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># harry_and_sally = harry,sally (组名 = 用户,用户)</div><div class="line">Eg:</div><div class="line">admin = root,liecol</div></pre></td></tr></table></figure></p>
-<p>对一个目录的认证规则:<br>[/foo/bar] 比如对根目录的认证规则的section为[/],如果将上面的test作为svn的起始目录的话，则是[test:/]<br>[test:/]这种适合于多仓库情况，[/]适合于单仓库情况。</p>
-<p>设置单用户的认证规则时一个用户一行:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># root = rw (对该目录，root有读写权限)</div><div class="line"># liecol = r (对该目录，liecol有读权限)</div></pre></td></tr></table></figure></p>
-<p>如果使用group，需要在group名字前加@,如<br>@admin=rw　　(组admin中的用户均为rw，等价于上边的两句话)</p>
-<p>(<em> 表示除了上面的人，比如 </em> = r，就是除了上面的root和liecol，其他人的权限是对test拥有读的权限。* = 的意思是其他人对test都没有权限)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"># * =</div><div class="line">vi svnserve.conf</div><div class="line"></div><div class="line">anon-access：匿名用户的权限，可以为read，write和none，默认值read。不允许匿名用户访问：anon-access = none</div><div class="line"></div><div class="line">auth-access：认证用户的权限，可以为read，write和none，默认值write。</div><div class="line"></div><div class="line">password-db：密码数据库的路径，去掉前边的# (可自行选填路径，即可多代码库共用同一用户名密码)</div><div class="line"></div><div class="line">authz-db：认证规则库的路径，去掉前边的#。(可自行选填路径，即可多代码库共用同一用户名密码)</div></pre></td></tr></table></figure></p>
-<p>以上配置需要重启svn</p>
-<p>重启svn：</p>
-<p>(-d: 表示 svnserve 以“守护”进程模式运行)<br>(指定文件系统的根位置（版本库的根目录），这样客户端不用输入全路径，就可以访问版本库：如：svn://192.168.0.1/test)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svnserve -d -r svn/test/</div></pre></td></tr></table></figure></p>
-<p>checkout访问形式<br>svn://192.168.0.1/ (svn://ip地址/)</p>
-<p>如果是svn目录启动的<br>svn://192.168.0.1/test (svn://ip地址/test)</p>
-<p>如果已启动<br>根据上面的查看进程:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Eg:</div><div class="line">ps -ef|grep svn</div><div class="line"></div><div class="line">kill -9 ****</div></pre></td></tr></table></figure></p>
-<p>如果端口占用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svnserve --listen-port 9999 -d -r svn_test1/svn/</div></pre></td></tr></table></figure></p>
-<p>最后需要导入文件：<br>Linux:<br>(–m：message,也就是查看svn log可以看到的注释。)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo  svn import -m &quot;test&quot;  /home/test  svn://192.168.0.1/test</div></pre></td></tr></table></figure></p>
-<p>本地：svn</p>
-<p>右键关于svn有个import<br>导入就可以</p>
-<p>create By<br>liecol-晓斌<br>2016-05-10</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Ubuntu 安装/卸载&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo apt-get install svnserve&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;apt-get remove subversion&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;centos 安装/卸载&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;yum install subversion&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;yum remove subversion&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="svn" scheme="http://bin.bloggao.cn/categories/svn/"/>
-    
-    
-      <category term="linux" scheme="http://bin.bloggao.cn//tags/linux/"/>
-    
-      <category term="svn" scheme="http://bin.bloggao.cn//tags/svn/"/>
     
   </entry>
   

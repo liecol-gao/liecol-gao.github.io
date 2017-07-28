@@ -4,18 +4,151 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Blog | Liecol&#39;s Blog</title>
+  <title>图的基本算法bfs浅析 | Liecol&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="KD9n1FRuBzVpoapy6t7dZdow7NG_SI4RKZ7dEPjkr0o" />
-  <meta name="description" content="liecol-晓斌的个人网站，技术，源于对生活的分享，所谓迷茫，就是才华配不上梦想。我是liecol，欢迎进入我的个人网站。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Liecol's Blog">
-<meta property="og:url" content="http://bin.bloggao.cn/tags/Blog/index.html">
+  <meta name="description" content="关于图的搜索有两种：广度优先（bfs）深度优先 （dfs）。
+
+
+
+
+
+
+A
+
+
+
+
+
+
+
+
+B
+
+
+
+C
+
+
+
+D
+E
+F
+
+G
+
+H
+
+
+
+
+
+
+I
+
+
+
+
+dfs:顺序应该为：ABCEDF CGH I
+bfs:顺序应该为：ABC EDF GH I
+笔者总结：深度优先的过程也就是递归的过程, 而bfs是层级的过程，所以广度优先不可避免的需要用到队列。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图的基本算法bfs浅析">
+<meta property="og:url" content="http://bin.bloggao.cn/2017/07/28/python_bfs/index.html">
 <meta property="og:site_name" content="Liecol's Blog">
-<meta property="og:description" content="liecol-晓斌的个人网站，技术，源于对生活的分享，所谓迷茫，就是才华配不上梦想。我是liecol，欢迎进入我的个人网站。">
+<meta property="og:description" content="关于图的搜索有两种：广度优先（bfs）深度优先 （dfs）。
+
+
+
+
+
+
+A
+
+
+
+
+
+
+
+
+B
+
+
+
+C
+
+
+
+D
+E
+F
+
+G
+
+H
+
+
+
+
+
+
+I
+
+
+
+
+dfs:顺序应该为：ABCEDF CGH I
+bfs:顺序应该为：ABC EDF GH I
+笔者总结：深度优先的过程也就是递归的过程, 而bfs是层级的过程，所以广度优先不可避免的需要用到队列。">
+<meta property="og:updated_time" content="2017-07-28T09:18:47.344Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Liecol's Blog">
-<meta name="twitter:description" content="liecol-晓斌的个人网站，技术，源于对生活的分享，所谓迷茫，就是才华配不上梦想。我是liecol，欢迎进入我的个人网站。">
+<meta name="twitter:title" content="图的基本算法bfs浅析">
+<meta name="twitter:description" content="关于图的搜索有两种：广度优先（bfs）深度优先 （dfs）。
+
+
+
+
+
+
+A
+
+
+
+
+
+
+
+
+B
+
+
+
+C
+
+
+
+D
+E
+F
+
+G
+
+H
+
+
+
+
+
+
+I
+
+
+
+
+dfs:顺序应该为：ABCEDF CGH I
+bfs:顺序应该为：ABC EDF GH I
+笔者总结：深度优先的过程也就是递归的过程, 而bfs是层级的过程，所以广度优先不可避免的需要用到队列。">
   
     <link rel="alternative" href="/atom.xml" title="Liecol&#39;s Blog" type="application/atom+xml">
   
@@ -89,87 +222,138 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/01/10/hexo_sitemap/" class="archive-article-date">
-  <time datetime="2017-01-10T08:51:52.000Z" itemprop="datePublished">1月 10</time>
+      <section id="main"><article id="post-python_bfs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/28/python_bfs/" class="article-date">
+  <time datetime="2017-07-28T09:10:45.000Z" itemprop="datePublished">2017-07-28</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/10/hexo_sitemap/">hexo 添加百度谷歌收录sitemap</a>
+    <h1 class="article-title" itemprop="name">
+      图的基本算法bfs浅析
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/01/10/hexo_lf_will_be_replaced_by_crlf/" class="archive-article-date">
-  <time datetime="2017-01-10T08:32:52.000Z" itemprop="datePublished">1月 10</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/10/hexo_lf_will_be_replaced_by_crlf/">hexo LF will be replaced by CRLF 错误</a>
-    </h1>
-  
+        <p>关于图的搜索有两种：广度优先（bfs）深度优先 （dfs）。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th>A</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>B</td>
+<td></td>
+<td></td>
+<td></td>
+<td>C</td>
+<td></td>
+</tr>
+<tr>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td></td>
+<td>G</td>
+<td></td>
+<td>H</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>dfs:顺序应该为：ABCEDF CGH I</p>
+<p>bfs:顺序应该为：ABC EDF GH I</p>
+<p>笔者总结：深度优先的过程也就是递归的过程, 而bfs是层级的过程，所以广度优先不可避免的需要用到队列。</p>
+<a id="more"></a>
+<p>以下是结合需求用Python写的bfs代码(为了解决一个涉行的最短选择)，因涉及需求，笔者有注释，仅供参考。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_rows</span><span class="params">(s_row, product_list, slot_p_count)</span>:</span></div><div class="line">    <span class="comment"># product_list eg:['p2', 'p3', 'p1', 'p1']</span></div><div class="line">    <span class="comment"># slot_p_count eg: &#123;'02': 1, '03': 2, '08': 3&#125;</span></div><div class="line">    end_rows_path = []</div><div class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> range(<span class="number">0</span>, len(s_row)): </div><div class="line">    	status = <span class="number">0</span></div><div class="line">        row_order = []</div><div class="line">        temporary_order = []</div><div class="line">        copy_p_list = copy.deepcopy(product_list)</div><div class="line">        <span class="keyword">for</span> row <span class="keyword">in</span> s_row:</div><div class="line">            <span class="keyword">if</span> num &gt; status:</div><div class="line">            	status += <span class="number">1</span></div><div class="line">                <span class="keyword">continue</span></div><div class="line">        	<span class="comment"># get list tree intersection (must for del)</span></div><div class="line">            pro_in_slot = <span class="keyword">False</span></div><div class="line">            <span class="keyword">for</span> pro <span class="keyword">in</span> s_row[row]:</div><div class="line">                <span class="keyword">try</span>:</div><div class="line">                    pro_ad = copy_p_list.index(pro)</div><div class="line">                    <span class="keyword">del</span> copy_p_list[pro_ad]</div><div class="line">                    pro_in_slot = <span class="keyword">True</span></div><div class="line">                <span class="keyword">except</span> Exception, e:</div><div class="line">                    <span class="keyword">pass</span></div><div class="line">            <span class="keyword">if</span> pro_in_slot:</div><div class="line">            	row_order.append([row, slot_p_count[row]])</div><div class="line">            <span class="keyword">if</span> <span class="keyword">not</span> copy_p_list:</div><div class="line">            	temporary_order = copy.deepcopy(row_order)</div><div class="line">                <span class="keyword">break</span></div><div class="line">        <span class="keyword">if</span> temporary_order:</div><div class="line">            end_rows_path.append(temporary_order)</div><div class="line">    <span class="comment"># all end_rows_path eg: [['01', 5], ['05', 1], ...]  [row, all pro quantity]  Reason: less quantity priority</span></div><div class="line">    <span class="keyword">return</span> end_rows_path</div></pre></td></tr></table></figure>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+    </div>
+    <footer class="article-footer">
       
+        <a data-url="http://bin.bloggao.cn/2017/07/28/python_bfs/" data-id="cj5nni309003rawdek02ojc29" class="article-share-link" data-share="baidu" data-title="图的基本算法bfs浅析">分享到</a>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/11/14/Hexo_Blog_Coding/" class="archive-article-date">
-  <time datetime="2016-11-14T09:08:37.000Z" itemprop="datePublished">11月 14</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/14/Hexo_Blog_Coding/">关于Hexo搭建Blog托管至Coding并显示</a>
-    </h1>
-  
 
-    </header>
+      
+        <a href="http://bin.bloggao.cn/2017/07/28/python_bfs/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bfs/">bfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
   </div>
+
+  
+    <! -- 添加版权信息 -->
+    <div style="margin-top:20px;">
+    <div>
+    <b>注:</b> 转载请注明出处,本文作者为
+    <a style="color:#e32d40;" href="/index.html" target="_blank" title="Liecol Gao">Liecol Gao</a>,
+    本文标题为
+    <a style="color:#e32d40;" href="/2017/07/28/python_bfs/" target="_blank" title="图的基本算法bfs浅析">图的基本算法bfs浅析</a>
+    </div>
+    <div>
+    &nbsp;&nbsp;&nbsp;&nbsp;本文链接为
+    <a style="color:#e32d40;" href="/2017/07/28/python_bfs/" target="_blank" title="图的基本算法bfs浅析">http://bin.bloggao.cn/2017/07/28/python_bfs/</a>.
+    </div>
+    </div>
+    <! -- 添加版权信息 -->
+
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/07/27/python_cprofile/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">python性能测量工具cProfile</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+  <!--PC和WAP自适应版-->
+  <div id="SOHUCS" sid="图的基本算法bfs浅析" ></div> 
+  <script type="text/javascript"> 
+  (function(){ 
+  var appid = 'cysWveYe9'; 
+  var conf = 'prod_17d4525b97e67d157e2c5e0a2cedfcd7'; 
+  var width = window.innerWidth || document.documentElement.clientWidth; 
+  if (width < 960) { 
+  window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
 
 </section>
       
