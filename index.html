@@ -91,6 +91,61 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-linux_ubutu_gdm" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/21/linux_ubutu_gdm/" class="article-date">
+  <time datetime="2017-09-21T03:27:00.000Z" itemprop="datePublished">2017-09-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/21/linux_ubutu_gdm/">在vmware上安装ubuntu16.04无法进入桌面或者桌面空白解决办法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在虚拟机上安装ubuntu出现了这样的情况，开机后不能进入图形桌面，只能按crl+alt+f1~f6，在文本界面下登陆。<br><strong> 解决办法 </strong>：<br>step1:<br>按<code>crl+alt+f1</code>写换到文本模式下，键入用户名和密码登陆，然后切换到超级用户状态下:</p>
+<p>step2：<br>输入<code>startx</code>命令切换到图形界面，会发图形界面什么都没有。</p>
+<p>step3：<br>按<code>crl+alt+t</code>进入超级终端，安装<code>gdm</code></p>
+<p>step4:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install gdm </div><div class="line"># 登录显示器</div><div class="line"></div><div class="line">sudo apt-get install ubuntu-desktop</div><div class="line"># ubuntu桌面</div><div class="line"></div><div class="line">sudo apt-get install gnome-core </div><div class="line"># 图形桌面环境</div></pre></td></tr></table></figure></p>
+<p>step5:<br>重启ubuntu。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://bin.bloggao.cn/2017/09/21/linux_ubutu_gdm/" data-id="cj7twf7jz000fj8de1zarwpfu" class="article-share-link" data-share="baidu" data-title="在vmware上安装ubuntu16.04无法进入桌面或者桌面空白解决办法">分享到</a>
+      
+
+      
+        <a href="http://bin.bloggao.cn/2017/09/21/linux_ubutu_gdm/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
+  </div>
+
+  
+</article>
+
+
+
+  
     <article id="post-python_bfs" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/28/python_bfs/" class="article-date">
@@ -171,7 +226,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2017/07/28/python_bfs/" data-id="cj5nozvde000oqwdef033ozfj" class="article-share-link" data-share="baidu" data-title="图的基本算法bfs浅析">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2017/07/28/python_bfs/" data-id="cj7twf7kc000oj8dexipsxxa6" class="article-share-link" data-share="baidu" data-title="图的基本算法bfs浅析">分享到</a>
       
 
       
@@ -227,7 +282,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2017/07/27/python_cprofile/" data-id="cj5nozvdf000qqwdeos3ks8ur" class="article-share-link" data-share="baidu" data-title="python性能测量工具cProfile">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2017/07/27/python_cprofile/" data-id="cj7twf7ke000qj8de0cvby2pj" class="article-share-link" data-share="baidu" data-title="python性能测量工具cProfile">分享到</a>
       
 
       
@@ -287,7 +342,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2017/07/10/tmux_linux/" data-id="cj5nozvdq000vqwdeq1y1q59p" class="article-share-link" data-share="baidu" data-title="多窗口工具tmux快捷键速查表">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2017/07/10/tmux_linux/" data-id="cj7twf7kk000vj8dextdlap36" class="article-share-link" data-share="baidu" data-title="多窗口工具tmux快捷键速查表">分享到</a>
       
 
       
@@ -340,7 +395,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2017/04/23/date_parse/" data-id="cj5nozvct0006qwdew2ot4ald" class="article-share-link" data-share="baidu" data-title="Date.parse在IE里NaN问题的解决方式">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2017/04/23/date_parse/" data-id="cj7twf7jn0007j8denqxhz359" class="article-share-link" data-share="baidu" data-title="Date.parse在IE里NaN问题的解决方式">分享到</a>
       
 
       
@@ -400,7 +455,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2017/01/11/chrome_SwitchyOmega/" data-id="cj5nozvcw0008qwdems7mr6ux" class="article-share-link" data-share="baidu" data-title="chrome通过SwitchyOmega配置代理">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2017/01/11/chrome_SwitchyOmega/" data-id="cj7twf7jo0008j8dexslooe30" class="article-share-link" data-share="baidu" data-title="chrome通过SwitchyOmega配置代理">分享到</a>
       
 
       
@@ -446,7 +501,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>自动推送:</strong><br>最近发现百度没收录blog子页，然后就研究了一番。<br>之前在theme里添加了一段百度自动推送的js：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> bp = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</div><div class="line">    <span class="keyword">var</span> curProtocol = <span class="built_in">window</span>.location.protocol.split(<span class="string">':'</span>)[<span class="number">0</span>];</div><div class="line">    <span class="keyword">if</span> (curProtocol === <span class="string">'https'</span>) &#123;</div><div class="line">        bp.src = <span class="string">'https://zz.bdstatic.com/linksubmit/push.js'</span>;        </div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        bp.src = <span class="string">'http://push.zhanzhang.baidu.com/push.js'</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> s = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"script"</span>)[<span class="number">0</span>];</div><div class="line">    s.parentNode.insertBefore(bp, s);</div><div class="line">&#125;)();</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> bp = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</div><div class="line">    <span class="keyword">var</span> curProtocol = <span class="built_in">window</span>.location.protocol.split(<span class="string">':'</span>)[<span class="number">0</span>];</div><div class="line">    <span class="keyword">if</span> (curProtocol === <span class="string">'https'</span>) &#123;</div><div class="line">        bp.src = <span class="string">'https://zz.bdstatic.com/linksubmit/push.js'</span>;        </div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        bp.src = <span class="string">'http://push.zhanzhang.baidu.com/push.js'</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> s = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"script"</span>)[<span class="number">0</span>];</div><div class="line">    s.parentNode.insertBefore(bp, s);</div><div class="line">&#125;)();</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
         
           <p class="article-more-link">
             <a href="/2017/01/10/hexo_sitemap/#more">Read More</a>
@@ -456,7 +511,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2017/01/10/hexo_sitemap/" data-id="cj5nozvcx0009qwdev41v84s5" class="article-share-link" data-share="baidu" data-title="hexo 添加百度谷歌收录sitemap">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2017/01/10/hexo_sitemap/" data-id="cj7twf7jw000dj8dev3hlej34" class="article-share-link" data-share="baidu" data-title="hexo 添加百度谷歌收录sitemap">分享到</a>
       
 
       
@@ -515,7 +570,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2017/01/10/hexo_lf_will_be_replaced_by_crlf/" data-id="cj5nozvcy000aqwdebv8jo131" class="article-share-link" data-share="baidu" data-title="hexo LF will be replaced by CRLF 错误">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2017/01/10/hexo_lf_will_be_replaced_by_crlf/" data-id="cj7twf7jp0009j8deygt5c5pc" class="article-share-link" data-share="baidu" data-title="hexo LF will be replaced by CRLF 错误">分享到</a>
       
 
       
@@ -577,7 +632,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2017/01/09/wechat_min_app/" data-id="cj5nozvdt000xqwdekbzogugy" class="article-share-link" data-share="baidu" data-title="关于开发wechat小程序">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2017/01/09/wechat_min_app/" data-id="cj7twf7ky0010j8de8rw8qhd3" class="article-share-link" data-share="baidu" data-title="关于开发wechat小程序">分享到</a>
       
 
       
@@ -632,7 +687,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2016/12/25/Apache_Directory/" data-id="cj5nozvck0002qwdebscfg9l9" class="article-share-link" data-share="baidu" data-title="Apache2.4与2.2版本访问配置对比">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2016/12/25/Apache_Directory/" data-id="cj7twf7j40001j8de2wf2stfe" class="article-share-link" data-share="baidu" data-title="Apache2.4与2.2版本访问配置对比">分享到</a>
       
 
       
@@ -641,62 +696,6 @@
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Apache/">Apache</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
-
-    </footer>
-  </div>
-
-  
-</article>
-
-
-
-  
-    <article id="post-linux_fdisk" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/23/linux_fdisk/" class="article-date">
-  <time datetime="2016-12-23T10:02:15.000Z" itemprop="datePublished">2016-12-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/linux/">linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/23/linux_fdisk/">挂载磁盘和永久挂载</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近折腾，给磁盘扩容，阿里云得从新挂载，顺道儿这边做个记录。</p>
-<p>df -hl(看看有没有挂载成功)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">root@iZ25xadwwi4Z:~# df -hl</div><div class="line">Filesystem      Size  Used Avail Use% Mounted on</div><div class="line">/dev/xvda1       20G  3.4G   16G  18% /</div><div class="line">udev            489M  4.0K  489M   1% /dev</div><div class="line">tmpfs           199M  268K  199M   1% /run</div><div class="line">none            5.0M     0  5.0M   0% /run/lock</div><div class="line">none            498M     0  498M   0% /run/shm</div></pre></td></tr></table></figure></p>
-        
-          <p class="article-more-link">
-            <a href="/2016/12/23/linux_fdisk/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://bin.bloggao.cn/2016/12/23/linux_fdisk/" data-id="cj5nozvd2000eqwdekuejrdvz" class="article-share-link" data-share="baidu" data-title="挂载磁盘和永久挂载">分享到</a>
-      
-
-      
-        <a href="http://bin.bloggao.cn/2016/12/23/linux_fdisk/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
 
     </footer>
   </div>
@@ -720,7 +719,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/fileupload/" style="font-size: 13px; color: #ee9a49">fileupload</a> <a href="/tags/mysql/" style="font-size: 17px; color: #ee5c2c">mysql</a> <a href="/tags/Apache/" style="font-size: 13px; color: #ee9a49">Apache</a> <a href="/tags/hexo/" style="font-size: 19px; color: #ee3e1d">hexo</a> <a href="/tags/coding/" style="font-size: 13px; color: #ee9a49">coding</a> <a href="/tags/Blog/" style="font-size: 17px; color: #ee5c2c">Blog</a> <a href="/tags/html/" style="font-size: 15px; color: #ee7b3a">html</a> <a href="/tags/other/" style="font-size: 15px; color: #ee7b3a">other</a> <a href="/tags/php/" style="font-size: 21px; color: #ee1f0f">php</a> <a href="/tags/Memcache/" style="font-size: 13px; color: #ee9a49">Memcache</a> <a href="/tags/nosql/" style="font-size: 15px; color: #ee7b3a">nosql</a> <a href="/tags/javascript/" style="font-size: 19px; color: #ee3e1d">javascript</a> <a href="/tags/phpexcel/" style="font-size: 13px; color: #ee9a49">phpexcel</a> <a href="/tags/chrome/" style="font-size: 13px; color: #ee9a49">chrome</a> <a href="/tags/Google/" style="font-size: 13px; color: #ee9a49">Google</a> <a href="/tags/jquery/" style="font-size: 15px; color: #ee7b3a">jquery</a> <a href="/tags/linux/" style="font-size: 23px; color: #e00">linux</a> <a href="/tags/flexigrid/" style="font-size: 13px; color: #ee9a49">flexigrid</a> <a href="/tags/svn/" style="font-size: 13px; color: #ee9a49">svn</a> <a href="/tags/nodejs/" style="font-size: 15px; color: #ee7b3a">nodejs</a> <a href="/tags/redis/" style="font-size: 15px; color: #ee7b3a">redis</a> <a href="/tags/python/" style="font-size: 21px; color: #ee1f0f">python</a> <a href="/tags/bfs/" style="font-size: 13px; color: #ee9a49">bfs</a> <a href="/tags/curl/" style="font-size: 13px; color: #ee9a49">curl</a> <a href="/tags/cProfile/" style="font-size: 13px; color: #ee9a49">cProfile</a> <a href="/tags/xlrd/" style="font-size: 13px; color: #ee9a49">xlrd</a> <a href="/tags/excel/" style="font-size: 13px; color: #ee9a49">excel</a> <a href="/tags/smarty/" style="font-size: 13px; color: #ee9a49">smarty</a> <a href="/tags/tmux/" style="font-size: 13px; color: #ee9a49">tmux</a> <a href="/tags/vpn/" style="font-size: 13px; color: #ee9a49">vpn</a> <a href="/tags/wechat/" style="font-size: 13px; color: #ee9a49">wechat</a> <a href="/tags/virtualenv/" style="font-size: 15px; color: #ee7b3a">virtualenv</a> <a href="/tags/pyramid/" style="font-size: 13px; color: #ee9a49">pyramid</a>
+      <a href="/tags/flexigrid/" style="font-size: 13px; color: #ee9a49">flexigrid</a> <a href="/tags/linux/" style="font-size: 23px; color: #e00">linux</a> <a href="/tags/mysql/" style="font-size: 17px; color: #ee5c2c">mysql</a> <a href="/tags/hexo/" style="font-size: 19px; color: #ee3e1d">hexo</a> <a href="/tags/coding/" style="font-size: 13px; color: #ee9a49">coding</a> <a href="/tags/Blog/" style="font-size: 17px; color: #ee5c2c">Blog</a> <a href="/tags/php/" style="font-size: 21px; color: #ee1f0f">php</a> <a href="/tags/Memcache/" style="font-size: 13px; color: #ee9a49">Memcache</a> <a href="/tags/nosql/" style="font-size: 15px; color: #ee7b3a">nosql</a> <a href="/tags/html/" style="font-size: 15px; color: #ee7b3a">html</a> <a href="/tags/other/" style="font-size: 15px; color: #ee7b3a">other</a> <a href="/tags/phpexcel/" style="font-size: 13px; color: #ee9a49">phpexcel</a> <a href="/tags/javascript/" style="font-size: 19px; color: #ee3e1d">javascript</a> <a href="/tags/chrome/" style="font-size: 13px; color: #ee9a49">chrome</a> <a href="/tags/Google/" style="font-size: 13px; color: #ee9a49">Google</a> <a href="/tags/jquery/" style="font-size: 15px; color: #ee7b3a">jquery</a> <a href="/tags/fileupload/" style="font-size: 13px; color: #ee9a49">fileupload</a> <a href="/tags/Apache/" style="font-size: 13px; color: #ee9a49">Apache</a> <a href="/tags/nodejs/" style="font-size: 15px; color: #ee7b3a">nodejs</a> <a href="/tags/Ubuntu/" style="font-size: 13px; color: #ee9a49">Ubuntu</a> <a href="/tags/svn/" style="font-size: 13px; color: #ee9a49">svn</a> <a href="/tags/redis/" style="font-size: 15px; color: #ee7b3a">redis</a> <a href="/tags/python/" style="font-size: 21px; color: #ee1f0f">python</a> <a href="/tags/bfs/" style="font-size: 13px; color: #ee9a49">bfs</a> <a href="/tags/cProfile/" style="font-size: 13px; color: #ee9a49">cProfile</a> <a href="/tags/curl/" style="font-size: 13px; color: #ee9a49">curl</a> <a href="/tags/xlrd/" style="font-size: 13px; color: #ee9a49">xlrd</a> <a href="/tags/excel/" style="font-size: 13px; color: #ee9a49">excel</a> <a href="/tags/tmux/" style="font-size: 13px; color: #ee9a49">tmux</a> <a href="/tags/smarty/" style="font-size: 13px; color: #ee9a49">smarty</a> <a href="/tags/vpn/" style="font-size: 13px; color: #ee9a49">vpn</a> <a href="/tags/virtualenv/" style="font-size: 15px; color: #ee7b3a">virtualenv</a> <a href="/tags/pyramid/" style="font-size: 13px; color: #ee9a49">pyramid</a> <a href="/tags/wechat/" style="font-size: 13px; color: #ee9a49">wechat</a>
     </div>
   </div>
 
@@ -730,6 +729,10 @@
     <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/09/21/linux_ubutu_gdm/">在vmware上安装ubuntu16.04无法进入桌面或者桌面空白解决办法</a>
+          </li>
         
           <li>
             <a href="/2017/07/28/python_bfs/">图的基本算法bfs浅析</a>
@@ -747,10 +750,6 @@
             <a href="/2017/04/23/date_parse/">Date.parse在IE里NaN问题的解决方式</a>
           </li>
         
-          <li>
-            <a href="/2017/01/11/chrome_SwitchyOmega/">chrome通过SwitchyOmega配置代理</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -760,7 +759,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/curl/">curl</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nosql/">nosql</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/other/">other</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wechat/">wechat</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/curl/">curl</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nosql/">nosql</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/other/">other</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wechat/">wechat</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -769,7 +768,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
