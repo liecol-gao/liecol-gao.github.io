@@ -4,18 +4,25 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: nodejs | Liecol&#39;s Blog</title>
+  <title>linux修改ip设置 | Liecol&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="KD9n1FRuBzVpoapy6t7dZdow7NG_SI4RKZ7dEPjkr0o" />
-  <meta name="description" content="liecol-晓斌的个人网站，技术，源于对生活的分享，所谓迷茫，就是才华配不上梦想。我是liecol，欢迎进入我的个人网站。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Liecol's Blog">
-<meta property="og:url" content="http://bin.bloggao.cn/categories/nodejs/index.html">
+  <meta name="description" content="有时候需要修改linux的ip,怕记不住，做个笔记，解决办法如下：
+step1(进入修改文件):123sudo vim /etc/config/networking/interfacesorsudo vim /etc/network/interfaces
+step2(修改文件):1234567891011121314auto lo#本地回环接口iface lo inet loopbackauto">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux修改ip设置">
+<meta property="og:url" content="http://bin.bloggao.cn/2017/09/27/linux_ipset/index.html">
 <meta property="og:site_name" content="Liecol's Blog">
-<meta property="og:description" content="liecol-晓斌的个人网站，技术，源于对生活的分享，所谓迷茫，就是才华配不上梦想。我是liecol，欢迎进入我的个人网站。">
+<meta property="og:description" content="有时候需要修改linux的ip,怕记不住，做个笔记，解决办法如下：
+step1(进入修改文件):123sudo vim /etc/config/networking/interfacesorsudo vim /etc/network/interfaces
+step2(修改文件):1234567891011121314auto lo#本地回环接口iface lo inet loopbackauto">
+<meta property="og:updated_time" content="2017-09-27T09:26:01.785Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Liecol's Blog">
-<meta name="twitter:description" content="liecol-晓斌的个人网站，技术，源于对生活的分享，所谓迷茫，就是才华配不上梦想。我是liecol，欢迎进入我的个人网站。">
+<meta name="twitter:title" content="linux修改ip设置">
+<meta name="twitter:description" content="有时候需要修改linux的ip,怕记不住，做个笔记，解决办法如下：
+step1(进入修改文件):123sudo vim /etc/config/networking/interfacesorsudo vim /etc/network/interfaces
+step2(修改文件):1234567891011121314auto lo#本地回环接口iface lo inet loopbackauto">
   
     <link rel="alternative" href="/atom.xml" title="Liecol&#39;s Blog" type="application/atom+xml">
   
@@ -89,39 +96,96 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/09/30/nodejs_install/" class="archive-article-date">
-  <time datetime="2015-09-30T09:54:05.000Z" itemprop="datePublished">9月 30</time>
+      <section id="main"><article id="post-linux_ipset" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/27/linux_ipset/" class="article-date">
+  <time datetime="2017-09-27T08:54:52.000Z" itemprop="datePublished">2017-09-27</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/09/30/nodejs_install/">nodejs安装及环境搭建</a>
+    <h1 class="article-title" itemprop="name">
+      linux修改ip设置
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有时候需要修改linux的ip,怕记不住，做个笔记，解决办法如下：</p>
+<h2 id="step1-进入修改文件"><a href="#step1-进入修改文件" class="headerlink" title="step1(进入修改文件):"></a>step1(进入修改文件):</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/config/networking/interfaces</div><div class="line">or</div><div class="line">sudo vim /etc/network/interfaces</div></pre></td></tr></table></figure>
+<h2 id="step2-修改文件"><a href="#step2-修改文件" class="headerlink" title="step2(修改文件):"></a>step2(修改文件):</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">auto lo</div><div class="line"><span class="comment">#本地回环接口</span></div><div class="line">iface lo inet loopback</div><div class="line">auto eth0</div><div class="line"><span class="comment">#以太网接口</span></div><div class="line"><span class="comment">#iface eth0 inet dhcp </span></div><div class="line">iface eth0 inet static</div><div class="line"><span class="comment">#连接方式dhcp和固定ip</span></div><div class="line">address <span class="number">192.168</span><span class="number">.2</span><span class="number">.135</span></div><div class="line"><span class="comment">#ip地址</span></div><div class="line">gateway <span class="number">192.168</span><span class="number">.2</span><span class="number">.1</span></div><div class="line"><span class="comment">#ip网关</span></div><div class="line">netmask <span class="number">255.255</span><span class="number">.255</span><span class="number">.0</span></div><div class="line"><span class="comment">#子掩码</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="step3-重启"><a href="#step3-重启" class="headerlink" title="step3(重启):"></a>step3(重启):</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /etc/init.d/networking  restart</div></pre></td></tr></table></figure>
+<h2 id="step4-ping"><a href="#step4-ping" class="headerlink" title="step4(ping):"></a>step4(ping):</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ping www.baidu.com</div><div class="line"></div><div class="line">if not:</div><div class="line">cat /etc/resolv.conf</div><div class="line">修改网关至192.168.2.1</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://bin.bloggao.cn/2017/09/27/linux_ipset/" data-id="cj82td1hc000ue4deko613876" class="article-share-link" data-share="baidu" data-title="linux修改ip设置">分享到</a>
+      
+
+      
+        <a href="http://bin.bloggao.cn/2017/09/27/linux_ipset/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
   </div>
+
+  
+    <! -- 添加版权信息 -->
+    <div style="margin-top:20px;">
+    <div>
+    <b>注:</b> 转载请注明出处,本文作者为
+    <a style="color:#e32d40;" href="/index.html" target="_blank" title="Liecol Gao">Liecol Gao</a>,
+    本文标题为
+    <a style="color:#e32d40;" href="/2017/09/27/linux_ipset/" target="_blank" title="linux修改ip设置">linux修改ip设置</a>
+    </div>
+    <div>
+    &nbsp;&nbsp;&nbsp;&nbsp;本文链接为
+    <a style="color:#e32d40;" href="/2017/09/27/linux_ipset/" target="_blank" title="linux修改ip设置">http://bin.bloggao.cn/2017/09/27/linux_ipset/</a>.
+    </div>
+    </div>
+    <! -- 添加版权信息 -->
+
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/21/linux_ubutu_gdm/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">在vmware上安装ubuntu16.04无法进入桌面或者桌面空白解决办法</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+  <!--PC和WAP自适应版-->
+  <div id="SOHUCS" sid="linux修改ip设置" ></div> 
+  <script type="text/javascript"> 
+  (function(){ 
+  var appid = 'cysWveYe9'; 
+  var conf = 'prod_17d4525b97e67d157e2c5e0a2cedfcd7'; 
+  var width = window.innerWidth || document.documentElement.clientWidth; 
+  if (width < 960) { 
+  window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
 
 </section>
       

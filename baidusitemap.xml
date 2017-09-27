@@ -4,6 +4,48 @@
 
     
   <url>
+    <loc>http://bin.bloggao.cn/2017/09/27/linux_ipset/</loc>
+    <lastmod>2017-09-27T09:26:01.785Z</lastmod>
+    <data>
+        <display>
+        <title>linux修改ip设置</title>
+        <pubTime>2017-09-27T08:54:52.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://bin.bloggao.cn/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2017/01/10/hexo_sitemap/</loc>
+    <lastmod>2017-09-27T09:01:28.018Z</lastmod>
+    <data>
+        <display>
+        <title>hexo 添加百度谷歌收录sitemap</title>
+        <pubTime>2017-01-10T08:51:52.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>Blog</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="http://bin.bloggao.cn/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://bin.bloggao.cn/2017/09/21/linux_ubutu_gdm/</loc>
     <lastmod>2017-09-21T03:44:47.757Z</lastmod>
     <data>
@@ -105,28 +147,6 @@
            
              
               <breadCrumb title="javascript" url="http://bin.bloggao.cn/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://bin.bloggao.cn/2017/01/10/hexo_sitemap/</loc>
-    <lastmod>2017-01-13T02:19:28.001Z</lastmod>
-    <data>
-        <display>
-        <title>hexo 添加百度谷歌收录sitemap</title>
-        <pubTime>2017-01-10T08:51:52.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-        <tag>Blog</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo" url="http://bin.bloggao.cn/categories/hexo/"/>
           
         </display>
     </data>
@@ -357,9 +377,9 @@
         <title>如何在linux上使用hexo搭建git博客</title>
         <pubTime>2016-09-30T09:48:37.000Z</pubTime>
         
-        <tag>linux</tag>
-         
         <tag>hexo</tag>
+         
+        <tag>linux</tag>
          
         <tag>nodejs</tag>
          
