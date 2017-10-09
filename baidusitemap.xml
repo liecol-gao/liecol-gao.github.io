@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://bin.bloggao.cn/2017/10/09/linux_locale/</loc>
+    <lastmod>2017-10-09T08:55:30.908Z</lastmod>
+    <data>
+        <display>
+        <title>locale修改linux语言环境</title>
+        <pubTime>2017-10-09T08:39:15.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://bin.bloggao.cn/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://bin.bloggao.cn/2017/09/27/linux_ipset/</loc>
     <lastmod>2017-09-27T09:26:01.785Z</lastmod>
     <data>
@@ -377,9 +397,9 @@
         <title>如何在linux上使用hexo搭建git博客</title>
         <pubTime>2016-09-30T09:48:37.000Z</pubTime>
         
-        <tag>hexo</tag>
-         
         <tag>linux</tag>
+         
+        <tag>hexo</tag>
          
         <tag>nodejs</tag>
          

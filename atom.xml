@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://bin.bloggao.cn/"/>
-  <updated>2017-09-27T09:26:01.785Z</updated>
+  <updated>2017-10-09T08:55:30.908Z</updated>
   <id>http://bin.bloggao.cn/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>locale修改linux语言环境</title>
+    <link href="http://bin.bloggao.cn/2017/10/09/linux_locale/"/>
+    <id>http://bin.bloggao.cn/2017/10/09/linux_locale/</id>
+    <published>2017-10-09T08:39:15.000Z</published>
+    <updated>2017-10-09T08:55:30.908Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近用python脚本做文件写入，进vim看是乱码，以为是自己编码没处理好，处理后，发现打开还是不对。<br>然后用tail，cat发现又没毛病，而且vim打开所有文件写中文都是如此。<br>用locale查看了一下当前的语言环境。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">locale: Cannot set LC_CTYPE to default locale: No such file or directory</div><div class="line">locale: Cannot set LC_MESSAGES to default locale: No such file or directory</div><div class="line">locale: Cannot set LC_ALL to default locale: No such file or directory</div><div class="line">LANG=zh_CN.UTF-8</div><div class="line">LANGUAGE=zh_CN:zh</div><div class="line">LC_CTYPE=&quot;zh_CN.UTF-8&quot;</div><div class="line">LC_NUMERIC=zh_CN</div><div class="line">LC_TIME=zh_CN</div><div class="line">LC_COLLATE=&quot;zh_CN.UTF-8&quot;</div><div class="line">LC_MONETARY=zh_CN</div><div class="line">LC_MESSAGES=&quot;zh_CN.UTF-8&quot;</div><div class="line">LC_PAPER=zh_CN</div><div class="line">LC_NAME=zh_CN</div><div class="line">LC_ADDRESS=zh_CN</div><div class="line">LC_TELEPHONE=zh_CN</div><div class="line">LC_MEASUREMENT=zh_CN</div><div class="line">LC_IDENTIFICATION=zh_CN</div><div class="line">LC_ALL=</div></pre></td></tr></table></figure></p>
+<h3 id="出现如下错误"><a href="#出现如下错误" class="headerlink" title="出现如下错误"></a>出现如下错误</h3><ul>
+<li>locale: Cannot set LC_CTYPE to default locale: No such file or directory</li>
+<li>locale: Cannot set LC_MESSAGES to default locale: No such file or directory</li>
+<li>locale: Cannot set LC_ALL to default locale: No such file or directory<a id="more"></a>
+</li>
+</ul>
+<p>再查看一下，系统安装的locale<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">locale -a</div><div class="line">locale: Cannot set LC_CTYPE to default locale: No such file or directory</div><div class="line">locale: Cannot set LC_MESSAGES to default locale: No such file or directory</div><div class="line">locale: Cannot set LC_COLLATE to default locale: No such file or directory</div><div class="line">C</div><div class="line">C.UTF-8</div><div class="line">POSIX</div><div class="line">en_US.utf8</div><div class="line">zh_CN</div><div class="line">zh_CN.gb2312</div></pre></td></tr></table></figure></p>
+<p>果然，没有对应的zh_CN.UTF-8</p>
+<p>安装zh_CN.UTF-8<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo locale-gen zh_CN.UTF-8</div></pre></td></tr></table></figure></p>
+<p>locale再次查看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">LANG=zh_CN.UTF-8</div><div class="line">LANGUAGE=zh_CN:zh</div><div class="line">LC_CTYPE=&quot;zh_CN.UTF-8&quot;</div><div class="line">LC_NUMERIC=zh_CN</div><div class="line">LC_TIME=zh_CN</div><div class="line">LC_COLLATE=&quot;zh_CN.UTF-8&quot;</div><div class="line">LC_MONETARY=zh_CN</div><div class="line">LC_MESSAGES=&quot;zh_CN.UTF-8&quot;</div><div class="line">LC_PAPER=zh_CN</div><div class="line">LC_NAME=zh_CN</div><div class="line">LC_ADDRESS=zh_CN</div><div class="line">LC_TELEPHONE=zh_CN</div><div class="line">LC_MEASUREMENT=zh_CN</div><div class="line">LC_IDENTIFICATION=zh_CN</div><div class="line">LC_ALL=</div></pre></td></tr></table></figure></p>
+<p>最后vim进脚本一看，不再继续乱码。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近用python脚本做文件写入，进vim看是乱码，以为是自己编码没处理好，处理后，发现打开还是不对。&lt;br&gt;然后用tail，cat发现又没毛病，而且vim打开所有文件写中文都是如此。&lt;br&gt;用locale查看了一下当前的语言环境。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;locale: Cannot set LC_CTYPE to default locale: No such file or directory&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;locale: Cannot set LC_MESSAGES to default locale: No such file or directory&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;locale: Cannot set LC_ALL to default locale: No such file or directory&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;LANG=zh_CN.UTF-8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;LANGUAGE=zh_CN:zh&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;LC_CTYPE=&amp;quot;zh_CN.UTF-8&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;LC_NUMERIC=zh_CN&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;LC_TIME=zh_CN&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;LC_COLLATE=&amp;quot;zh_CN.UTF-8&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;LC_MONETARY=zh_CN&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;LC_MESSAGES=&amp;quot;zh_CN.UTF-8&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;LC_PAPER=zh_CN&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;LC_NAME=zh_CN&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;LC_ADDRESS=zh_CN&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;LC_TELEPHONE=zh_CN&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;LC_MEASUREMENT=zh_CN&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;LC_IDENTIFICATION=zh_CN&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;LC_ALL=&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;出现如下错误&quot;&gt;&lt;a href=&quot;#出现如下错误&quot; class=&quot;headerlink&quot; title=&quot;出现如下错误&quot;&gt;&lt;/a&gt;出现如下错误&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;locale: Cannot set LC_CTYPE to default locale: No such file or directory&lt;/li&gt;
+&lt;li&gt;locale: Cannot set LC_MESSAGES to default locale: No such file or directory&lt;/li&gt;
+&lt;li&gt;locale: Cannot set LC_ALL to default locale: No such file or directory
+    
+    </summary>
+    
+      <category term="linux" scheme="http://bin.bloggao.cn/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://bin.bloggao.cn//tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>linux修改ip设置</title>
@@ -807,56 +845,6 @@
       <category term="coding" scheme="http://bin.bloggao.cn//tags/coding/"/>
     
       <category term="Blog" scheme="http://bin.bloggao.cn//tags/Blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何在linux上使用hexo搭建git博客</title>
-    <link href="http://bin.bloggao.cn/2016/09/30/linux_hexo_blog_git/"/>
-    <id>http://bin.bloggao.cn/2016/09/30/linux_hexo_blog_git/</id>
-    <published>2016-09-30T09:48:37.000Z</published>
-    <updated>2017-01-04T03:33:10.761Z</updated>
-    
-    <content type="html"><![CDATA[<p>之前在windows上安装了hexo推送github，但是由于经常不在一个电脑上操作，修改比较麻烦<br>所以为了偷懒，在linux服务器上也装了一个，方便使用。<br>中间遇到一些和windows上不同的问题，在这做一些相应的记录。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install git</div></pre></td></tr></table></figure></p>
-<p>由于我的是Ubuntu,所以最初我采用了apt-get的方式。<br>当时我可能由于长时间没有安装一些软件，导致报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">failed to fetch from registry: hexo</div></pre></td></tr></table></figure></p>
-<p>如果有朋友同样遇到，解决办法为：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">先update一下：sudo apt-get update</div></pre></td></tr></table></figure></p>
-<p>安装nodejs：<br>我当时也采用的是apt-get方式，不过后面就报npm的问题，之后我便卸载，采用curl的模式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -sL https://deb.nodesource.com/setup | sudo bash -</div></pre></td></tr></table></figure></p>
-<p>之后再<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install -y nodejs</div></pre></td></tr></table></figure></p>
-<p>则没有再出现npm的问题<br>安装hexo<br>最初我以为和windows上显示一样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g hexo</div></pre></td></tr></table></figure></p>
-<p>采用这种方式，但是却显示此包不再维护：This package is no longer maintained<br>我就搜了一下，发现需要：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install hexo-cli -g</div></pre></td></tr></table></figure></p>
-<p>hexo 成功安装<br>然后再mkdir到需要放置的路径下<br>初始化hexo：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure></p>
-<p>在这我不做hexo内容描述，以后有时间会写hexo的一些细节。<br>生成静态页：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate(hexo g)</div><div class="line">开启服务：</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo server</div></pre></td></tr></table></figure>
-<p>如果发现进程被占用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo server -p 进程号</div></pre></td></tr></table></figure></p>
-<p>如果发现服务ok，则hexo基本没啥问题了，都是根据需要处理细节<br>安装git：<br>最初我同样采用apt-get发现也并不好用,可能因为版本太老了，hexo deploy显示没有找到git<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install git</div></pre></td></tr></table></figure></p>
-<p>于是我又开始卸载<br>继续采用第二种方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget http://soft.itbulu.com/git/git-2.4.6.tar.gz</div></pre></td></tr></table></figure></p>
-<p>下载包后开始解压<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -zxvf git-2.4.6.tar.gz</div></pre></td></tr></table></figure></p>
-<p>进入目录开始安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd git-2.4.6/</div><div class="line">make prefix=/usr/local/git all(我将其安装在/usr/local/git目录下)</div><div class="line">sudo make prefix=/usr/local/git install</div></pre></td></tr></table></figure></p>
-<p>git –version查看一下版本，发现并不是2.4.6,它默认使用了”/usr/bin”下的git<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ whereis git</div><div class="line">git: /usr/bin/git /usr/local/git /usr/share/man/man1/git.1.gz</div></pre></td></tr></table></figure></p>
-<p>只能修改环境变量，替换”/usr/bin”下的git，可以修改“/etc/profile”文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/profile</div></pre></td></tr></table></figure></p>
-<p>找到PATH，追加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PATH=/usr/local/git/bin</div></pre></td></tr></table></figure></p>
-<p>source命令应用修改。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source /etc/profile</div></pre></td></tr></table></figure></p>
-<p>版本搞定，再次去hexo d发现换了个错，其实是忘了执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
-<p>友情提醒:hexo里git的地址不能写错了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">repo: https://github.com/git-name/git-name.github.io.git</div></pre></td></tr></table></figure></p>
-<p>再次提交终于搞定，一波三折。<br>create by<br>liecol-晓斌<br>2016-09-30</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;之前在windows上安装了hexo推送github，但是由于经常不在一个电脑上操作，修改比较麻烦&lt;br&gt;所以为了偷懒，在linux服务器上也装了一个，方便使用。&lt;br&gt;中间遇到一些和windows上不同的问题，在这做一些相应的记录。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo apt-get install git&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;由于我的是Ubuntu,所以最初我采用了apt-get的方式。&lt;br&gt;当时我可能由于长时间没有安装一些软件，导致报错：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;failed to fetch from registry: hexo&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;如果有朋友同样遇到，解决办法为：&lt;br&gt;
-    
-    </summary>
-    
-      <category term="hexo" scheme="http://bin.bloggao.cn/categories/hexo/"/>
-    
-    
-      <category term="hexo" scheme="http://bin.bloggao.cn//tags/hexo/"/>
-    
-      <category term="linux" scheme="http://bin.bloggao.cn//tags/linux/"/>
-    
-      <category term="nodejs" scheme="http://bin.bloggao.cn//tags/nodejs/"/>
     
   </entry>
   
