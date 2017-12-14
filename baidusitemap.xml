@@ -4,8 +4,30 @@
 
     
   <url>
+    <loc>http://bin.bloggao.cn/2017/01/11/chrome_SwitchyOmega/</loc>
+    <lastmod>2017-12-14T10:48:26.891Z</lastmod>
+    <data>
+        <display>
+        <title>chrome通过SwitchyOmega配置代理</title>
+        <pubTime>2017-01-11T09:56:30.000Z</pubTime>
+        
+        <tag>chrome</tag>
+         
+        <tag>google</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://bin.bloggao.cn/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://bin.bloggao.cn/2017/12/13/python_requests/</loc>
-    <lastmod>2017-12-14T10:30:17.939Z</lastmod>
+    <lastmod>2017-12-14T10:47:54.203Z</lastmod>
     <data>
         <display>
         <title>Requests 一款实用的python http库</title>
@@ -189,28 +211,6 @@
            
              
               <breadCrumb title="javascript" url="http://bin.bloggao.cn/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://bin.bloggao.cn/2017/01/11/chrome_SwitchyOmega/</loc>
-    <lastmod>2017-01-11T10:31:58.160Z</lastmod>
-    <data>
-        <display>
-        <title>chrome通过SwitchyOmega配置代理</title>
-        <pubTime>2017-01-11T09:56:30.000Z</pubTime>
-        
-        <tag>chrome</tag>
-         
-        <tag>Google</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux" url="http://bin.bloggao.cn/categories/linux/"/>
           
         </display>
     </data>

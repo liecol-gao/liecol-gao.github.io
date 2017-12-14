@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://bin.bloggao.cn/2017/01/11/chrome_SwitchyOmega/</loc>
+    
+    <lastmod>2017-12-14T10:48:26.891Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://bin.bloggao.cn/2017/12/13/python_requests/</loc>
     
-    <lastmod>2017-12-14T10:30:17.939Z</lastmod>
+    <lastmod>2017-12-14T10:47:54.203Z</lastmod>
     
   </url>
   
@@ -61,13 +68,6 @@
     <loc>http://bin.bloggao.cn/2017/04/23/date_parse/</loc>
     
     <lastmod>2017-05-15T06:03:01.111Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://bin.bloggao.cn/2017/01/11/chrome_SwitchyOmega/</loc>
-    
-    <lastmod>2017-01-11T10:31:58.160Z</lastmod>
     
   </url>
   
