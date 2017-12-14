@@ -4,28 +4,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>windows/python/virtualenv环境安装pyramid | Liecol&#39;s Blog</title>
+  <title>Requests 一款实用的python http库 | Liecol&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="KD9n1FRuBzVpoapy6t7dZdow7NG_SI4RKZ7dEPjkr0o" />
-  <meta name="description" content="关于win-py-vir的环境安装技巧在之前就有记录(详情参考windows＋Python＋virtualenv环境配置)
-这里主要讲在虚拟环境下如何安装python框架pyramid
-pyramid采用mako模板引擎,SQLAlchemy ORM工具，可配置多样数据库,如sqlite，mysql等(如若有时间，以后也会整理出一份文档)
-在安装python库pip或者easy_install后">
+  <meta name="description" content="Requests 作为Python的一款实用型http库，一直深受好评。让人用完就不太想使用其他的http库。对于http不太了解的开发，采用其他库，会经常出现安全隐患，性能差，不经意造轮子，代码冗余等病状，所以，在笔者看来Requests还是比较友好和谐的一款http库。接下来，我们来看一下Requests和非Requests的对比。
+非Requests：12345678910111213141">
 <meta property="og:type" content="article">
-<meta property="og:title" content="windows/python/virtualenv环境安装pyramid">
-<meta property="og:url" content="http://bin.bloggao.cn/2016/01/11/windows_python_virtualenv_pyramid/index.html">
+<meta property="og:title" content="Requests 一款实用的python http库">
+<meta property="og:url" content="http://bin.bloggao.cn/2017/12/13/python_requests/index.html">
 <meta property="og:site_name" content="Liecol's Blog">
-<meta property="og:description" content="关于win-py-vir的环境安装技巧在之前就有记录(详情参考windows＋Python＋virtualenv环境配置)
-这里主要讲在虚拟环境下如何安装python框架pyramid
-pyramid采用mako模板引擎,SQLAlchemy ORM工具，可配置多样数据库,如sqlite，mysql等(如若有时间，以后也会整理出一份文档)
-在安装python库pip或者easy_install后">
-<meta property="og:updated_time" content="2017-01-04T03:28:39.945Z">
+<meta property="og:description" content="Requests 作为Python的一款实用型http库，一直深受好评。让人用完就不太想使用其他的http库。对于http不太了解的开发，采用其他库，会经常出现安全隐患，性能差，不经意造轮子，代码冗余等病状，所以，在笔者看来Requests还是比较友好和谐的一款http库。接下来，我们来看一下Requests和非Requests的对比。
+非Requests：12345678910111213141">
+<meta property="og:updated_time" content="2017-12-14T10:30:17.939Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="windows/python/virtualenv环境安装pyramid">
-<meta name="twitter:description" content="关于win-py-vir的环境安装技巧在之前就有记录(详情参考windows＋Python＋virtualenv环境配置)
-这里主要讲在虚拟环境下如何安装python框架pyramid
-pyramid采用mako模板引擎,SQLAlchemy ORM工具，可配置多样数据库,如sqlite，mysql等(如若有时间，以后也会整理出一份文档)
-在安装python库pip或者easy_install后">
+<meta name="twitter:title" content="Requests 一款实用的python http库">
+<meta name="twitter:description" content="Requests 作为Python的一款实用型http库，一直深受好评。让人用完就不太想使用其他的http库。对于http不太了解的开发，采用其他库，会经常出现安全隐患，性能差，不经意造轮子，代码冗余等病状，所以，在笔者看来Requests还是比较友好和谐的一款http库。接下来，我们来看一下Requests和非Requests的对比。
+非Requests：12345678910111213141">
   
     <link rel="alternative" href="/atom.xml" title="Liecol&#39;s Blog" type="application/atom+xml">
   
@@ -99,10 +93,10 @@ pyramid采用mako模板引擎,SQLAlchemy ORM工具，可配置多样数据库,�
   </div>
 </header>
     <div class="outer">
-      <section id="main"><article id="post-windows_python_virtualenv_pyramid" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-python_requests" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/01/11/windows_python_virtualenv_pyramid/" class="article-date">
-  <time datetime="2016-01-11T09:46:29.000Z" itemprop="datePublished">2016-01-11</time>
+    <a href="/2017/12/13/python_requests/" class="article-date">
+  <time datetime="2017-12-13T10:08:15.000Z" itemprop="datePublished">2017-12-13</time>
 </a>
     
   <div class="article-category">
@@ -117,7 +111,7 @@ pyramid采用mako模板引擎,SQLAlchemy ORM工具，可配置多样数据库,�
         
   
     <h1 class="article-title" itemprop="name">
-      windows/python/virtualenv环境安装pyramid
+      Requests 一款实用的python http库
     </h1>
   
 
@@ -125,76 +119,61 @@ pyramid采用mako模板引擎,SQLAlchemy ORM工具，可配置多样数据库,�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>关于win-py-vir的环境安装技巧在之前就有记录(详情参考windows＋Python＋virtualenv环境配置)</p>
-<p>这里主要讲在虚拟环境下如何安装python框架pyramid</p>
-<p>pyramid采用<code>mako</code>模板引擎,<code>SQLAlchemy</code> ORM工具，可配置多样数据库,如<code>sqlite</code>，<code>mysql</code>等(如若有时间，以后也会整理出一份文档)</p>
-<p>在安装python库<code>pip</code>或者<code>easy_install</code>后</p>
-<p>采用<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pip install pyramid ==<span class="number">1.4</span>或者</div><div class="line"></div><div class="line">easy_install pyramid == <span class="number">1.4</span></div></pre></td></tr></table></figure></p>
-<p>后面的1.4是版本，如若不加则采用最新版</p>
-<p>但是pyramid不支持高版本对低版本的兼容，所以谨慎处理<br><a id="more"></a><br>linux采用yum或者apt-get处理，这里不做详细介绍</p>
-<p>安装之后，需要进入虚拟环境<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Scripts\activate</div></pre></td></tr></table></figure></p>
-<p>执行在路径Script下activate</p>
-<p>开启环境后可建立项目(建议项目和环境文件夹分开，因为如若环境版本不可控，可删除从新载入项目)</p>
-<p>创建项目<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pcreate -s starter myproject(项目名称)</div><div class="line"></div><div class="line">pcreate -s alchemy C:\simpleCRUD（项目名称）</div></pre></td></tr></table></figure></p>
-<p>如果要分离的话前面加上路径即可。</p>
-<p>在创建项目后，还需要增加项目的内置包<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python setup.py develop</div></pre></td></tr></table></figure></p>
-<p>然后进入项目启动项目<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pserve development.ini</div></pre></td></tr></table></figure></p>
-<p>目录安装完成，大体说一下文件作用，但不尽详细。</p>
-<p>这里我们首先看一下Myroject这个项目根目录下的几个文件：</p>
-<ol>
-<li><p>CHANGES.txt</p>
-<p> 本项目的变更文件，推荐采用ReST格式编写</p>
-</li>
-<li><p>RADME.txt</p>
-<p> 项目描述文件，推荐采用ReST格式编写</p>
-</li>
-<li><p>development.ini</p>
-<p> 开发时参数配置文件</p>
-</li>
-<li><p>production.ini</p>
-<p> 运行时参数配置文件</p>
-</li>
-<li><p>setup.cfg</p>
-<p> 这是setup.py使用的配置文件</p>
-</li>
-<li><p>MANIFEST.in</p>
-<p> 打包清单，列出了打包时需要一起打到python程序包中的文件</p>
-</li>
-<li><p>setup.py</p>
-<p> 标准的setuptools的setup.py文件，用于测试、分发该项目</p>
-</li>
-</ol>
-<p>在MyProject项目目录中，还有一个叫myproject的包目录，这个目录下包含了如下内容</p>
-<ol>
-<li><p><strong>init</strong>.py</p>
-<p> 初始化文件。包含了一些启动本项目的指令。</p>
-</li>
-<li><p>templates</p>
-<p> 存放开发模板文件的目录</p>
-</li>
-<li><p>tests.py</p>
-<p> 存放单元测试</p>
-</li>
-<li><p>views.py</p>
-<p> 存放可调用视图</p>
-</li>
-</ol>
-<p>各版本不一致，但主体文件差不多都是这样，也可以自行增加view文件夹开发。</p>
-<p>create By<br>liecol-晓斌</p>
+        <p>Requests 作为Python的一款实用型http库，一直深受好评。让人用完就不太想使用其他的http库。<br>对于http不太了解的开发，采用其他库，会经常出现安全隐患，性能差，不经意造轮子，代码冗余等病状，<br>所以，在笔者看来Requests还是比较友好和谐的一款http库。<br>接下来，我们来看一下Requests和非Requests的对比。</p>
+<h5 id="非Requests："><a href="#非Requests：" class="headerlink" title="非Requests："></a>非Requests：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env python</div><div class="line"># -*- coding: utf-8 -*-</div><div class="line"></div><div class="line">import urllib2</div><div class="line"></div><div class="line">gh_url = &apos;https://api.github.com&apos;</div><div class="line"></div><div class="line">req = urllib2.Request(gh_url)</div><div class="line"></div><div class="line">password_manager = urllib2.HTTPPasswordMgrWithDefaultRealm()</div><div class="line">password_manager.add_password(None, gh_url, &apos;user&apos;, &apos;pass&apos;)</div><div class="line"></div><div class="line">auth_manager = urllib2.HTTPBasicAuthHandler(password_manager)</div><div class="line">opener = urllib2.build_opener(auth_manager)</div><div class="line"></div><div class="line">urllib2.install_opener(opener)</div><div class="line"></div><div class="line">handler = urllib2.urlopen(req)</div><div class="line"></div><div class="line">print handler.getcode()</div><div class="line">print handler.headers.getheader(&apos;content-type&apos;)</div><div class="line"></div><div class="line"># ------</div><div class="line"># 200</div><div class="line"># &apos;application/json&apos;</div></pre></td></tr></table></figure>
+<h5 id="Requests："><a href="#Requests：" class="headerlink" title="Requests："></a>Requests：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">r = requests.get(&apos;https://api.github.com/users&apos;, auth=(&apos;user&apos;, &apos;pass&apos;))</div><div class="line">print r.status_code</div><div class="line"># ------</div><div class="line"># 200</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>Requests 完全满足目前的web需求。</p>
+<ul>
+<li>Keep-Alive &amp; 连接池</li>
+<li>国际化域名和 URL</li>
+<li>带持久 Cookie 的会话</li>
+<li>浏览器式的 SSL 认证</li>
+<li>自动内容解码</li>
+<li>基本/摘要式的身份认证</li>
+<li>优雅的 key/value Cookie</li>
+<li>自动解压</li>
+<li>Unicode 响应体</li>
+<li>HTTP(S) 代理支持</li>
+<li>文件分块上传</li>
+<li>流下载</li>
+<li>连接超时</li>
+<li>分块请求</li>
+<li>支持 .netrc</li>
+</ul>
+<p>在这里，笔者不做安装介绍。主要介绍一下如何快速上手。</p>
+<h5 id="发送请求："><a href="#发送请求：" class="headerlink" title="发送请求："></a>发送请求：</h5><p>GET, POST , PUT, DELETE, HEAD, OPTIONS 发送方式一应俱全。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">r = requests.get(&apos;https://github.com/timeline.json&apos;)</div><div class="line">r = requests.post(&quot;https://github.com/timeline.json&quot;)</div><div class="line">r = requests.put(&quot;https://github.com/timeline.json&quot;)</div><div class="line">r = requests.delete(&quot;https://github.com/timeline.json&quot;)</div><div class="line">r = requests.head(&quot;https://github.com/timeline.json&quot;)</div><div class="line">r = requests.options(&quot;https://github.com/timeline.json&quot;)</div></pre></td></tr></table></figure></p>
+<h5 id="传递URL参数"><a href="#传递URL参数" class="headerlink" title="传递URL参数"></a>传递URL参数</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">payload = &#123;&apos;key1&apos;: &apos;value1&apos;, &apos;key2&apos;: &apos;value2&apos;&#125; #可以采用dict的方式。</div><div class="line">r = requests.get(&quot;http://httpbin.org/get&quot;, params=payload)</div></pre></td></tr></table></figure>
+<p>解析出URL，我们就会发现URL已被正确编码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">print(r.url)</div><div class="line">http://httpbin.org/get?key2=value2&amp;key1=value1</div></pre></td></tr></table></figure></p>
+<h5 id="响应内容"><a href="#响应内容" class="headerlink" title="响应内容"></a>响应内容</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">import requests</div><div class="line">r = requests.get(&apos;https://github.com/timeline.json&apos;)</div><div class="line">print r.text</div><div class="line">u&apos;[&#123;&quot;repository&quot;:&#123;&quot;open_issues&quot;:0,&quot;url&quot;:&quot;https://github.com/...</div></pre></td></tr></table></figure>
+<p>Requests会自动解码来自服务器的内容,大多数unicode字符集都能被它无缝解码。</p>
+<h5 id="JSON-响应内容"><a href="#JSON-响应内容" class="headerlink" title="JSON 响应内容"></a>JSON 响应内容</h5><p>Requests中也有一个内置的JSON解码器，可以帮助处理JSON数据：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">r = requests.get(&apos;https://github.com/timeline.json&apos;)</div><div class="line">r.json() #如果JSON解码失败,r.json()就会抛出一个异常。</div></pre></td></tr></table></figure></p>
+<h5 id="定制请求头"><a href="#定制请求头" class="headerlink" title="定制请求头"></a>定制请求头</h5><p>和参数一样，可以采用dict的方式加入请求头数据。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">url = &apos;https://github.com/timeline.json&apos;</div><div class="line">headers = &#123;&apos;user-agent&apos;: &apos;my-app/0.0.1&apos;&#125;</div><div class="line">r = requests.get(url, headers=headers)</div></pre></td></tr></table></figure></p>
+<p>注意：</p>
+<ul>
+<li>如果被重定向，定制的请求头就没啥用，会被删掉。</li>
+<li>如果采用代理，同上。</li>
+<li>Content-Length 会存在被改写的情况。</li>
+</ul>
+<h5 id="响应状态码"><a href="#响应状态码" class="headerlink" title="响应状态码"></a>响应状态码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">r = requests.get(&apos;https://github.com/timeline.json&apos;)</div><div class="line">r.status_code</div><div class="line">200</div></pre></td></tr></table></figure>
+<h5 id="响应头"><a href="#响应头" class="headerlink" title="响应头"></a>响应头</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">r.headers</div><div class="line">&#123;</div><div class="line">    &apos;content-encoding&apos;: &apos;gzip&apos;,</div><div class="line">    &apos;transfer-encoding&apos;: &apos;chunked&apos;,</div><div class="line">    &apos;connection&apos;: &apos;close&apos;,</div><div class="line">    &apos;server&apos;: &apos;nginx/1.0.4&apos;,</div><div class="line">    &apos;x-runtime&apos;: &apos;148ms&apos;,</div><div class="line">    &apos;etag&apos;: &apos;&quot;e1ca502697e5c9317743dc078f67693f&quot;&apos;,</div><div class="line">    &apos;content-type&apos;: &apos;application/json&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="获取Cookie"><a href="#获取Cookie" class="headerlink" title="获取Cookie"></a>获取Cookie</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">url = &apos;https://github.com/timeline.json&apos;</div><div class="line">r = requests.get(url)</div><div class="line">r.cookies[&apos;example_cookie_name&apos;]</div><div class="line">&apos;example_cookie_value&apos;</div></pre></td></tr></table></figure>
+<h5 id="发送Cookie"><a href="#发送Cookie" class="headerlink" title="发送Cookie"></a>发送Cookie</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">url = &apos;https://github.com/timeline.json&apos;</div><div class="line">cookies = dict(cookies_are=&apos;working&apos;)</div><div class="line">r = requests.get(url, cookies=cookies)</div><div class="line">r.text</div></pre></td></tr></table></figure>
+<h5 id="超时"><a href="#超时" class="headerlink" title="超时"></a>超时</h5><p>我们可以告诉requests在经过以timeout参数设定的秒数时间之后停止等待响应。<br>timeout 仅对连接过程有效，与响应体的下载无关。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">requests.get(&apos;http://github.com&apos;, timeout=0.001)</div></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bin.bloggao.cn/2016/01/11/windows_python_virtualenv_pyramid/" data-id="cjb4xc08h00131gdekreauokm" class="article-share-link" data-share="baidu" data-title="windows/python/virtualenv环境安装pyramid">分享到</a>
+        <a data-url="http://bin.bloggao.cn/2017/12/13/python_requests/" data-id="cjb4xc082000q1gdes38e7tkl" class="article-share-link" data-share="baidu" data-title="Requests 一款实用的python http库">分享到</a>
       
 
       
-        <a href="http://bin.bloggao.cn/2016/01/11/windows_python_virtualenv_pyramid/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://bin.bloggao.cn/2017/12/13/python_requests/#ds-thread" class="article-comment-link">评论</a>
       
 
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pyramid/">pyramid</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/virtualenv/">virtualenv</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
 
     </footer>
   </div>
@@ -206,11 +185,11 @@ pyramid采用mako模板引擎,SQLAlchemy ORM工具，可配置多样数据库,�
     <b>注:</b> 转载请注明出处,本文作者为
     <a style="color:#e32d40;" href="/index.html" target="_blank" title="Liecol Gao">Liecol Gao</a>,
     本文标题为
-    <a style="color:#e32d40;" href="/2016/01/11/windows_python_virtualenv_pyramid/" target="_blank" title="windows/python/virtualenv环境安装pyramid">windows/python/virtualenv环境安装pyramid</a>
+    <a style="color:#e32d40;" href="/2017/12/13/python_requests/" target="_blank" title="Requests 一款实用的python http库">Requests 一款实用的python http库</a>
     </div>
     <div>
     &nbsp;&nbsp;&nbsp;&nbsp;本文链接为
-    <a style="color:#e32d40;" href="/2016/01/11/windows_python_virtualenv_pyramid/" target="_blank" title="windows/python/virtualenv环境安装pyramid">http://bin.bloggao.cn/2016/01/11/windows_python_virtualenv_pyramid/</a>.
+    <a style="color:#e32d40;" href="/2017/12/13/python_requests/" target="_blank" title="Requests 一款实用的python http库">http://bin.bloggao.cn/2017/12/13/python_requests/</a>.
     </div>
     </div>
     <! -- 添加版权信息 -->
@@ -218,19 +197,10 @@ pyramid采用mako模板引擎,SQLAlchemy ORM工具，可配置多样数据库,�
     
 <nav id="article-nav">
   
-    <a href="/2016/02/14/BINARY_mysql/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">
-        
-          BINARY解决数据大小写敏感及部分查询问题
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/01/10/windows_Python_virtualenv/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/10/09/linux_locale/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">windows＋Python＋virtualenv环境配置</div>
+      <div class="article-nav-title">locale修改linux语言环境</div>
     </a>
   
 </nav>
@@ -240,7 +210,7 @@ pyramid采用mako模板引擎,SQLAlchemy ORM工具，可配置多样数据库,�
 
 
   <!--PC和WAP自适应版-->
-  <div id="SOHUCS" sid="windows/python/virtualenv环境安装pyramid" ></div> 
+  <div id="SOHUCS" sid="Requests 一款实用的python http库" ></div> 
   <script type="text/javascript"> 
   (function(){ 
   var appid = 'cysWveYe9'; 
