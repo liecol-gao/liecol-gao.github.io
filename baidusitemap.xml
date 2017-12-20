@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://bin.bloggao.cn/2017/12/20/python_ftp/</loc>
-    <lastmod>2017-12-20T09:57:50.705Z</lastmod>
+    <lastmod>2017-12-20T10:04:56.729Z</lastmod>
     <data>
         <display>
         <title>如何在Python里使用FTP</title>
@@ -13,7 +13,7 @@
         
         <tag>python</tag>
          
-        <tag>http</tag>
+        <tag>ftp</tag>
          
          
            
@@ -441,9 +441,9 @@
         <title>如何在linux上使用hexo搭建git博客</title>
         <pubTime>2016-09-30T09:48:37.000Z</pubTime>
         
-        <tag>hexo</tag>
-         
         <tag>linux</tag>
+         
+        <tag>hexo</tag>
          
         <tag>nodejs</tag>
          
