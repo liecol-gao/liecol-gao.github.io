@@ -4,18 +4,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | Liecol&#39;s Blog</title>
+  <title>如何在Python里使用FTP | Liecol&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="KD9n1FRuBzVpoapy6t7dZdow7NG_SI4RKZ7dEPjkr0o" />
-  <meta name="description" content="liecol-晓斌的个人网站，技术，源于对生活的分享，所谓迷茫，就是才华配不上梦想。我是liecol，欢迎进入我的个人网站。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Liecol's Blog">
-<meta property="og:url" content="http://bin.bloggao.cn/archives/page/3/index.html">
+  <meta name="description" content="Python作为一款集包大成的语言，自然必不可少ftplib，而ftplib模块就定义了FTP类用于上传或下载文件。123456789101112131415161718192021ftp=FTP() #设置ftp变量ftp.set_debuglevel(2)  #开启调试级别2ftp.connect(&quot;IP&quot;,&quot;port&quot;)  #连接的ftp 地址、端口ftp.login(&quot;user&quot;,&quot;pas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何在Python里使用FTP">
+<meta property="og:url" content="http://bin.bloggao.cn/2017/12/20/python_ftp/index.html">
 <meta property="og:site_name" content="Liecol's Blog">
-<meta property="og:description" content="liecol-晓斌的个人网站，技术，源于对生活的分享，所谓迷茫，就是才华配不上梦想。我是liecol，欢迎进入我的个人网站。">
+<meta property="og:description" content="Python作为一款集包大成的语言，自然必不可少ftplib，而ftplib模块就定义了FTP类用于上传或下载文件。123456789101112131415161718192021ftp=FTP() #设置ftp变量ftp.set_debuglevel(2)  #开启调试级别2ftp.connect(&quot;IP&quot;,&quot;port&quot;)  #连接的ftp 地址、端口ftp.login(&quot;user&quot;,&quot;pas">
+<meta property="og:updated_time" content="2017-12-20T09:57:50.705Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Liecol's Blog">
-<meta name="twitter:description" content="liecol-晓斌的个人网站，技术，源于对生活的分享，所谓迷茫，就是才华配不上梦想。我是liecol，欢迎进入我的个人网站。">
+<meta name="twitter:title" content="如何在Python里使用FTP">
+<meta name="twitter:description" content="Python作为一款集包大成的语言，自然必不可少ftplib，而ftplib模块就定义了FTP类用于上传或下载文件。123456789101112131415161718192021ftp=FTP() #设置ftp变量ftp.set_debuglevel(2)  #开启调试级别2ftp.connect(&quot;IP&quot;,&quot;port&quot;)  #连接的ftp 地址、端口ftp.login(&quot;user&quot;,&quot;pas">
   
     <link rel="alternative" href="/atom.xml" title="Liecol&#39;s Blog" type="application/atom+xml">
   
@@ -89,225 +90,94 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/11/19/php_summary/" class="archive-article-date">
-  <time datetime="2016-11-19T04:22:00.000Z" itemprop="datePublished">11月 19</time>
+      <section id="main"><article id="post-python_ftp" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/20/python_ftp/" class="article-date">
+  <time datetime="2017-12-20T07:57:15.000Z" itemprop="datePublished">2017-12-20</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/19/php_summary/">php常用函数总结</a>
+    <h1 class="article-title" itemprop="name">
+      如何在Python里使用FTP
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Python作为一款集包大成的语言，自然必不可少ftplib，而ftplib模块就定义了FTP类用于上传或下载文件。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">ftp=FTP() <span class="comment">#设置ftp变量</span></div><div class="line">ftp.set_debuglevel(<span class="number">2</span>)  <span class="comment">#开启调试级别2</span></div><div class="line">ftp.connect(<span class="string">"IP"</span>,<span class="string">"port"</span>)  <span class="comment">#连接的ftp 地址、端口</span></div><div class="line">ftp.login(<span class="string">"user"</span>,<span class="string">"passwd"</span>)  <span class="comment">#ftp的用户名、密码</span></div><div class="line">ftp.cmd(<span class="string">"liecol/test"</span>)  <span class="comment">#进入ftp远程目录</span></div><div class="line">bufsize=<span class="number">1024</span>  <span class="comment">#设置的缓冲区大小</span></div><div class="line">file_handle=open(<span class="string">"test.py"</span>,<span class="string">"wb"</span>).write <span class="comment">#以写模式在本地打开文件</span></div><div class="line">ftp.retrbinaly(<span class="string">"RETR test.py"</span>,file_handle,bufsize) <span class="comment">#接收ftp服务器上文件并写入本地文件</span></div><div class="line">ftp.set_debuglevel(<span class="number">0</span>)  <span class="comment">#关闭调试模式</span></div><div class="line">ftp.quit()  <span class="comment">#退出ftp</span></div><div class="line"></div><div class="line">ftp.cwd(path)  <span class="comment">#设置FTP操作的路径</span></div><div class="line">ftp.dir()   <span class="comment">#显示ftp目录下的所有信息</span></div><div class="line">ftp.nlst()  <span class="comment">#获取目录下的文件</span></div><div class="line">ftp.mkd(pathname)  <span class="comment">#新建ftp目录</span></div><div class="line">ftp.pwd()  <span class="comment">#返回当前所在位置</span></div><div class="line">ftp.rmd(dirname)  <span class="comment">#删除远程目录</span></div><div class="line">ftp.delete(filename)  <span class="comment">#删除远程文件</span></div><div class="line">ftp.rename(fromname, toname) <span class="comment">#修改ftp文件名字</span></div><div class="line">ftp.storbinaly(<span class="string">"STOR test.txt"</span>,file_handel,bufsize)  <span class="comment">#上传目标文件</span></div><div class="line">ftp.retrbinary(<span class="string">"RETR test.txt"</span>,file_handel,bufsize)  <span class="comment">#下载FTP文件</span></div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>笔者这边以下载为例获取前一天的文件(yymmdd)：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DownloadFtp</span>:</span></div><div class="line">    ftp = ftplib.FTP()</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, host, port=<span class="string">'21'</span>)</span>:</span></div><div class="line">        <span class="comment"># self.ftp.set_debuglevel(2)</span></div><div class="line">        <span class="comment"># self.ftp.set_pasv(0)</span></div><div class="line">        self.ftp.connect(host, port)</div><div class="line">    </div><div class="line">    <span class="comment"># 登录</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">Login</span><span class="params">(self, username=<span class="string">''</span>, password=<span class="string">''</span>)</span>:</span></div><div class="line">        self.ftp.login(username, password)</div><div class="line"></div><div class="line">    <span class="comment"># 下载单文件</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">DownLoadFile</span><span class="params">(self, LocalFile, RemoteFile, dirpath=<span class="string">""</span>)</span>:</span></div><div class="line">        log.info(<span class="string">"DownLoad File: %s"</span> % RemoteFile)</div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            self.ftp.cwd(dirpath)</div><div class="line">            bufsize = <span class="number">4096</span></div><div class="line">            file_handler = open(LocalFile, <span class="string">'wb'</span>)</div><div class="line">            self.ftp.retrbinary(<span class="string">"RETR %s"</span> % (RemoteFile), file_handler.write, bufsize)</div><div class="line">            self.ftp.set_debuglevel(<span class="number">0</span>)</div><div class="line">            file_handler.close()</div><div class="line">            <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">        <span class="keyword">except</span>:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">    </div><div class="line">    <span class="comment"># 删除文件</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">DelFile</span><span class="params">(self, FileName)</span>:</span></div><div class="line">        log.info(<span class="string">"Del File: %s"</span> % FileName)</div><div class="line">        self.ftp.delete(FileName)</div><div class="line"></div><div class="line">    <span class="comment"># 获取文件夹(未写包含文件夹情况)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">DownLoadFileTree</span><span class="params">(self, LocalDir, RemoteDir, FtpDel=False)</span>:</span></div><div class="line">        <span class="keyword">if</span> os.path.isdir(LocalDir) == <span class="keyword">False</span>:</div><div class="line">            os.makedirs(LocalDir)</div><div class="line">        self.ftp.cwd(RemoteDir)</div><div class="line">        RemoteNames = self.ftp.nlst()</div><div class="line">        <span class="keyword">for</span> file <span class="keyword">in</span> RemoteNames:</div><div class="line">            Local = os.path.join(LocalDir, file)</div><div class="line">            time_format = datetime.today() + timedelta(<span class="number">-30</span>)</div><div class="line">            time_format = time_format.strftime(<span class="string">'%Y%m%d'</span>)</div><div class="line">            <span class="comment"># 未考虑文件名含其他8位数字情况</span></div><div class="line">            file_date = re.findall(<span class="string">r"[1-9]\d*|0"</span>, file)</div><div class="line">            time_yes = datetime.today() + timedelta(<span class="number">-1</span>)</div><div class="line">            time_today = time_yes.strftime(<span class="string">'%Y%m%d'</span>)</div><div class="line">            <span class="comment"># time_today = datetime.today().strftime('%Y%m%d')</span></div><div class="line">            <span class="keyword">if</span> file_date:</div><div class="line">                <span class="keyword">if</span> str(time_format) &gt;= file_date[<span class="number">0</span>] <span class="keyword">and</span> FtpDel:</div><div class="line">                    <span class="comment"># 未考虑dir情况</span></div><div class="line">                    re_del = self.DelFile(file)</div><div class="line">                <span class="keyword">elif</span> str(time_today) == file_date[<span class="number">0</span>]:</div><div class="line">                    self.DownLoadFile(Local, file)</div><div class="line">        self.ftp.cwd(<span class="string">".."</span>)</div><div class="line">        <span class="keyword">return</span></div><div class="line"></div><div class="line">    <span class="comment"># 获取文件信息</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">find</span><span class="params">(self,filename)</span>:</span></div><div class="line">        ftp_f_list = self.ftp.nlst()</div><div class="line">        <span class="keyword">if</span> filename <span class="keyword">in</span> ftp_f_list:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line"></div><div class="line">    <span class="comment"># 关闭</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">close</span><span class="params">(self)</span>:</span></div><div class="line">        self.ftp.quit()</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://bin.bloggao.cn/2017/12/20/python_ftp/" data-id="cjbevxiw5000otode1vfbx8hm" class="article-share-link" data-share="baidu" data-title="如何在Python里使用FTP">分享到</a>
+      
+
+      
+        <a href="http://bin.bloggao.cn/2017/12/20/python_ftp/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
   </div>
+
+  
+    <! -- 添加版权信息 -->
+    <div style="margin-top:20px;">
+    <div>
+    <b>注:</b> 转载请注明出处,本文作者为
+    <a style="color:#e32d40;" href="/index.html" target="_blank" title="Liecol Gao">Liecol Gao</a>,
+    本文标题为
+    <a style="color:#e32d40;" href="/2017/12/20/python_ftp/" target="_blank" title="如何在Python里使用FTP">如何在Python里使用FTP</a>
+    </div>
+    <div>
+    &nbsp;&nbsp;&nbsp;&nbsp;本文链接为
+    <a style="color:#e32d40;" href="/2017/12/20/python_ftp/" target="_blank" title="如何在Python里使用FTP">http://bin.bloggao.cn/2017/12/20/python_ftp/</a>.
+    </div>
+    </div>
+    <! -- 添加版权信息 -->
+
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/13/python_requests/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">Requests 一款实用的python http库</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/11/14/Hexo_Blog_Coding/" class="archive-article-date">
-  <time datetime="2016-11-14T09:08:37.000Z" itemprop="datePublished">11月 14</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/14/Hexo_Blog_Coding/">关于Hexo搭建Blog托管至Coding并显示</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/09/30/linux_hexo_blog_git/" class="archive-article-date">
-  <time datetime="2016-09-30T09:48:37.000Z" itemprop="datePublished">9月 30</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/09/30/linux_hexo_blog_git/">如何在linux上使用hexo搭建git博客</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/07/python_excel/" class="archive-article-date">
-  <time datetime="2016-07-07T08:58:00.000Z" itemprop="datePublished">7月 7</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/07/python_excel/">python导入excel表数据</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/06/12/vpn_install/" class="archive-article-date">
-  <time datetime="2016-06-12T06:22:00.000Z" itemprop="datePublished">6月 12</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/12/vpn_install/">关于vpn的搭建</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/05/10/linux_svn/" class="archive-article-date">
-  <time datetime="2016-05-10T11:02:25.000Z" itemprop="datePublished">5月 10</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/05/10/linux_svn/">linux系统里svn的搭建</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/02/14/BINARY_mysql/" class="archive-article-date">
-  <time datetime="2016-02-14T09:09:27.000Z" itemprop="datePublished">2月 14</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/14/BINARY_mysql/">BINARY解决数据大小写敏感及部分查询问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/11/windows_python_virtualenv_pyramid/" class="archive-article-date">
-  <time datetime="2016-01-11T09:46:29.000Z" itemprop="datePublished">1月 11</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/11/windows_python_virtualenv_pyramid/">windows/python/virtualenv环境安装pyramid</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/10/windows_Python_virtualenv/" class="archive-article-date">
-  <time datetime="2016-01-10T09:44:05.000Z" itemprop="datePublished">1月 10</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/10/windows_Python_virtualenv/">windows＋Python＋virtualenv环境配置</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/11/23/jquery_flexigrid/" class="archive-article-date">
-  <time datetime="2015-11-23T10:02:15.000Z" itemprop="datePublished">11月 23</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/11/23/jquery_flexigrid/">关于flexigrid的初识</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
 
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo; 上一页</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/4/">下一页 &raquo;</a>
-  </nav>
+  <!--PC和WAP自适应版-->
+  <div id="SOHUCS" sid="如何在Python里使用FTP" ></div> 
+  <script type="text/javascript"> 
+  (function(){ 
+  var appid = 'cysWveYe9'; 
+  var conf = 'prod_17d4525b97e67d157e2c5e0a2cedfcd7'; 
+  var width = window.innerWidth || document.documentElement.clientWidth; 
+  if (width < 960) { 
+  window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
 </section>
       
       <aside id="sidebar">
