@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://bin.bloggao.cn/2017/12/21/python_sip/</loc>
+    <lastmod>2017-12-25T10:50:40.444Z</lastmod>
+    <data>
+        <display>
+        <title>Requests对摘要认证的处理</title>
+        <pubTime>2017-12-21T10:25:50.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>http</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://bin.bloggao.cn/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://bin.bloggao.cn/2017/12/20/python_ftp/</loc>
     <lastmod>2017-12-20T10:04:56.729Z</lastmod>
     <data>
