@@ -1,4 +1,4 @@
+http://bin.bloggao.cn/2018/04/25/mysql_foreign_key/
 http://bin.bloggao.cn/2017/12/21/python_sip/
 http://bin.bloggao.cn/2017/12/20/python_ftp/
 http://bin.bloggao.cn/2017/12/13/python_requests/
-http://bin.bloggao.cn/2017/10/09/linux_locale/

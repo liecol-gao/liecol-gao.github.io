@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Mysql 外键 Foreign Key | Liecol&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="KD9n1FRuBzVpoapy6t7dZdow7NG_SI4RKZ7dEPjkr0o" />
+  <meta name="description" content="昨晚被朋友问到一个有关mysql外键的问题,问我删除外键再重新创建另一张表的外键，会提示key值重复，一下子问懵了，潜意识告诉我不应该，但是自己做了一下操作确实如此，最后发现是建立了索引的缘故。故，在此记录一下，写一下关于我的理解。既然做记录，这边就简述一下外键：
+
+如果一张表中有一个非主键的字段指向了别一张表中的主键，就将该字段叫做外键。
+1.对子表(外键所在的表)的作用：子表在进行写操作的时候">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mysql 外键 Foreign Key">
+<meta property="og:url" content="http://bin.bloggao.cn/2018/04/25/mysql_foreign_key/index.html">
+<meta property="og:site_name" content="Liecol's Blog">
+<meta property="og:description" content="昨晚被朋友问到一个有关mysql外键的问题,问我删除外键再重新创建另一张表的外键，会提示key值重复，一下子问懵了，潜意识告诉我不应该，但是自己做了一下操作确实如此，最后发现是建立了索引的缘故。故，在此记录一下，写一下关于我的理解。既然做记录，这边就简述一下外键：
+
+如果一张表中有一个非主键的字段指向了别一张表中的主键，就将该字段叫做外键。
+1.对子表(外键所在的表)的作用：子表在进行写操作的时候">
+<meta property="og:updated_time" content="2018-04-25T04:34:20.890Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mysql 外键 Foreign Key">
+<meta name="twitter:description" content="昨晚被朋友问到一个有关mysql外键的问题,问我删除外键再重新创建另一张表的外键，会提示key值重复，一下子问懵了，潜意识告诉我不应该，但是自己做了一下操作确实如此，最后发现是建立了索引的缘故。故，在此记录一下，写一下关于我的理解。既然做记录，这边就简述一下外键：
+
+如果一张表中有一个非主键的字段指向了别一张表中的主键，就将该字段叫做外键。
+1.对子表(外键所在的表)的作用：子表在进行写操作的时候">
+  
+    <link rel="alternative" href="/atom.xml" title="Liecol&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+    <meta name="keywords" content="liecol-晓斌个人网站,高晓斌网站, 高晓斌, 高晓斌博客, 望江县第三中学, 北京城市学院, 高晓斌blog, hexo博客">
+    <meta name="google-site-verification" content="KD9n1FRuBzVpoapy6t7dZdow7NG_SI4RKZ7dEPjkr0o" />
+</head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Liecol&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">技术，源于对生活的分享，所谓迷茫，就是才华配不上梦想！</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="bin.bloggao.cn">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main"><article id="post-mysql_foreign_key" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/25/mysql_foreign_key/" class="article-date">
+  <time datetime="2018-04-25T02:02:34.000Z" itemprop="datePublished">2018-04-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/mysql/">mysql</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Mysql 外键 Foreign Key
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>昨晚被朋友问到一个有关mysql外键的问题,问我删除外键再重新创建另一张表的外键，会提示key值重复，一下子问懵了，<br>潜意识告诉我不应该，但是自己做了一下操作确实如此，最后发现是建立了索引的缘故。故，在此记录一下，写一下关于我的理解。<br>既然做记录，这边就简述一下外键：</p>
+<ul>
+<li>如果一张表中有一个非主键的字段指向了别一张表中的主键，就将该字段叫做外键。</li>
+<li>1.对子表(外键所在的表)的作用：子表在进行写操作的时候，如果外键字段在父表中找不到对应的匹配，操作就会失败。</li>
+<li>2.对父表的作用：对父表的主键字段进行删和改时，如果对应的主键在子表中被引用，操作就会失败。</li>
+<li>外键的定制作用：<br>  =&gt; district：严格模式(默认), 父表不能删除或更新一个被子表引用的记录。<br>  =&gt; cascade：级联模式, 父表操作后，子表关联的数据也跟着一起操作。<br>  =&gt; set null：置空模式,前提外键字段允许为NLL,  父表操作后，子表对应的字段被置空。</li>
+<li>使用外键的前提：<br>  =&gt; 表储存引擎必须是innodb，否则创建的外键无约束效果。<br>  =&gt; 外键的列类型必须与父表的主键类型完全一致。<br>  =&gt; 外键的名字不能重复。<br>  =&gt; 已经存在数据的字段被设为外键时，必须保证字段中的数据与父表的主键数据对应起来。</li>
+</ul>
+<p>其实在现在的并发系统中，因为限制的原因，采用外键的机会个人觉得不会很多.(笔者参与的几个项目均未采用外键)<br>接下来，我们做一个验证：<br><a id="more"></a><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`tab_father`</span> (  </div><div class="line">    <span class="string">`t_first`</span> <span class="built_in">INT</span>(<span class="number">11</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,  </div><div class="line">    <span class="string">`t_second`</span> <span class="built_in">INT</span>(<span class="number">11</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,  </div><div class="line">    <span class="string">`ts`</span> <span class="keyword">TIMESTAMP</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">CURRENT_TIMESTAMP</span>  </div><div class="line">)  </div><div class="line"><span class="keyword">COLLATE</span>=<span class="string">'utf8_general_ci'</span>  </div><div class="line"><span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span>;</div></pre></td></tr></table></figure></p>
+<p>在上面建立的这个<code>tab_father</code>表里，并未建立索引，也同样没有建立主键, 接下来再建一张子表(<code>tab_child</code>)：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`tab_child`</span> (  </div><div class="line">    <span class="string">`id`</span> <span class="built_in">INT</span>(<span class="number">10</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,  </div><div class="line">    <span class="string">`col`</span> <span class="built_in">INT</span>(<span class="number">10</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,  </div><div class="line">    <span class="string">`col2`</span> <span class="built_in">INT</span>(<span class="number">10</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>, </div><div class="line">    PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)  </div><div class="line">)  </div><div class="line"><span class="keyword">COLLATE</span>=<span class="string">'utf8_general_ci'</span>  </div><div class="line"><span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span></div></pre></td></tr></table></figure></p>
+<p>再进行子表<code>col</code>关联父表<code>t_second</code>字段，发现失败。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`tab_child`</span> <span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> <span class="string">`FK_tab_child_tab_father`</span> FOREIGN <span class="keyword">KEY</span> (<span class="string">`col`</span>) </div><div class="line"><span class="keyword">REFERENCES</span> <span class="string">`tab_father`</span> (<span class="string">`t_second`</span>) <span class="keyword">ON</span> <span class="keyword">UPDATE</span> <span class="keyword">CASCADE</span> <span class="keyword">ON</span> <span class="keyword">DELETE</span> <span class="keyword">CASCADE</span>;</div><div class="line">[Err] 1215 - Cannot add foreign key constraint</div></pre></td></tr></table></figure></p>
+<p>为<code>tab_father</code>添加一个索引再执行外键语句 -&gt;(成功)：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`tab_father`</span> <span class="keyword">ADD</span> <span class="keyword">INDEX</span> <span class="string">`t_second`</span> (<span class="string">`t_second`</span>);</div></pre></td></tr></table></figure></p>
+<h5 id="注：这个时候，我们去看字表的索引，会发现，其实在创建外键的同时，mysql默认给字表也添加了一个索引。"><a href="#注：这个时候，我们去看字表的索引，会发现，其实在创建外键的同时，mysql默认给字表也添加了一个索引。" class="headerlink" title="注：这个时候，我们去看字表的索引，会发现，其实在创建外键的同时，mysql默认给字表也添加了一个索引。"></a><span style="color:red; text-decoration:underline;">注：这个时候，我们去看字表的索引，会发现，其实在创建外键的同时，mysql默认给字表也添加了一个索引。</span></h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">+<span class="comment">------------+-------------+------------+</span></div><div class="line">| TABLE_NAME | COLUMN_NAME | COLUMN_KEY |</div><div class="line">+<span class="comment">------------+-------------+------------+</span></div><div class="line">| tab_child  | col         | MUL        |</div><div class="line">+<span class="comment">------------+-------------+------------+</span></div></pre></td></tr></table></figure>
+<p>我们再创建一个子表tab_child2：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`tab_child2`</span> (  </div><div class="line">    <span class="string">`id`</span> <span class="built_in">INT</span>(<span class="number">10</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,  </div><div class="line">    <span class="string">`col`</span> <span class="built_in">INT</span>(<span class="number">10</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,  </div><div class="line">    <span class="string">`col2`</span> <span class="built_in">INT</span>(<span class="number">10</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>, </div><div class="line">    PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)  </div><div class="line">)  </div><div class="line"><span class="keyword">COLLATE</span>=<span class="string">'utf8_general_ci'</span>  </div><div class="line"><span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span></div></pre></td></tr></table></figure></p>
+<p>删掉<code>tab_child</code>的外键，再给<code>tab_child2</code>做<code>col2</code>关联父表<code>t_first</code>字段，发现失败。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tab_child <span class="keyword">drop</span> foreign <span class="keyword">key</span> FK_tab_child_tab_father;</div><div class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`tab_child2`</span> <span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> <span class="string">`FK_tab_child_tab_father`</span> FOREIGN <span class="keyword">KEY</span> (<span class="string">`col2`</span>) </div><div class="line"><span class="keyword">REFERENCES</span> <span class="string">`tab_father`</span> (<span class="string">`t_first`</span>) <span class="keyword">ON</span> <span class="keyword">UPDATE</span> <span class="keyword">CASCADE</span> <span class="keyword">ON</span> <span class="keyword">DELETE</span> <span class="keyword">CASCADE</span>;</div><div class="line">[Err] 1215 - Cannot add foreign key constraint</div></pre></td></tr></table></figure></p>
+<p>笔者朋友就是在这里被卡住的，为什么已经drop了外键，但是却报错了呢，原因同之前一样，因为父表的t_first，未建立索引，建立索引后成功。<br>笔者朋友还遇到一种情况：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[Err] 1061 - Duplicate key name 'FK_tab_child_tab_father'</div></pre></td></tr></table></figure></p>
+<p>这种也令他费解，同样的也是为什么已经drop了外键，但是也报错了呢，这个是因为，在建立外键时，<br>子表被自动加了<code>FK_tab_child_tab_father</code>这个索引名称导致后面在建立外键时，采用同一个名称，所以会报错。<br><span style="color:red; text-decoration:underline;">这个时候，可以修改外键名称，或删除之前没用的索引，或在最开始创建一个字段索引(注: 增加外键是无则加之。)，这样的办法来进行增加外键。</span><br>那么，为什么mysql会在创立外键的时间，给默认增加一个索引呢？<br>主要原因就在于查询性能。<br>父子表之间在进行外键检查时，需要一条一条每条必查地校验，而且在对父表的SELECT操作时，为了避免产出数据不一致，<br>使用的是一致性锁定读(SELECT …… LOCK IN SHARE MODE)，主动加一个S锁阻塞其他的修改操作。如果没有索引，<br>对于大一点的表而言那效率就非常低下。参考文档：<a href="https://dev.mysql.com/doc/refman/5.7/en/create-table-foreign-keys.html" target="_blank" rel="external">https://dev.mysql.com/doc/refman/5.7/en/create-table-foreign-keys.html</a></p>
+<p>那为什么子表可以隐式地创建索引而父表需要显式地创建(主表没有索引报错)？</p>
+<ul>
+<li>笔者理解为是mysql的执行顺序问题(性能问题)。<br>  检查父表关联字段有没有创建可使用的有效索引<br>  检查子表父表字段属性的一致性，包括数据类型、长度、字符编码等<br>  检查子表外键字段是否创建索引(无则创建，创建名称唯一)<br>  检查子表数据是否关联父表记录</li>
+<li>可能会存在其他原因：<br>  父表权限(暗示拥有创建字表的权限)<br>  操作权限(外键是基于字表上工作)<br>或者这是mysql的设计者觉得这是一种比较合理的方式吧。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://bin.bloggao.cn/2018/04/25/mysql_foreign_key/" data-id="cjgekqge0000r44debxymsz8z" class="article-share-link" data-share="baidu" data-title="Mysql 外键 Foreign Key">分享到</a>
+      
+
+      
+        <a href="http://bin.bloggao.cn/2018/04/25/mysql_foreign_key/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+
+    </footer>
+  </div>
+
+  
+    <! -- 添加版权信息 -->
+    <div style="margin-top:20px;">
+    <div>
+    <b>注:</b> 转载请注明出处,本文作者为
+    <a style="color:#e32d40;" href="/index.html" target="_blank" title="Liecol Gao">Liecol Gao</a>,
+    本文标题为
+    <a style="color:#e32d40;" href="/2018/04/25/mysql_foreign_key/" target="_blank" title="Mysql 外键 Foreign Key">Mysql 外键 Foreign Key</a>
+    </div>
+    <div>
+    &nbsp;&nbsp;&nbsp;&nbsp;本文链接为
+    <a style="color:#e32d40;" href="/2018/04/25/mysql_foreign_key/" target="_blank" title="Mysql 外键 Foreign Key">http://bin.bloggao.cn/2018/04/25/mysql_foreign_key/</a>.
+    </div>
+    </div>
+    <! -- 添加版权信息 -->
+
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/21/python_sip/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">Requests对摘要认证的处理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <!--PC和WAP自适应版-->
+  <div id="SOHUCS" sid="Mysql 外键 Foreign Key" ></div> 
+  <script type="text/javascript"> 
+  (function(){ 
+  var appid = 'cysWveYe9'; 
+  var conf = 'prod_17d4525b97e67d157e2c5e0a2cedfcd7'; 
+  var width = window.innerWidth || document.documentElement.clientWidth; 
+  if (width < 960) { 
+  window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/nodejs/" style="font-size: 14.67px; color: #ee803d">nodejs</a> <a href="/tags/mysql/" style="font-size: 18px; color: #ee4d25">mysql</a> <a href="/tags/coding/" style="font-size: 13px; color: #ee9a49">coding</a> <a href="/tags/Blog/" style="font-size: 16.33px; color: #ee6731">Blog</a> <a href="/tags/php/" style="font-size: 19.67px; color: #ee3318">php</a> <a href="/tags/Memcache/" style="font-size: 13px; color: #ee9a49">Memcache</a> <a href="/tags/linux/" style="font-size: 23px; color: #e00">linux</a> <a href="/tags/nosql/" style="font-size: 14.67px; color: #ee803d">nosql</a> <a href="/tags/html/" style="font-size: 14.67px; color: #ee803d">html</a> <a href="/tags/other/" style="font-size: 14.67px; color: #ee803d">other</a> <a href="/tags/Apache/" style="font-size: 13px; color: #ee9a49">Apache</a> <a href="/tags/phpexcel/" style="font-size: 13px; color: #ee9a49">phpexcel</a> <a href="/tags/javascript/" style="font-size: 18px; color: #ee4d25">javascript</a> <a href="/tags/chrome/" style="font-size: 13px; color: #ee9a49">chrome</a> <a href="/tags/google/" style="font-size: 13px; color: #ee9a49">google</a> <a href="/tags/jquery/" style="font-size: 14.67px; color: #ee803d">jquery</a> <a href="/tags/fileupload/" style="font-size: 13px; color: #ee9a49">fileupload</a> <a href="/tags/flexigrid/" style="font-size: 13px; color: #ee9a49">flexigrid</a> <a href="/tags/hexo/" style="font-size: 18px; color: #ee4d25">hexo</a> <a href="/tags/svn/" style="font-size: 13px; color: #ee9a49">svn</a> <a href="/tags/Ubuntu/" style="font-size: 13px; color: #ee9a49">Ubuntu</a> <a href="/tags/curl/" style="font-size: 13px; color: #ee9a49">curl</a> <a href="/tags/redis/" style="font-size: 14.67px; color: #ee803d">redis</a> <a href="/tags/python/" style="font-size: 21.33px; color: #ee1a0c">python</a> <a href="/tags/cProfile/" style="font-size: 13px; color: #ee9a49">cProfile</a> <a href="/tags/ftp/" style="font-size: 13px; color: #ee9a49">ftp</a> <a href="/tags/xlrd/" style="font-size: 13px; color: #ee9a49">xlrd</a> <a href="/tags/excel/" style="font-size: 13px; color: #ee9a49">excel</a> <a href="/tags/bfs/" style="font-size: 13px; color: #ee9a49">bfs</a> <a href="/tags/http/" style="font-size: 14.67px; color: #ee803d">http</a> <a href="/tags/smarty/" style="font-size: 13px; color: #ee9a49">smarty</a> <a href="/tags/virtualenv/" style="font-size: 14.67px; color: #ee803d">virtualenv</a> <a href="/tags/wechat/" style="font-size: 13px; color: #ee9a49">wechat</a> <a href="/tags/vpn/" style="font-size: 13px; color: #ee9a49">vpn</a> <a href="/tags/tmux/" style="font-size: 13px; color: #ee9a49">tmux</a> <a href="/tags/pyramid/" style="font-size: 13px; color: #ee9a49">pyramid</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/04/25/mysql_foreign_key/">Mysql 外键 Foreign Key</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/21/python_sip/">Requests对摘要认证的处理</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/20/python_ftp/">如何在Python里使用FTP</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/13/python_requests/">Requests 一款实用的python http库</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/09/linux_locale/">locale修改linux语言环境</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/curl/">curl</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nosql/">nosql</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/other/">other</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wechat/">wechat</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://www.bloggao.cn" target="_blank">liecol&#39;s 主页</a>
+          </li>
+        
+          <li>
+            <a href="http://shop.bloggao.cn" target="_blank">liecol&#39;s 商城</a>
+          </li>
+        
+          <li>
+            <a href="http://zpw.bloggao.cn" target="_blank">liecol&#39;s 招聘</a>
+          </li>
+        
+          <li>
+            <a href="http://ltkd.bloggao.cn" target="_blank">liecol&#39;s 快递</a>
+          </li>
+        
+          <li>
+            <a href="http://blog.newbmiao.com" target="_blank">菜鸟-Miao</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <ul class="list-inline text-center">
+    <li>
+        <a target="_blank" href="http://weibo.com/liecol">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+    </li>
+    <li>
+        <a target="_blank"  href="https://github.com/liecol-gao">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+    </li>
+    </ul>
+  <p class="copyright text-muted" style='margin-top:10px;'>
+    <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人次</span>
+  </p>
+  <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>  
+  <p class="copyright text-muted"  style='margin-top:0px;'>
+      Copyright &copy; Liecol&#39;s Blog 2018 
+      <br>
+      Create by <a href="http://www.bloggao.cn">liecol</a> 
+      <span style="display: inline-block; margin: 0 5px;">
+          <i class="fa fa-heart"></i>
+      </span> 
+      Ported by <a href="https://github.com/liecol-gao/liecol-gao.github.io">Liecol-Github</a> | 
+      京ICP备15020464号
+  </p>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+<!-- 多说公共js代码 start -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"liecol"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共js代码 end -->
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+</div>
+</body>
+</html>

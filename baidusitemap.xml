@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://bin.bloggao.cn/2018/04/25/mysql_foreign_key/</loc>
+    <lastmod>2018-04-25T04:34:20.890Z</lastmod>
+    <data>
+        <display>
+        <title>Mysql 外键 Foreign Key</title>
+        <pubTime>2018-04-25T02:02:34.000Z</pubTime>
+        
+        <tag>mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="mysql" url="http://bin.bloggao.cn/categories/mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://bin.bloggao.cn/2017/12/21/python_sip/</loc>
     <lastmod>2017-12-25T10:50:40.444Z</lastmod>
     <data>
@@ -415,11 +435,11 @@
         <title>MemCache及phpApi缓存浅谈</title>
         <pubTime>2015-09-28T09:50:17.000Z</pubTime>
         
-        <tag>linux</tag>
-         
         <tag>php</tag>
          
         <tag>Memcache</tag>
+         
+        <tag>linux</tag>
          
         <tag>nosql</tag>
          
@@ -463,9 +483,9 @@
         <title>如何在linux上使用hexo搭建git博客</title>
         <pubTime>2016-09-30T09:48:37.000Z</pubTime>
         
-        <tag>linux</tag>
-         
         <tag>hexo</tag>
+         
+        <tag>linux</tag>
          
         <tag>nodejs</tag>
          
