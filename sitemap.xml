@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://bin.bloggao.cn/2020/05/21/python_google_auth/</loc>
+    
+    <lastmod>2020-05-21T10:32:41.667Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://bin.bloggao.cn/2017/07/10/tmux_linux/</loc>
+    
+    <lastmod>2020-05-21T10:19:11.507Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://bin.bloggao.cn/2018/04/25/mysql_foreign_key/</loc>
     
     <lastmod>2018-04-25T04:40:43.130Z</lastmod>
@@ -18,7 +32,7 @@
   <url>
     <loc>http://bin.bloggao.cn/2017/12/20/python_ftp/</loc>
     
-    <lastmod>2017-12-20T10:04:56.729Z</lastmod>
+    <lastmod>2017-12-20T10:04:56.730Z</lastmod>
     
   </url>
   
@@ -32,7 +46,7 @@
   <url>
     <loc>http://bin.bloggao.cn/2017/01/11/chrome_SwitchyOmega/</loc>
     
-    <lastmod>2017-12-14T10:48:26.891Z</lastmod>
+    <lastmod>2017-12-14T10:48:26.892Z</lastmod>
     
   </url>
   
@@ -53,14 +67,14 @@
   <url>
     <loc>http://bin.bloggao.cn/2017/01/10/hexo_sitemap/</loc>
     
-    <lastmod>2017-09-27T09:01:28.018Z</lastmod>
+    <lastmod>2017-09-27T09:01:28.019Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bin.bloggao.cn/2017/09/21/linux_ubutu_gdm/</loc>
     
-    <lastmod>2017-09-21T03:44:47.757Z</lastmod>
+    <lastmod>2017-09-21T03:44:47.758Z</lastmod>
     
   </url>
   
@@ -79,23 +93,16 @@
   </url>
   
   <url>
-    <loc>http://bin.bloggao.cn/2017/07/10/tmux_linux/</loc>
-    
-    <lastmod>2017-07-10T06:29:34.278Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://bin.bloggao.cn/2017/04/23/date_parse/</loc>
     
-    <lastmod>2017-05-15T06:03:01.111Z</lastmod>
+    <lastmod>2017-05-15T06:03:01.112Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bin.bloggao.cn/2017/01/10/hexo_lf_will_be_replaced_by_crlf/</loc>
     
-    <lastmod>2017-01-10T08:39:41.112Z</lastmod>
+    <lastmod>2017-01-10T08:39:41.113Z</lastmod>
     
   </url>
   
@@ -109,7 +116,7 @@
   <url>
     <loc>http://bin.bloggao.cn/2016/01/10/windows_Python_virtualenv/</loc>
     
-    <lastmod>2017-01-06T07:53:35.391Z</lastmod>
+    <lastmod>2017-01-06T07:53:35.392Z</lastmod>
     
   </url>
   
@@ -123,21 +130,21 @@
   <url>
     <loc>http://bin.bloggao.cn/2016/02/14/BINARY_mysql/</loc>
     
-    <lastmod>2017-01-04T08:23:14.204Z</lastmod>
+    <lastmod>2017-01-04T08:23:14.205Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bin.bloggao.cn/2015/11/16/python_html_role/</loc>
     
-    <lastmod>2017-01-04T08:17:46.027Z</lastmod>
+    <lastmod>2017-01-04T08:17:46.028Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bin.bloggao.cn/2015/11/23/linux_zip/</loc>
     
-    <lastmod>2017-01-04T08:09:12.260Z</lastmod>
+    <lastmod>2017-01-04T08:09:12.261Z</lastmod>
     
   </url>
   
@@ -158,42 +165,42 @@
   <url>
     <loc>http://bin.bloggao.cn/2016/09/30/linux_hexo_blog_git/</loc>
     
-    <lastmod>2017-01-04T03:33:10.761Z</lastmod>
+    <lastmod>2017-01-04T03:33:10.762Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bin.bloggao.cn/2015/08/27/jquery_Symbol/</loc>
     
-    <lastmod>2017-01-04T03:33:02.297Z</lastmod>
+    <lastmod>2017-01-04T03:33:02.298Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bin.bloggao.cn/2016/12/23/linux_fdisk/</loc>
     
-    <lastmod>2017-01-04T03:32:54.281Z</lastmod>
+    <lastmod>2017-01-04T03:32:54.282Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bin.bloggao.cn/2015/11/23/jquery_flexigrid/</loc>
     
-    <lastmod>2017-01-04T03:32:48.457Z</lastmod>
+    <lastmod>2017-01-04T03:32:48.458Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bin.bloggao.cn/2016/11/23/jQuery_FileUpload/</loc>
     
-    <lastmod>2017-01-04T03:32:39.761Z</lastmod>
+    <lastmod>2017-01-04T03:32:39.762Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bin.bloggao.cn/2016/11/14/Hexo_Blog_Coding/</loc>
     
-    <lastmod>2017-01-04T03:32:29.273Z</lastmod>
+    <lastmod>2017-01-04T03:32:29.274Z</lastmod>
     
   </url>
   
@@ -221,7 +228,7 @@
   <url>
     <loc>http://bin.bloggao.cn/2014/11/06/other_web/</loc>
     
-    <lastmod>2017-01-04T03:31:58.561Z</lastmod>
+    <lastmod>2017-01-04T03:31:58.562Z</lastmod>
     
   </url>
   
@@ -249,7 +256,7 @@
   <url>
     <loc>http://bin.bloggao.cn/2016/12/20/PHPExcel/</loc>
     
-    <lastmod>2017-01-04T03:31:15.905Z</lastmod>
+    <lastmod>2017-01-04T03:31:15.906Z</lastmod>
     
   </url>
   
@@ -284,14 +291,14 @@
   <url>
     <loc>http://bin.bloggao.cn/2016/01/11/windows_python_virtualenv_pyramid/</loc>
     
-    <lastmod>2017-01-04T03:28:39.945Z</lastmod>
+    <lastmod>2017-01-04T03:28:39.946Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bin.bloggao.cn/2016/12/25/Apache_Directory/</loc>
     
-    <lastmod>2017-01-03T07:27:23.704Z</lastmod>
+    <lastmod>2017-01-03T07:27:23.705Z</lastmod>
     
   </url>
   

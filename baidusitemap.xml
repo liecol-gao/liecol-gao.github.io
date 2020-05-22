@@ -4,6 +4,50 @@
 
     
   <url>
+    <loc>http://bin.bloggao.cn/2020/05/21/python_google_auth/</loc>
+    <lastmod>2020-05-21T10:32:41.667Z</lastmod>
+    <data>
+        <display>
+        <title>通过python进行谷歌hotp身份验证</title>
+        <pubTime>2020-05-21T10:14:40.000Z</pubTime>
+        
+        <tag>chrome</tag>
+         
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://bin.bloggao.cn/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://bin.bloggao.cn/2017/07/10/tmux_linux/</loc>
+    <lastmod>2020-05-21T10:19:11.507Z</lastmod>
+    <data>
+        <display>
+        <title>多窗口工具tmux快捷键速查表</title>
+        <pubTime>2017-07-10T05:12:40.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>tmux</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://bin.bloggao.cn/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://bin.bloggao.cn/2018/04/25/mysql_foreign_key/</loc>
     <lastmod>2018-04-25T04:40:43.130Z</lastmod>
     <data>
@@ -47,7 +91,7 @@
     
   <url>
     <loc>http://bin.bloggao.cn/2017/12/20/python_ftp/</loc>
-    <lastmod>2017-12-20T10:04:56.729Z</lastmod>
+    <lastmod>2017-12-20T10:04:56.730Z</lastmod>
     <data>
         <display>
         <title>如何在Python里使用FTP</title>
@@ -91,7 +135,7 @@
     
   <url>
     <loc>http://bin.bloggao.cn/2017/01/11/chrome_SwitchyOmega/</loc>
-    <lastmod>2017-12-14T10:48:26.891Z</lastmod>
+    <lastmod>2017-12-14T10:48:26.892Z</lastmod>
     <data>
         <display>
         <title>chrome通过SwitchyOmega配置代理</title>
@@ -153,7 +197,7 @@
     
   <url>
     <loc>http://bin.bloggao.cn/2017/01/10/hexo_sitemap/</loc>
-    <lastmod>2017-09-27T09:01:28.018Z</lastmod>
+    <lastmod>2017-09-27T09:01:28.019Z</lastmod>
     <data>
         <display>
         <title>hexo 添加百度谷歌收录sitemap</title>
@@ -175,7 +219,7 @@
     
   <url>
     <loc>http://bin.bloggao.cn/2017/09/21/linux_ubutu_gdm/</loc>
-    <lastmod>2017-09-21T03:44:47.757Z</lastmod>
+    <lastmod>2017-09-21T03:44:47.758Z</lastmod>
     <data>
         <display>
         <title>在vmware上安装ubuntu16.04无法进入桌面或者桌面空白解决办法</title>
@@ -240,30 +284,8 @@
 
     
   <url>
-    <loc>http://bin.bloggao.cn/2017/07/10/tmux_linux/</loc>
-    <lastmod>2017-07-10T06:29:34.278Z</lastmod>
-    <data>
-        <display>
-        <title>多窗口工具tmux快捷键速查表</title>
-        <pubTime>2017-07-10T05:12:40.000Z</pubTime>
-        
-        <tag>linux</tag>
-         
-        <tag>tmux</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux" url="http://bin.bloggao.cn/categories/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://bin.bloggao.cn/2017/04/23/date_parse/</loc>
-    <lastmod>2017-05-15T06:03:01.111Z</lastmod>
+    <lastmod>2017-05-15T06:03:01.112Z</lastmod>
     <data>
         <display>
         <title>Date.parse在IE里NaN问题的解决方式</title>
@@ -283,7 +305,7 @@
     
   <url>
     <loc>http://bin.bloggao.cn/2017/01/10/hexo_lf_will_be_replaced_by_crlf/</loc>
-    <lastmod>2017-01-10T08:39:41.112Z</lastmod>
+    <lastmod>2017-01-10T08:39:41.113Z</lastmod>
     <data>
         <display>
         <title>hexo LF will be replaced by CRLF 错误</title>
@@ -325,7 +347,7 @@
     
   <url>
     <loc>http://bin.bloggao.cn/2016/01/10/windows_Python_virtualenv/</loc>
-    <lastmod>2017-01-06T07:53:35.391Z</lastmod>
+    <lastmod>2017-01-06T07:53:35.392Z</lastmod>
     <data>
         <display>
         <title>windows＋Python＋virtualenv环境配置</title>
@@ -367,7 +389,7 @@
     
   <url>
     <loc>http://bin.bloggao.cn/2016/02/14/BINARY_mysql/</loc>
-    <lastmod>2017-01-04T08:23:14.204Z</lastmod>
+    <lastmod>2017-01-04T08:23:14.205Z</lastmod>
     <data>
         <display>
         <title>BINARY解决数据大小写敏感及部分查询问题</title>
@@ -387,7 +409,7 @@
     
   <url>
     <loc>http://bin.bloggao.cn/2015/11/16/python_html_role/</loc>
-    <lastmod>2017-01-04T08:17:46.027Z</lastmod>
+    <lastmod>2017-01-04T08:17:46.028Z</lastmod>
     <data>
         <display>
         <title>python解决html转义</title>
@@ -409,7 +431,7 @@
     
   <url>
     <loc>http://bin.bloggao.cn/2015/11/23/linux_zip/</loc>
-    <lastmod>2017-01-04T08:09:12.260Z</lastmod>
+    <lastmod>2017-01-04T08:09:12.261Z</lastmod>
     <data>
         <display>
         <title>linux的压缩及解压zip</title>
@@ -477,7 +499,7 @@
     
   <url>
     <loc>http://bin.bloggao.cn/2016/09/30/linux_hexo_blog_git/</loc>
-    <lastmod>2017-01-04T03:33:10.761Z</lastmod>
+    <lastmod>2017-01-04T03:33:10.762Z</lastmod>
     <data>
         <display>
         <title>如何在linux上使用hexo搭建git博客</title>
@@ -501,7 +523,7 @@
     
   <url>
     <loc>http://bin.bloggao.cn/2015/08/27/jquery_Symbol/</loc>
-    <lastmod>2017-01-04T03:33:02.297Z</lastmod>
+    <lastmod>2017-01-04T03:33:02.298Z</lastmod>
     <data>
         <display>
         <title>如何解决jquery的$符号冲突</title>
@@ -523,7 +545,7 @@
     
   <url>
     <loc>http://bin.bloggao.cn/2016/12/23/linux_fdisk/</loc>
-    <lastmod>2017-01-04T03:32:54.281Z</lastmod>
+    <lastmod>2017-01-04T03:32:54.282Z</lastmod>
     <data>
         <display>
         <title>挂载磁盘和永久挂载</title>
@@ -543,7 +565,7 @@
     
   <url>
     <loc>http://bin.bloggao.cn/2015/11/23/jquery_flexigrid/</loc>
-    <lastmod>2017-01-04T03:32:48.457Z</lastmod>
+    <lastmod>2017-01-04T03:32:48.458Z</lastmod>
     <data>
         <display>
         <title>关于flexigrid的初识</title>
@@ -565,7 +587,7 @@
     
   <url>
     <loc>http://bin.bloggao.cn/2016/11/23/jQuery_FileUpload/</loc>
-    <lastmod>2017-01-04T03:32:39.761Z</lastmod>
+    <lastmod>2017-01-04T03:32:39.762Z</lastmod>
     <data>
         <display>
         <title>jQuery上传插件FileUpload浅析</title>
@@ -589,7 +611,7 @@
     
   <url>
     <loc>http://bin.bloggao.cn/2016/11/14/Hexo_Blog_Coding/</loc>
-    <lastmod>2017-01-04T03:32:29.273Z</lastmod>
+    <lastmod>2017-01-04T03:32:29.274Z</lastmod>
     <data>
         <display>
         <title>关于Hexo搭建Blog托管至Coding并显示</title>
@@ -675,7 +697,7 @@
     
   <url>
     <loc>http://bin.bloggao.cn/2014/11/06/other_web/</loc>
-    <lastmod>2017-01-04T03:31:58.561Z</lastmod>
+    <lastmod>2017-01-04T03:31:58.562Z</lastmod>
     <data>
         <display>
         <title>个人总结web开发</title>
@@ -759,7 +781,7 @@
     
   <url>
     <loc>http://bin.bloggao.cn/2016/12/20/PHPExcel/</loc>
-    <lastmod>2017-01-04T03:31:15.905Z</lastmod>
+    <lastmod>2017-01-04T03:31:15.906Z</lastmod>
     <data>
         <display>
         <title>PHPExcel的使用</title>
@@ -873,7 +895,7 @@
     
   <url>
     <loc>http://bin.bloggao.cn/2016/01/11/windows_python_virtualenv_pyramid/</loc>
-    <lastmod>2017-01-04T03:28:39.945Z</lastmod>
+    <lastmod>2017-01-04T03:28:39.946Z</lastmod>
     <data>
         <display>
         <title>windows/python/virtualenv环境安装pyramid</title>
@@ -897,7 +919,7 @@
     
   <url>
     <loc>http://bin.bloggao.cn/2016/12/25/Apache_Directory/</loc>
-    <lastmod>2017-01-03T07:27:23.704Z</lastmod>
+    <lastmod>2017-01-03T07:27:23.705Z</lastmod>
     <data>
         <display>
         <title>Apache2.4与2.2版本访问配置对比</title>
